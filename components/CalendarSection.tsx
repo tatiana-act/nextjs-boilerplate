@@ -1,5 +1,5 @@
 import {JSX, useState} from 'react';
-import { Event, UpcomingEvent } from '../types';
+import { Event, UpcomingEvent } from '@/types';
 
 interface CalendarSectionProps {
     events: Event;

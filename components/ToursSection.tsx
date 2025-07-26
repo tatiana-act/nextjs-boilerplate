@@ -1,4 +1,4 @@
-import { Tour } from '../types';
+import { Tour } from '@/types';
 
 interface ToursSectionProps {
     tours: Tour[];
