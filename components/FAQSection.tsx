@@ -16,7 +16,7 @@ const FAQSection: React.FC<FAQSectionProps> = ({ faqs }) => {
     return (
         <section className="section faq-section">
             <div className="container">
-                <h2 className="section-title">Frequently Asked Questions</h2>
+                <h2 className="section-title">Ответы на часто задаваемые вопросы</h2>
                 <div className="faq-container">
                     {faqs.map((faq, index) => (
                         <FAQItem
