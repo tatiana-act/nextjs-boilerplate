@@ -1,0 +1,68 @@
+[
+  {
+    "id": "historic-downtown",
+    "title": "Historic Downtown Walking Tour",
+    "description": "Explore the rich history and architecture of our city's downtown core. Visit century-old buildings, learn about local legends, and discover the stories that shaped our community.",
+    "price": 25,
+    "icon": "fas fa-building",
+    "duration": "2 hours",
+    "maxParticipants": 15,
+    "difficulty": "Easy",
+    "includes": ["Professional guide", "Historical maps", "Photo opportunities"],
+    "meetingPoint": "City Hall Main Entrance",
+    "ageRecommendation": "All ages welcome"
+  },
+  {
+    "id": "culinary-adventure",
+    "title": "Culinary Adventure Tour",
+    "description": "Taste your way through the city's best local eateries and hidden food gems. Sample authentic dishes, meet local chefs, and learn about our diverse culinary heritage.",
+    "price": 45,
+    "icon": "fas fa-utensils",
+    "duration": "3 hours",
+    "maxParticipants": 12,
+    "difficulty": "Easy",
+    "includes": ["Food tastings", "Restaurant visits", "Chef interactions", "Recipe cards"],
+    "meetingPoint": "Downtown Food Market",
+    "ageRecommendation": "12+ recommended"
+  },
+  {
+    "id": "photography-tour",
+    "title": "Photography Hotspots Tour",
+    "description": "Capture the city's most Instagram-worthy locations with professional photography tips. Perfect for both beginners and experienced photographers looking for unique perspectives.",
+    "price": 35,
+    "icon": "fas fa-camera",
+    "duration": "2.5 hours",
+    "maxParticipants": 10,
+    "difficulty": "Moderate",
+    "includes": ["Photography tips", "Equipment advice", "Best viewpoints", "Photo editing basics"],
+    "meetingPoint": "Riverside Park Pavilion",
+    "ageRecommendation": "16+ recommended"
+  },
+  {
+    "id": "haunted-night",
+    "title": "Haunted City Night Tour",
+    "description": "Brave the darkness and explore the city's most haunted locations. Hear spine-chilling tales of ghosts, mysteries, and unexplained phenomena that will give you goosebumps.",
+    "price": 30,
+    "icon": "fas fa-ghost",
+    "duration": "2 hours",
+    "maxParticipants": 20,
+    "difficulty": "Easy",
+    "ageRestriction": "13+",
+    "includes": ["Ghost stories", "Historical mysteries", "Paranormal equipment demo", "Souvenir photo"],
+    "meetingPoint": "Old Cemetery Gates",
+    "ageRecommendation": "13+ only due to scary content"
+  },
+  {
+    "id": "sunset-skyline",
+    "title": "Sunset Skyline Tour",
+    "description": "Experience breathtaking views of the city skyline as the sun sets. Visit rooftop terraces and observation decks for the perfect golden hour photography opportunities.",
+    "price": 40,
+    "icon": "fas fa-sun",
+    "duration": "2 hours",
+    "maxParticipants": 15,
+    "difficulty": "Easy",
+    "includes": ["Rooftop access", "Sunset viewing", "City facts", "Complimentary refreshment"],
+    "meetingPoint": "Central Business District Plaza",
+    "ageRecommendation": "All ages welcome"
+  }
+]

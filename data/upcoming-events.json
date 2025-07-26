@@ -1,0 +1,68 @@
+[
+  {
+    "id": "historic-july-26",
+    "title": "Historic Downtown Tour",
+    "date": "July 26, 10:00 AM",
+    "spotsAvailable": 2,
+    "totalSpots": 15,
+    "tourId": "historic-downtown",
+    "price": 25,
+    "guide": "Sarah Mitchell",
+    "weather": "Sunny, 75°F"
+  },
+  {
+    "id": "culinary-july-27",
+    "title": "Culinary Adventure",
+    "date": "July 27, 6:00 PM",
+    "spotsAvailable": 5,
+    "totalSpots": 12,
+    "tourId": "culinary-adventure",
+    "price": 45,
+    "guide": "Marco Rodriguez",
+    "weather": "Partly cloudy, 72°F"
+  },
+  {
+    "id": "photography-july-28",
+    "title": "Photography Tour",
+    "date": "July 28, 9:00 AM",
+    "spotsAvailable": 3,
+    "totalSpots": 10,
+    "tourId": "photography-tour",
+    "price": 35,
+    "guide": "Alex Chen",
+    "weather": "Clear, 70°F"
+  },
+  {
+    "id": "haunted-july-30",
+    "title": "Haunted Night Tour",
+    "date": "July 30, 8:00 PM",
+    "spotsAvailable": 8,
+    "totalSpots": 20,
+    "tourId": "haunted-night",
+    "price": 30,
+    "guide": "Rebecca Stone",
+    "weather": "Clear, 68°F"
+  },
+  {
+    "id": "sunset-august-1",
+    "title": "Sunset Skyline Tour",
+    "date": "August 1, 7:30 PM",
+    "spotsAvailable": 12,
+    "totalSpots": 15,
+    "tourId": "sunset-skyline",
+    "price": 40,
+    "guide": "David Park",
+    "weather": "Clear, 78°F"
+  },
+  {
+    "id": "historic-august-2",
+    "title": "Historic Downtown Tour",
+    "date": "August 2, 2:00 PM",
+    "spotsAvailable": 7,
+    "totalSpots": 15,
+    "tourId": "historic-downtown",
+    "price": 25,
+    "guide": "Sarah Mitchell",
+    "weather": "Sunny, 80°F"
+  }
+]
