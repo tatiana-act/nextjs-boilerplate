@@ -2,8 +2,8 @@ import type { Metadata } from 'next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'City Tours - Discover Your City Like Never Before',
-  description: 'Join our expert-guided tours and explore the hidden gems, rich history, and vibrant culture of our beautiful city. Book your adventure today!',
+  title: 'Austin City Tours - Город, который ты ещё не знаешь',
+  description: 'Присоединяйтесь к экскурсиям и откройте для себя скрытые жемчужины, богатую историю и яркую культуру нашего города!',
 }
 
 export default function RootLayout({

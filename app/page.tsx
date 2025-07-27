@@ -7,6 +7,10 @@ import FAQSection from '@/components/FAQSection';
 import Footer from '@/components/Footer';
 import { tours } from '@/data/tours';
 import { faqs } from '@/data/faq';
+import {upcomingTours} from '@/data/upcomingTours';
+import CalendarSection from '@/components/CalendarSection';
+import {Tour} from "@/types/tour";
+import UpcomingToursSection from "@/components/UpcomingSection";
 
 export default function Home() {
   const scrollToTours = () => {
@@ -18,15 +22,18 @@ export default function Home() {
     // For now, we'll just show an alert
     const tour = tours.find(t => t.id === tourId);
     if (tour) {
-      alert(`Booking ${tour.title}! This would redirect to a booking system.`);
+      alert(`Чтобы присоединиться к ${tour.title} пишите в директ или отправляйте смс `);
     }
   };
 
+  const allTours: Map<string, Tour> = new Map(tours.map(tour => [tour.id, tour] as const));
   return (
     <main>
       <Hero onExploreClick={scrollToTours} />
       <ToursSection tours={tours} onBookTour={handleBookTour} />
-      <FAQSection faqs={faqs} />
+      <UpcomingToursSection allTours={allTours} upcomingTours={upcomingTours} />
+        {/*<CalendarSection allTours={allTours} upcomingTours={upcomingTours} />*/}
+      {/*<FAQSection faqs={faqs} />*/}
       <Footer />
     </main>
   );

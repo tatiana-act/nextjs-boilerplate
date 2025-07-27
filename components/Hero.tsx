@@ -9,7 +9,7 @@ const Hero: React.FC<HeroProps> = ({ onExploreClick }) => {
         <section className="hero">
             <div className="hero-content">
                 <h1>Открой для себя Остин</h1>
-                <p>Join our expert-guided tours and explore hidden gems, rich history, and vibrant culture like never before</p>
+                <p>Присоединяйтесь к экскурсиям и откройте для себя скрытые жемчужины, богатую историю и яркую культуру нашего города!</p>
                 <button className="cta-button" onClick={onExploreClick}>
                     Наши экскурсии
                 </button>

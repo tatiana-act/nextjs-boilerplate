@@ -2,18 +2,16 @@ import { Tour } from '@/types/tour';
 
 export const tours: Tour[] = [
     {
-        id: '1',
-        title: 'Historic Downtown Walking Tour',
-        description: 'Discover the rich history and architectural marvels of our city center. This comprehensive walking tour takes you through centuries of urban development, from colonial foundations to modern skyscrapers. You\'ll explore hidden alleyways, visit historic landmarks, and hear fascinating stories about the people who shaped our city.',
-        duration: '2.5 hours',
-        price: 25,
-        imageUrl: 'https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=800&h=600&fit=crop',
+        id: 'Acap',
+        title: 'Пешеходная экскурсия по историческому центру Остина',
+        description: 'Прогуляемся по знаменитой Congress Avenue — главной улице города, где сохранился дух старого Остина. Заглянем в легендарный отель Driskill — настоящий архитектурный шедевр с привидениями и удивительной историей.',
+        duration: '1.5 часа',
+        price: 0,
+        imageUrl: 'https://images.unsplash.com/photo-1666972120465-efebce20bf93?q=80&w=800&h=600&auto=format&fit=crop',
         highlights: [
-            'Visit the original city hall built in 1847',
-            'Explore the historic financial district',
-            'See beautiful Victorian architecture',
-            'Learn about local legends and ghost stories',
-            'Stop at the famous central market'
+            'Увидим, услышим, почувствуем Остин таким, каким его знали сто лет назад.',
+            'Не забудьте зарядить телефоны — будет что фотографировать!',
+            'После экскурсии желающие смогут выпить кофе и почувствовать атмосферу XIX века в красивом старинном кафе при отеле.'
         ],
         included: [
             'Professional tour guide',
@@ -21,22 +19,23 @@ export const tours: Tour[] = [
             'Entry to public buildings',
             'Small group experience (max 15 people)'
         ],
-        meetingPoint: 'Main Street Plaza, by the bronze statue',
+        meetingPoint: 'Встречаемся у южных ворот Капитолия Техаса (пересечение Congress Ave и 11th St)',
         difficulty: 'Easy'
     },
     {
-        id: '2',
-        title: 'Culinary Food & Market Tour',
-        description: 'Embark on a delicious journey through our city\'s vibrant food scene. This tour combines visits to traditional markets, local eateries, and hidden culinary gems. You\'ll taste authentic local dishes, meet passionate food vendors, and learn about the cultural influences that shaped our unique cuisine.',
-        duration: '3 hours',
-        price: 45,
-        imageUrl: 'https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=800&h=600&fit=crop',
+        id: 'Gcrt',
+        title: 'Квест-экскурсия по Джорджтауну + музей!',
+        description: 'Увлекательная экскурсия-квест для взрослых и детей по историческому центру Джорджтауна — одному из самых красивых и уютных городков Техаса!',
+        duration: '1.5 часа',
+        price: 0,
+        imageUrl: 'https://images.unsplash.com/photo-1606251671317-19fb334213ba?q=80&w=800&h=600&fit=crop',
+
         highlights: [
-            'Visit 3 different local markets',
-            'Taste 8+ local specialties',
-            'Meet artisan food producers',
-            'Learn cooking techniques from locals',
-            'Explore ethnic neighborhoods'
+            'Прогулка-квест по центральной площади Джорджтауна — разгадаем загадки зданий, стоящихна ней, рассмотрим архитектуру и скульптуры, познакомимся с прошлым Техаса.',
+            'Перерыв на кофе в уютном кафе.',
+            'Экскурсия по музею Уильямсона — ожившая история округа, интересные экспонаты и атмосфера прошлого.',
+            'Подходит для взрослых и детей 7+',
+            'После экскурсии - кофе-брейк или поход в кафе- мороженое!'
         ],
         included: [
             'Expert food guide',
@@ -45,22 +44,21 @@ export const tours: Tour[] = [
             'Market shopping tips',
             'Dietary restrictions accommodated'
         ],
-        meetingPoint: 'Central Market main entrance',
+        meetingPoint: 'Встречаемся на центральной площади Джорджтауна, около Williamson museum',
         difficulty: 'Easy'
     },
     {
-        id: '3',
-        title: 'Sunset Photography & Scenic Views',
-        description: 'Capture the city\'s most breathtaking views during the golden hour. This photography-focused tour takes you to the best vantage points and hidden scenic spots that most tourists never see. Perfect for photography enthusiasts and anyone wanting to see the city from unique perspectives.',
-        duration: '2 hours',
-        price: 35,
-        imageUrl: 'https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=800&h=600&fit=crop',
+        id: 'Albjwc',
+        title: 'Экскурсия в Lady Bird Johnson Wildflower Center',
+        description: 'Не только о растениях, но также об истории и культуре Техаса',
+        duration: '2 часа',
+        price: 0,
+        imageUrl: 'https://images.unsplash.com/photo-1471644806490-77c53366b18b?w=800&h=600&fit=crop',
         highlights: [
-            'Visit 5 stunning viewpoints',
-            'Professional photography tips',
-            'Best sunset viewing locations',
-            'Hidden rooftop gardens',
-            'Perfect Instagram spots'
+            'Пройдем по интерактивной экотропе и познакомимся с местными растениями',
+            'Погуляем под вековыми техасскими дубами',
+            'Посетим сад бабочек и кактусовый сад',
+            'Снимем потрясающие кадры с расположенной на башне смотровой площадки'
         ],
         included: [
             'Photography guide',
@@ -69,7 +67,7 @@ export const tours: Tour[] = [
             'Location map for future visits',
             'Small group (max 10 people)'
         ],
-        meetingPoint: 'Hilltop Park visitor center',
+        meetingPoint: 'Lady Bird Johnson Wildflower Center',
         difficulty: 'Moderate'
     }
 ];

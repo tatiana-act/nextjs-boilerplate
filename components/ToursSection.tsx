@@ -11,7 +11,7 @@ const ToursSection: React.FC<ToursSectionProps> = ({ tours, onBookTour }) => {
     return (
         <section id="tours" className="section">
             <div className="container">
-                <h2 className="section-title">Our Featured Tours</h2>
+                <h2 className="section-title">Наши экскурсии</h2>
                 <div className="tours-grid">
                     {tours.map((tour) => (
                         <TourCard

@@ -15,3 +15,10 @@ export interface FAQ {
     question: string;
     answer: string;
 }
+
+export interface UpcomingTour {
+    id: string;
+    tourId: string;
+    date: string;
+    time: string;
+}

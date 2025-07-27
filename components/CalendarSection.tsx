@@ -1,12 +1,12 @@
-import {JSX, useState} from 'react';
-import { Event, UpcomingEvent } from '@/types';
+import React, { JSX, useState } from 'react';
+import { Tour, UpcomingTour } from '@/types/tour';
 
 interface CalendarSectionProps {
-    events: Event;
-    upcomingEvents: UpcomingEvent[];
+    allTours: ReadonlyMap<string,Tour>;
+    upcomingTours: UpcomingTour[];
 }
 
-const CalendarSection: React.FC<CalendarSectionProps> = ({ events, upcomingEvents }) => {
+const CalendarSection: React.FC<CalendarSectionProps> = ({ allTours, upcomingTours }) => {
     const [currentMonth, setCurrentMonth] = useState<number>(new Date().getMonth());
     const [currentYear, setCurrentYear] = useState<number>(new Date().getFullYear());
 
@@ -21,6 +21,11 @@ const CalendarSection: React.FC<CalendarSectionProps> = ({ events, upcomingEvent
         const firstDay = new Date(currentYear, currentMonth, 1).getDay();
         const daysInMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
         const days: JSX.Element[] = [];
+
+        // map upcomingEvents
+        const mapTours: Map<string, UpcomingTour> = new Map();
+            // upcomingTours.map(tour => [`${tour.date.getFullYear()}-${tour.date.getMonth() + 1}-${tour.date.getDate()}`, tour] as const));
+
 
         // Add day headers
         dayNames.forEach(day => {
@@ -39,7 +44,7 @@ const CalendarSection: React.FC<CalendarSectionProps> = ({ events, upcomingEvent
         // Add days of the month
         for (let day = 1; day <= daysInMonth; day++) {
             const dateKey = `${currentYear}-${currentMonth + 1}-${day}`;
-            const hasEvent = events[dateKey];
+            const hasEvent = mapTours.has(dateKey);
 
             days.push(
                 <div
@@ -49,7 +54,7 @@ const CalendarSection: React.FC<CalendarSectionProps> = ({ events, upcomingEvent
                             ? 'bg-gradient-to-r from-pink-500 to-yellow-500 text-white hover:shadow-lg'
                             : 'hover:bg-gray-100'
                     }`}
-                    title={hasEvent || ''}
+                    title={hasEvent ? allTours.get(mapTours.get(dateKey)?.tourId || '')?.title : ''}
                 >
                     {day}
                 </div>
@@ -110,18 +115,18 @@ const CalendarSection: React.FC<CalendarSectionProps> = ({ events, upcomingEvent
                     <div className="bg-gray-50 rounded-2xl p-6">
                         <h4 className="text-xl font-bold mb-4 text-gray-800">Upcoming Events</h4>
                         <div className="space-y-4">
-                            {upcomingEvents.map((event) => (
-                                <div key={event.id} className="flex justify-between items-center p-4 bg-white rounded-lg hover:shadow-md transition-shadow">
+                            {upcomingTours.map((tour) => (
+                                <div key={tour.id} className="flex justify-between items-center p-4 bg-white rounded-lg hover:shadow-md transition-shadow">
                                     <div>
-                                        <div className="font-bold text-gray-800">{event.title}</div>
-                                        <div className="text-sm text-gray-600">
+                                        <div className="font-bold text-gray-800">{allTours.get(tour.tourId)?.title || ''}</div>
+                                        {/*<div className="text-sm text-gray-600">
                                             {event.spotsAvailable} spots available • Guide: {event.guide}
                                         </div>
-                                        <div className="text-xs text-gray-500">{event.weather}</div>
+                                        <div className="text-xs text-gray-500">{event.weather}</div>*/}
                                     </div>
                                     <div className="text-right">
-                                        <div className="text-gray-700">{event.date}</div>
-                                        <div className="text-sm text-indigo-600 font-semibold">${event.price}</div>
+                                        <div className="text-gray-700">{tour.date}</div>
+                                        {/* <div className="text-sm text-indigo-600 font-semibold">${event.price}</div> */}
                                     </div>
                                 </div>
                             ))}
