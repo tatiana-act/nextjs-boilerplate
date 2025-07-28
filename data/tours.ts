@@ -20,6 +20,7 @@ export const tours: Tour[] = [
             'Small group experience (max 15 people)'
         ],
         meetingPoint: 'Встречаемся у южных ворот Капитолия Техаса (пересечение Congress Ave и 11th St)',
+        meetingPointLink: 'https://maps.app.goo.gl/vTTBHFYjYFnkgYPB6',
         difficulty: 'Easy'
     },
     {
@@ -45,20 +46,20 @@ export const tours: Tour[] = [
             'Dietary restrictions accommodated'
         ],
         meetingPoint: 'Встречаемся на центральной площади Джорджтауна, около Williamson museum',
+        meetingPointLink: 'https://maps.app.goo.gl/c9spEFwMY7VWcPTS6',
         difficulty: 'Easy'
     },
     {
         id: 'Albjwc',
         title: 'Экскурсия в Lady Bird Johnson Wildflower Center',
-        description: 'Не только о растениях, но также об истории и культуре Техаса',
-        duration: '2 часа',
+        description: 'Прогулка по удивительному месту, где природа переплетается с историей и культурным наследием Техаса. Это не просто ботанический сад, а живая энциклопедия южноамериканского ландшафта и дань уважения женщине, чьё влияние навсегда изменило облик страны.',
+        duration: '1-1,5 ч',
         price: 0,
         imageUrl: 'https://images.unsplash.com/photo-1471644806490-77c53366b18b?w=800&h=600&fit=crop',
         highlights: [
-            'Пройдем по интерактивной экотропе и познакомимся с местными растениями',
-            'Погуляем под вековыми техасскими дубами',
-            'Посетим сад бабочек и кактусовый сад',
-            'Снимем потрясающие кадры с расположенной на башне смотровой площадки'
+            'История Леди Бёрд Джонсон — первой леди США. Мы поговорим о её вкладе в озеленение городов, борьбу за сохранение природной красоты Америки и её роли в культурной истории 60-х годов',
+            'Рассказ об архитектуре и ландшафтном дизайне центра. Вы сделаете потрясающие кадры с расположенной на башне смотровой площадки',
+            'Поговорим о символике растений в искусстве и народной культуре Техаса'
         ],
         included: [
             'Photography guide',
@@ -68,6 +69,7 @@ export const tours: Tour[] = [
             'Small group (max 10 people)'
         ],
         meetingPoint: 'Lady Bird Johnson Wildflower Center',
+        meetingPointLink: 'https://maps.app.goo.gl/aJf3ShjPhDnvwdJq5',
         difficulty: 'Moderate'
     }
 ];

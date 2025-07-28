@@ -2,35 +2,31 @@ import { FAQ } from '@/types/tour';
 
 export const faqs: FAQ[] = [
     {
-        question: 'How do I book a tour?',
-        answer: 'You can book directly through our website by selecting your preferred tour and date. We accept all major credit cards and require a small deposit to secure your booking. Full payment is due 24 hours before the tour starts.'
+        question: 'Как записаться на экскурсию?',
+        answer: 'Чтобы записаться на экскурсию, присылайте заявки на мой почтовый адрес tatiana.city.guide@gmail.com или на мой номер 512-801-4114'
     },
     {
-        question: 'What should I wear?',
-        answer: 'Comfortable walking shoes are essential for all tours. Dress according to the weather and bring a light jacket for evening tours. For the food tour, avoid wearing white clothing as tastings can be messy!'
+        question: 'Как оплатить экскурсию?',
+        answer: 'Оплатить можно через Venmo, Zelle или перед началом экскурсии!'
     },
     {
-        question: 'Are the tours suitable for children?',
-        answer: 'Yes! All our tours are family-friendly. Children under 12 receive a 50% discount, and we can adapt the pace and content to keep younger participants engaged. The Historic Downtown tour is especially popular with families.'
+        question: 'Что делать, если я не успеваю к началу экскурсии?',
+        answer: 'Позвоните мне! Постарайтесь сообщить об этом до начала экскурсии. Даже если экскурсия уже началась, я по возможности вам отвечу, и объясню как нас найти.'
     },
     {
-        question: 'What happens if it rains?',
-        answer: 'Tours run rain or shine! We provide umbrellas when needed, and many stops on our tours have covered areas. If weather conditions are severe, we\'ll reschedule your tour at no extra cost.'
+        question: 'Я не могу найти место встречи!',
+        answer: 'Позвоните мне!'
     },
     {
-        question: 'Can you accommodate dietary restrictions?',
-        answer: 'Absolutely! Please inform us of any dietary restrictions when booking. Our food tour can accommodate vegetarian, vegan, gluten-free, and most other dietary needs with advance notice.'
+        question: 'Я беспокоюсь из-за погоды',
+        answer: 'Если погода не позволяет провести пешеходную экскурсию (экстремальная жара, шторм, ливень), мы перенесем ее на другое время, удобное всем. Если такой неблагоприятный прогноз будет известен заранее, я сообщу об этом всем записавшимся.'
     },
     {
-        question: 'How large are the tour groups?',
-        answer: 'We keep our groups small for a more personal experience. Most tours have a maximum of 15 people, with the photography tour limited to 10 participants to ensure everyone gets individual attention.'
+        question: 'Хочу прийти с друзьями или родственниками, но они плохо понимают русский язык',
+        answer: 'Приходите, но переводить всю информацию придется вам.'
     },
     {
-        question: 'Do you offer private tours?',
-        answer: 'Yes! We offer private tours for groups of 4 or more. Private tours can be customized to your interests and schedule. Contact us for pricing and availability.'
-    },
-    {
-        question: 'What\'s your cancellation policy?',
-        answer: 'You can cancel or reschedule up to 48 hours before your tour for a full refund. Cancellations within 24 hours receive a 50% refund. No-shows are not eligible for refunds.'
+        question: 'Я хочу заказать индивидуальную экскурсию',
+        answer: 'Это возможно под заказ, позвоните мне.'
     }
 ];

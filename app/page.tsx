@@ -8,7 +8,6 @@ import Footer from '@/components/Footer';
 import { tours } from '@/data/tours';
 import { faqs } from '@/data/faq';
 import {upcomingTours} from '@/data/upcomingTours';
-import CalendarSection from '@/components/CalendarSection';
 import {Tour} from "@/types/tour";
 import UpcomingToursSection from "@/components/UpcomingSection";
 
@@ -22,7 +21,7 @@ export default function Home() {
     // For now, we'll just show an alert
     const tour = tours.find(t => t.id === tourId);
     if (tour) {
-      alert(`Чтобы присоединиться к ${tour.title} пишите в директ или отправляйте смс `);
+      alert(`Чтобы присоединиться к ${tour.title} присылайте заявки на мой почтовый адрес tatiana.city.guide@gmail.com или на мой номер 512-801-4114`);
     }
   };
 
@@ -32,8 +31,7 @@ export default function Home() {
       <Hero onExploreClick={scrollToTours} />
       <ToursSection tours={tours} onBookTour={handleBookTour} />
       <UpcomingToursSection allTours={allTours} upcomingTours={upcomingTours} />
-        {/*<CalendarSection allTours={allTours} upcomingTours={upcomingTours} />*/}
-      {/*<FAQSection faqs={faqs} />*/}
+      <FAQSection faqs={faqs} />
       <Footer />
     </main>
   );

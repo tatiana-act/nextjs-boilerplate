@@ -8,6 +8,7 @@ export interface Tour {
     highlights: string[];
     included: string[];
     meetingPoint: string;
+    meetingPointLink: string;
     difficulty: 'Easy' | 'Moderate' | 'Challenging';
 }
 
