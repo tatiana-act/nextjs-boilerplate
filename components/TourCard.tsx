@@ -31,7 +31,7 @@ const TourCard: React.FC<TourCardProps> = ({ tour, onBookTour }) => {
                 <div className="tour-highlights">
                     <h4 className="highlights-title">Вам понравится:</h4>
                     <ul className="highlights-list">
-                        {tour.highlights.slice(0, 3).map((highlight, index) => (
+                        {tour.highlights.slice(0, 4).map((highlight, index) => (
                             <li key={index}>{highlight}</li>
                         ))}
                     </ul>

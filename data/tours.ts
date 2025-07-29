@@ -53,7 +53,7 @@ export const tours: Tour[] = [
         id: 'Albjwc',
         title: 'Экскурсия в Lady Bird Johnson Wildflower Center',
         description: 'Прогулка по удивительному месту, где природа переплетается с историей и культурным наследием Техаса. Это не просто ботанический сад, а живая энциклопедия южноамериканского ландшафта и дань уважения женщине, чьё влияние навсегда изменило облик страны.',
-        duration: '1-1,5 ч',
+        duration: '1-1,5 часа',
         price: 0,
         imageUrl: 'https://images.unsplash.com/photo-1471644806490-77c53366b18b?w=800&h=600&fit=crop',
         highlights: [
@@ -71,5 +71,51 @@ export const tours: Tour[] = [
         meetingPoint: 'Lady Bird Johnson Wildflower Center',
         meetingPointLink: 'https://maps.app.goo.gl/aJf3ShjPhDnvwdJq5',
         difficulty: 'Moderate'
+    },
+    {
+        id: 'Amhry',
+        title: 'Экскурсия по музею О\'Генри',
+        description: 'Мы узнаем, как переплетаются лирические и трагические события в жизни писателя, и как они связаны с Остином, и почему сам О\'Генри никогда о них не рассказывал',
+        duration: '1 час',
+        price: 0,
+        imageUrl: '/ohenry.jpg',
+        highlights: [
+            'Узнаете писателя с необычной стороны',
+            'Поиграете на старинном пианино, а также прослушаете музыкальное произведение, которое сочинил сам О\'Генри',
+            'После экскурсии желающие могут выпить кофе и продолжить общение в красивом старинном кафе при отеле Driskill'
+        ],
+        included: [
+            'Photography guide',
+            'Tripod rental available',
+            'Photo editing tips',
+            'Location map for future visits',
+            'Small group (max 10 people)'
+        ],
+        meetingPoint: 'Встречаемся на площади Brush Square, пересечение 4-й Восточной и Neches',
+        meetingPointLink: 'https://maps.app.goo.gl/GDtQDZMwxYAMGudHA',
+        difficulty: 'Easy'
+    },
+    {
+        id: 'Anlch',
+        title: 'Экскурсия в дом-музей Neill-Cochran',
+        description: 'Настоящее путешествие во времени: пройдя в здание, построенное в неогреческом стиле, вы увидите прекрасно сохранившиеся интерьеры XIX века, подлинную мебель и артефакты эпохи, а также узнаете удивительную историю этого места и прежних его обитателей',
+        duration: '1 час',
+        price: 0,
+        imageUrl: '/nch.jpg',
+        highlights: [
+            'Атмосфера старинного особняка',
+            'Подлинные интерьеры XIX века – мебель, предметы быта',
+            'После экскурсии можно посетить временную экспозицию, посвященную истории и природе Техаса, и приобрести памятные сувениры'
+        ],
+        included: [
+            'Photography guide',
+            'Tripod rental available',
+            'Photo editing tips',
+            'Location map for future visits',
+            'Small group (max 10 people)'
+        ],
+        meetingPoint: 'Встречаемся возле музея, пересечение улиц San Gabriel и 23-й Западной',
+        meetingPointLink: 'https://maps.app.goo.gl/4frvcX5L1gySddwn6',
+        difficulty: 'Easy'
     }
 ];
