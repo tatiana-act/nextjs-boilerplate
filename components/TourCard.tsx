@@ -47,7 +47,7 @@ const TourCard: React.FC<TourCardProps> = ({ tour, onBookTour }) => {
                 </div>*/}
 
                 <div className="meeting-point">
-                    <strong>Место встречи:</strong> <a href={tour.meetingPointLink} target="_blank">{tour.meetingPoint}</a>
+                    <strong>Место встречи:</strong> <a href={tour.meetingPointLink} target="_blank">📍{tour.meetingPoint}📍</a>
                 </div>
                 {
                 <button className="book-button" onClick={handleBookClick}>

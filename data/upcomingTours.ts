@@ -10,14 +10,8 @@ export const upcomingTours: UpcomingTour[] = [
     {
         id: "tour2",
         tourId: "Gcrt",
-        date: "2025-08-08",
-        time: "11:00"
-    },
-    {
-        id: "tour3",
-        tourId: "Gcrt",
-        date: "2025-08-09",
-        time: "10:30"
+        date: "2025-08-16",
+        time: "10:00"
     },
     {
         id: "tour4",
