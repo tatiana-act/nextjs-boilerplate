@@ -1,7 +1,7 @@
 'use client';
 
-import { useState, useEffect } from 'react';
-import { FacebookEmbed } from 'react-social-media-embed';
+import { useState } from 'react';
+// import { FacebookEmbed } from 'react-social-media-embed';
 
 // Base interface for social media embeds
 interface SocialMediaEmbedProps {
@@ -15,10 +15,11 @@ interface FacebookPostProps extends SocialMediaEmbedProps {
     showCaption?: boolean;
 }
 
-const FacebookPost: React.FC<FacebookPostProps> = ({ url, width = 550, className }) => {
-    const [error, setError] = useState<string | null>(null);
+const FacebookPost: React.FC<FacebookPostProps> = ({ url, className }) => {
+    const [error] = useState<string | null>(null);
     const [isVisible, setIsVisible] = useState(false);
 
+    {/*
     useEffect(() => {
         if (isVisible && typeof window !== 'undefined' && window.FB) {
             try {
@@ -27,7 +28,7 @@ const FacebookPost: React.FC<FacebookPostProps> = ({ url, width = 550, className
                 setError('Failed to load Facebook post. Please check the URL or try again later.');
             }
         }
-    }, [isVisible]);
+    }, [isVisible]); */}
 
     if (error) {
         return (
@@ -58,16 +59,16 @@ const FacebookPost: React.FC<FacebookPostProps> = ({ url, width = 550, className
             <div
                 className={`transition-opacity duration-300 ${isVisible ? 'opacity-100' : 'opacity-0 hidden'}`}
             >
-                {isVisible && <FacebookEmbed url={url} width={width} />}
+                {/*isVisible && <FacebookEmbed url={url} width={width} />*/}
             </div>
         </div>
     );
 };
 
-declare global {
+/*declare global {
     interface Window {
         FB: any;
     }
-}
+}*/
 
 export default FacebookPost;
