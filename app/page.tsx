@@ -31,6 +31,7 @@ export default function Home() {
       <Hero onExploreClick={scrollToTours} />
       <ToursSection tours={tours} onBookTour={handleBookTour} />
       <UpcomingToursSection allTours={allTours} upcomingTours={upcomingTours} />
+      {/*<PastToursSection pastTours={pastTours} allTours={allTours} />*/}
       <FAQSection faqs={faqs} />
       <Footer />
     </main>

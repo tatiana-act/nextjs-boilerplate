@@ -23,3 +23,8 @@ export interface UpcomingTour {
     date: string;
     time: string;
 }
+
+export interface PastTour extends UpcomingTour {
+    eventUrl: string;
+    feedbacks: string[];
+}

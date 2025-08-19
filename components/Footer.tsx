@@ -17,8 +17,12 @@ const Footer: React.FC = () => {
                             <span><a href="https://instagram.com/austin.guide/" target="_blank" rel="noopener noreferrer">austin.guide</a></span>
                         </div>
                         <div className="contact-item">
+                            <span>✈️</span>
+                            <span><a href="https://t.me/austin_city_tours" target="_blank" rel="noopener noreferrer">telegram</a></span>
+                        </div>
+                        <div className="contact-item">
                             <span>💥</span>
-                            <span><a href="https://www.facebook.com/groups/662224066870718/" target="_blank" rel="noopener noreferrer">facebook group</a></span>
+                            <span><a href="https://www.facebook.com/groups/662224066870718/" target="_blank" rel="noopener noreferrer">facebook</a></span>
                         </div>
                         {<div className="contact-item">
                             <span>✉️</span>
