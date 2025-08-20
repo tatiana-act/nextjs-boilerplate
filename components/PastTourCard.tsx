@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { PastTour } from '@/types/tour';
 import Image from 'next/image';
+import { formatDateToUserLocale } from '@/lib/utils';
 
 interface PastTourCardProps {
     tour: PastTour;
@@ -24,7 +25,7 @@ const PastTourCard: React.FC<PastTourCardProps> = ({ tour, tourName }) => {
                 <h4 className="upcoming-tour-name text-xl font-bold mb-2">{tourName}</h4>
                 <div className="upcoming-tour-details">
                     <div className="tour-datetime flex items-center space-x-4">
-                        📅 {tour.date}
+                        📅 {formatDateToUserLocale(tour.date)}
                         <button
                         onClick={handleDateClick}
                         className="date text-blue-600 hover:underline cursor-pointer"
