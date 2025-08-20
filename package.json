@@ -1,12 +1,13 @@
 {
   "name": "city-tours",
-  "version": "0.9.0",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "devt": "next dev --turbopack",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "format": "prettier --write \"**/*.{ts,tsx}\"",
     "lint": "next lint"
   },
   "dependencies": {
@@ -20,10 +21,14 @@
     "@types/node": "^20",
     "@types/react": "19.1.6",
     "@types/react-dom": "19.1.6",
+    "@typescript-eslint/eslint-plugin": "^8.40.0",
+    "@typescript-eslint/parser": "^8.40.0",
     "autoprefixer": "^10",
-    "eslint": "9.32.0",
+    "eslint": "^9.32.0",
     "eslint-config-next": "15.4.4",
+    "eslint-config-prettier": "^10.1.8",
     "postcss": "^8.5.6",
+    "prettier": "^3.6.2",
     "tailwindcss": "^3.4.17",
     "typescript": "^5"
   }

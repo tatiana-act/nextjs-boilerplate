@@ -1,16 +1,18 @@
-import type { Metadata } from 'next'
-import { Analytics } from "@vercel/analytics/next"
-import './globals.css'
+import type { Metadata } from 'next';
+import { Analytics } from '@vercel/analytics/next';
+import './globals.css';
+import React from "react";
 
 export const metadata: Metadata = {
   title: 'Austin City Tours - Город, который ты ещё не знаешь',
-  description: 'Присоединяйтесь к экскурсиям и откройте для себя скрытые жемчужины, богатую историю и яркую культуру нашего города!',
-}
+  description:
+    'Присоединяйтесь к экскурсиям и откройте для себя скрытые жемчужины, богатую историю и яркую культуру нашего города!',
+};
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
     <html lang="en">
@@ -19,5 +21,5 @@ export default function RootLayout({
         <Analytics />
       </body>
     </html>
-  )
+  );
 }

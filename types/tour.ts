@@ -1,30 +1,31 @@
 export interface Tour {
-    id: string;
-    title: string;
-    description: string;
-    duration: string;
-    price: number;
-    imageUrl: string;
-    highlights: string[];
-    included: string[];
-    meetingPoint: string;
-    meetingPointLink: string;
-    difficulty: 'Easy' | 'Moderate' | 'Challenging';
+  id: string;
+  title: string;
+  description: string;
+  duration: string;
+  price: number;
+  imageUrl: string;
+  highlights: string[];
+  included: string[];
+  meetingPoint: string;
+  meetingPointLink: string;
+  difficulty: 'Easy' | 'Moderate' | 'Challenging';
 }
 
 export interface FAQ {
-    question: string;
-    answer: string;
+  question: string;
+  answer: string;
 }
 
 export interface UpcomingTour {
-    id: string;
-    tourId: string;
-    date: string;
-    time: string;
+  id: string;
+  tourId: string;
+  date: string;
+  time: string;
 }
 
 export interface PastTour extends UpcomingTour {
-    eventUrl: string;
-    feedbacks: string[];
+  eventUrl: string;
+  eventImage: string;
+  feedbacks: string[];
 }
