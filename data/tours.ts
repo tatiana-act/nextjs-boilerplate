@@ -6,7 +6,7 @@ export const tours: Tour[] = [
     title: 'Пешеходная экскурсия по историческому центру Остина',
     description:
       'Прогуляемся по знаменитой Congress Avenue — главной улице города, где сохранился дух старого Остина. Заглянем в легендарный отель Driskill — настоящий архитектурный шедевр с привидениями и удивительной историей.',
-    duration: '1.5 часа',
+    duration: '2 - 2.5 часа',
     price: 0,
     imageUrl:
       'https://images.unsplash.com/photo-1666972120465-efebce20bf93?q=80&w=800&h=600&auto=format&fit=crop',
