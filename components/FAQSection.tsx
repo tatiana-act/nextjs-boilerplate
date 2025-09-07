@@ -14,7 +14,7 @@ const FAQSection: React.FC<FAQSectionProps> = ({ faqs }) => {
   };
 
   return (
-    <section className="section faq-section">
+    <section className="section faq-section" id="faqSection">
       <div className="container">
         <h2 className="section-title">Ответы на часто задаваемые вопросы</h2>
         <div className="faq-container">

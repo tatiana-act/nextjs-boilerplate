@@ -14,8 +14,8 @@ import UpcomingToursSection from '@/components/UpcomingSection';
 import PastToursSection from '@/components/PastSection';
 
 export default function Home() {
-  const scrollToTours = () => {
-    document.getElementById('tours')?.scrollIntoView({ behavior: 'smooth' });
+  const scrollToSection = (sectionId : string) => {
+    document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
   };
 
   const handleBookTour = (tourId: string) => {
@@ -34,7 +34,7 @@ export default function Home() {
   );
   return (
     <main>
-      <Hero onExploreClick={scrollToTours} />
+      <Hero onExploreClick={scrollToSection} />
       <ToursSection tours={tours} onBookTour={handleBookTour} />
       <UpcomingToursSection allTours={allTours} upcomingTours={upcomingTours} />
       <PastToursSection pastTours={pastTours} allTours={allTours} />

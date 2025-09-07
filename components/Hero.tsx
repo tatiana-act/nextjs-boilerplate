@@ -1,7 +1,8 @@
 import React from 'react';
+import MyConstants from './../lib/MyConstants'
 
 interface HeroProps {
-  onExploreClick: () => void;
+  onExploreClick: (sectionId: string) => void;
 }
 
 const Hero: React.FC<HeroProps> = ({ onExploreClick }) => {
@@ -13,8 +14,14 @@ const Hero: React.FC<HeroProps> = ({ onExploreClick }) => {
           Присоединяйтесь к экскурсиям и откройте для себя скрытые жемчужины,
           богатую историю и яркую культуру нашего города!
         </p>
-        <button className="cta-button" onClick={onExploreClick}>
+        <button className="cta-button" onClick={() => onExploreClick(MyConstants.idTours)}>
           Наши экскурсии
+        </button>
+        <button className="cta-button" onClick={() => onExploreClick(MyConstants.idEvents)}>
+          Ближайшие события
+        </button>
+        <button className="cta-button" onClick={() => onExploreClick(MyConstants.idFAQ)}>
+          Ответы на вопросы
         </button>
       </div>
     </section>

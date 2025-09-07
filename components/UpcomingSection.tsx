@@ -13,7 +13,7 @@ const UpcomingToursSection: React.FC<UpcomingToursSectionProps> = ({
   allTours,
 }) => {
   return (
-    <section className="section upcoming-tours-section">
+    <section className="section upcoming-tours-section" id="upcomingTours">
       <div className="container">
         <h2 className="section-title">Экскурсии в ближайшее время</h2>
         {/*<p className="section-subtitle">Reserve your spot for these scheduled tours</p>*/}
