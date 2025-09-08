@@ -2,6 +2,15 @@ import { PastTour } from '@/types/tour';
 
 const pastTours: PastTour[] = [
     {
+        id: 'tour10',
+        tourId: 'Amhry',
+        date: '2025-09-07',
+        time: '12:00',
+        eventUrl: 'https://www.facebook.com/orlowa.tatiana/posts/3655321031268146',
+        eventImage: '/090725amhry.jpg',
+        feedbacks: []
+    },
+    {
         id: 'tour9',
         tourId: 'Gcrt',
         date: '2025-09-06',
