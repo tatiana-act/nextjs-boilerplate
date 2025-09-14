@@ -2,6 +2,27 @@ import { Tour } from '@/types/tour';
 
 export const tours: Tour[] = [
   {
+    id: 'Brmn',
+    title: 'Новинка! Экскурсия по кварталу Bremond с посещением Chateau Bellevue',
+    description: 'Приглашаю на уникальную прогулку по историческому кварталу Bremond (Бремон) в Остине — очаровательному району с викторианскими домами конца XIX века. Вы увидите изысканную архитектуру: кованые ограды, резные украшения и сказочные башенки. Уникальность этой экскурсии — визит в Chateau Bellevue (Шато Бельвью), открытое для свободного посещения только 21-го сентября.',
+    duration: '2 часа',
+    price: 0,
+    imageUrl: '/bremond.jpg',
+    highlights: [
+      'Красота викторианской архитектуры конца XIX века',
+      'Прогулка по элегантным залам Chateau Bellevue',
+      'Прикоснуться к историческому наследию элит Остина',
+    ],
+    included: [
+      'Photography guide',
+      'Tripod rental available',
+      'Photo editing tips',
+    ],
+    meetingPoint: 'Встречаемся в павильоне на площади Wooldridge Square, пересечение улиц Guadalupe и 9-й Западной',
+    meetingPointLink: 'https://maps.app.goo.gl/UiDVakHKfszzTE5b7',
+    difficulty: 'Easy',
+  },
+  {
     id: 'Acap',
     title: 'Пешеходная экскурсия по историческому центру Остина',
     description:
@@ -130,27 +151,4 @@ export const tours: Tour[] = [
     meetingPointLink: 'https://maps.app.goo.gl/4frvcX5L1gySddwn6',
     difficulty: 'Easy',
   },
-  {
-    id: 'Brmn',
-    title: 'Экскурсия по кварталу Bremond с посещением Chateau Bellevue',
-        description:
-            'Приглашаю на уникальную прогулку по историческому кварталу Bremond (Бремон) в Остине — очаровательному району с викторианскими домами конца XIX века. Вы увидите изысканную архитектуру: кованые ограды, резные украшения и сказочные башенки. Уникальность этой экскурсии — визит в Chateau Bellevue (Шато Бельвью), открытое для свободного посещения только 21-го сентября.',
-        duration: '2 часа',
-        price: 0,
-        imageUrl: '/bremond.jpg',
-        highlights: [
-            'Красота викторианской архитектуры конца XIX века',
-            'Прогулка по элегантным залам Chateau Bellevue',
-            'Прикоснуться к историческому наследию элит Остина',
-        ],
-        included: [
-            'Photography guide',
-            'Tripod rental available',
-            'Photo editing tips',
-        ],
-        meetingPoint:
-            'Встречаемся в павильоне на площади Wooldridge Square, пересечение улиц Guadalupe и 9-й Западной',
-        meetingPointLink: 'https://maps.app.goo.gl/UiDVakHKfszzTE5b7',
-        difficulty: 'Easy',
-    },
 ];
