@@ -2,6 +2,15 @@ import { PastTour } from '@/types/tour';
 
 const pastTours: PastTour[] = [
     {
+        id: 'tour8',
+        tourId: 'Acap',
+        date: '2025-09-14',
+        time: '09:00',
+        eventUrl: 'https://www.facebook.com/groups/662224066870718/posts/709989568760834/',
+        eventImage: '/091425ac.jpg',
+        feedbacks: []
+    },
+    {
         id: 'tour10',
         tourId: 'Amhry',
         date: '2025-09-07',
