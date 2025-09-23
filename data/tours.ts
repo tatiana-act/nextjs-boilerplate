@@ -1,9 +1,31 @@
 import { Tour } from '@/types/tour';
 
 export const tours: Tour[] = [
+    {
+        id: 'Milt',
+        title: 'Историческая прогулка по Конгресс-авеню и тайны Millett Opera House!',
+        description: 'Шагните в историю, прогуливаясь по Конгресс-авеню — пульсирующей артерии города, где перед нами оживет ущедшая эпоха: архитектурные поединки, бурлящая коммерческая и культурная жизнь и судьбоносный выстрел Анджелины Эберли, спасший для Остина титул столицы Техаса. \n' +
+            'Мы посетим Millett Opera House (1878): узнаем его историю, восхитимся викторианскими интерьерами и пощекочем нервы рассказами о привидении оперной певицы Присциллы. ',
+        duration: '2 часа',
+        price: 0,
+        imageUrl: '/millett.jpg',
+        highlights: [
+            'Неспешная прогулка без жёсткого маршрута и тайминга',
+            'Посещение легендарного Millett Opera House',
+            'Изысканный обед в ресторане Millett Opera House',
+        ],
+        included: [
+            'Photography guide',
+            'Tripod rental available',
+            'Photo editing tips',
+        ],
+        meetingPoint: 'Встречаемся у скульптуры-гитары ("Vibrancy guitar statue"), пересечение Congress Avenue и 4-й Восточной',
+        meetingPointLink: 'https://maps.app.goo.gl/tvFiqw2Z93jqi5WS6',
+        difficulty: 'Easy',
+    },
   {
     id: 'Brmn',
-    title: 'Новинка! Экскурсия по кварталу Bremond с посещением Chateau Bellevue',
+    title: 'Экскурсия по кварталу Bremond с посещением Chateau Bellevue',
     description: 'Приглашаю на уникальную прогулку по историческому кварталу Bremond (Бремон) в Остине — очаровательному району с викторианскими домами конца XIX века. Вы увидите изысканную архитектуру: кованые ограды, резные украшения и сказочные башенки. Уникальность этой экскурсии — визит в Chateau Bellevue (Шато Бельвью), открытое для свободного посещения только 21-го сентября.',
     duration: '2 часа',
     price: 0,
@@ -125,30 +147,5 @@ export const tours: Tour[] = [
       'Встречаемся на площади Brush Square, пересечение 4-й Восточной и Neches',
     meetingPointLink: 'https://maps.app.goo.gl/GDtQDZMwxYAMGudHA',
     difficulty: 'Easy',
-  },
-  {
-    id: 'Anlch',
-    title: 'Экскурсия в дом-музей Neill-Cochran',
-    description:
-      'Настоящее путешествие во времени: пройдя в здание, построенное в неогреческом стиле, вы увидите прекрасно сохранившиеся интерьеры XIX века, подлинную мебель и артефакты эпохи, а также узнаете удивительную историю этого места и прежних его обитателей',
-    duration: '1 час',
-    price: 0,
-    imageUrl: '/nch.jpg',
-    highlights: [
-      'Атмосфера старинного особняка',
-      'Подлинные интерьеры XIX века – мебель, предметы быта',
-      'После экскурсии можно посетить временную экспозицию, посвященную истории и природе Техаса, и приобрести памятные сувениры',
-    ],
-    included: [
-      'Photography guide',
-      'Tripod rental available',
-      'Photo editing tips',
-      'Location map for future visits',
-      'Small group (max 10 people)',
-    ],
-    meetingPoint:
-      'Встречаемся возле музея, пересечение улиц San Gabriel и 23-й Западной',
-    meetingPointLink: 'https://maps.app.goo.gl/4frvcX5L1gySddwn6',
-    difficulty: 'Easy',
-  },
+  }
 ];
