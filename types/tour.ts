@@ -22,7 +22,7 @@ export interface UpcomingTour {
   tourId: string;
   date: string;
   time: string;
-  price: number | undefined;
+  price?: number;
 }
 
 export interface PastTour extends UpcomingTour {
