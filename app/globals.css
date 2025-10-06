@@ -148,9 +148,9 @@ a {
 }
 
 .tour-price {
-  font-size: 1.8rem;
+  font-size: 0.9rem;
   font-weight: 700;
-  color: #ff6b6b;
+  color: #333;
 }
 
 .tour-meta {

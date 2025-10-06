@@ -13,20 +13,13 @@ const UpcomingTourCard: React.FC<UpcomingTourCardProps> = ({
   upcomingTour,
   tourName,
 }) => {
-  /* const handleReserveClick = () => {
-        onReserveSpot(upcomingTour.id);
-    };
+  const handleReserveClick = () => {
+      document.getElementById(upcomingTour.tourId + "tour-card")?.scrollIntoView({ behavior: 'smooth' });
+  };
 
-    const getAvailabilityStatus = (spots: number) => {
-        if (spots <= 3) return { text: 'Almost Full!', class: 'availability-low' };
-        if (spots <= 7) return { text: 'Filling Up', class: 'availability-medium' };
-        return { text: 'Available', class: 'availability-high' };
-    };
 
-    const availability = getAvailabilityStatus(upcomingTour.availableSpots);
-*/
   return (
-    <div className="upcoming-tour-card">
+    <div className="upcoming-tour-card" onClick={handleReserveClick} >
       <div className="upcoming-tour-content">
         <h4 className="upcoming-tour-name">{tourName}</h4>
         <div className="upcoming-tour-details">
@@ -36,19 +29,8 @@ const UpcomingTourCard: React.FC<UpcomingTourCardProps> = ({
             </span>
             <span className="time">🕐 {upcomingTour.time}</span>
           </div>
-          {/*<div className="tour-availability">
-            <span className={`availability-badge ${availability.class}`}>
-              {availability.text}
-            </span>
-                        <span className="spots-remaining">
-              {upcomingTour.availableSpots} spots left
-            </span>
-                    </div>
-                    */}
+          {upcomingTour.price !== undefined && (<div className="tour-price">💲 {upcomingTour.price} долларов</div>)}
         </div>
-        {/*<button className="reserve-button" onClick={handleReserveClick}>
-                    Reserve Spot
-                </button>*/}
       </div>
     </div>
   );

@@ -13,7 +13,7 @@ const TourCard: React.FC<TourCardProps> = ({ tour, onBookTour }) => {
   };
 
   return (
-    <div className="tour-card">
+    <div className="tour-card" id={tour.id.valueOf() + 'tour-card'}>
       <Image
         src={tour.imageUrl}
         alt={tour.title}
@@ -56,9 +56,11 @@ const TourCard: React.FC<TourCardProps> = ({ tour, onBookTour }) => {
 
         <div className="meeting-point">
           <strong>Место встречи:</strong>{' '}
-          <a href={tour.meetingPointLink} target="_blank">
-            📍{tour.meetingPoint}📍
-          </a>
+            {tour.meetingPointLink.trim() === '' ? <span>{tour.meetingPoint}</span> :
+              <a href={tour.meetingPointLink} target="_blank">
+                  📍{tour.meetingPoint}📍
+              </a>
+          }
         </div>
         {
           <button className="book-button" onClick={handleBookClick}>

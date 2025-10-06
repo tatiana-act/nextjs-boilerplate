@@ -23,27 +23,60 @@ export const tours: Tour[] = [
         meetingPointLink: 'https://maps.app.goo.gl/tvFiqw2Z93jqi5WS6',
         difficulty: 'Easy',
     },
-  {
-    id: 'Brmn',
-    title: 'Экскурсия по кварталу Bremond с посещением Chateau Bellevue',
-    description: 'Приглашаю на уникальную прогулку по историческому кварталу Bremond (Бремон) в Остине — очаровательному району с викторианскими домами конца XIX века. Вы увидите изысканную архитектуру: кованые ограды, резные украшения и сказочные башенки. Уникальность этой экскурсии — визит в Chateau Bellevue (Шато Бельвью), открытое для свободного посещения только 21-го сентября.',
-    duration: '2 часа',
-    price: 0,
-    imageUrl: '/bremond.jpg',
-    highlights: [
-      'Красота викторианской архитектуры конца XIX века',
-      'Прогулка по элегантным залам Chateau Bellevue',
-      'Прикоснуться к историческому наследию элит Остина',
-    ],
-    included: [
-      'Photography guide',
-      'Tripod rental available',
-      'Photo editing tips',
-    ],
-    meetingPoint: 'Встречаемся в павильоне на площади Wooldridge Square, пересечение улиц Guadalupe и 9-й Западной',
-    meetingPointLink: 'https://maps.app.goo.gl/UiDVakHKfszzTE5b7',
-    difficulty: 'Easy',
-  },
+    {
+        id: 'Gcrt',
+        title: 'Экскурсия по центру Джорджтауна',
+        description:
+            'Увлекательная экскурсия-квест для взрослых и детей по историческому центру Джорджтауна — одному из самых красивых и уютных городков Техаса!',
+        duration: '1.5 - 2 часа',
+        price: 0,
+        imageUrl:
+            'https://images.unsplash.com/photo-1606251671317-19fb334213ba?q=80&w=800&h=600&fit=crop',
+
+        highlights: [
+            'Прогулка-квест по центральной площади Джорджтауна — разгадаем загадки зданий, стоящихна ней, рассмотрим архитектуру и скульптуры, познакомимся с прошлым Техаса.',
+            'Перерыв на кофе в уютном кафе.',
+            'Экскурсия по музею Уильямсона — ожившая история округа, интересные экспонаты и атмосфера прошлого.',
+            'Подходит для взрослых и детей 7+',
+            'После экскурсии - кофе-брейк или поход в кафе- мороженое!',
+        ],
+        included: [
+            'Expert food guide',
+            'All food tastings',
+            'Recipe cards to take home',
+            'Market shopping tips',
+            'Dietary restrictions accommodated',
+        ],
+        meetingPoint:
+            'Встречаемся на центральной площади Джорджтауна, около Williamson museum',
+        meetingPointLink: 'https://maps.app.goo.gl/c9spEFwMY7VWcPTS6',
+        difficulty: 'Easy',
+    },
+    {
+        id: 'Albjwc',
+        title: 'Экскурсия в Lady Bird Johnson Wildflower Center',
+        description:
+            'Прогулка по удивительному месту, где природа переплетается с историей и культурным наследием Техаса. Это не просто ботанический сад, а живая энциклопедия южноамериканского ландшафта и дань уважения женщине, чьё влияние навсегда изменило облик страны.',
+        duration: '1-1,5 часа',
+        price: 0,
+        imageUrl:
+            'https://images.unsplash.com/photo-1471644806490-77c53366b18b?w=800&h=600&fit=crop',
+        highlights: [
+            'История Леди Бёрд Джонсон — первой леди США. Мы поговорим о её вкладе в озеленение городов, борьбу за сохранение природной красоты Америки и её роли в культурной истории 60-х годов',
+            'Рассказ об архитектуре и ландшафтном дизайне центра. Вы сделаете потрясающие кадры с расположенной на башне смотровой площадки',
+            'Поговорим о символике растений в искусстве и народной культуре Техаса',
+        ],
+        included: [
+            'Photography guide',
+            'Tripod rental available',
+            'Photo editing tips',
+            'Location map for future visits',
+            'Small group (max 10 people)',
+        ],
+        meetingPoint: 'Lady Bird Johnson Wildflower Center',
+        meetingPointLink: 'https://maps.app.goo.gl/aJf3ShjPhDnvwdJq5',
+        difficulty: 'Moderate',
+    },
   {
     id: 'Acap',
     title: 'Пешеходная экскурсия по историческому центру Остина',
@@ -70,60 +103,6 @@ export const tours: Tour[] = [
     difficulty: 'Easy',
   },
   {
-    id: 'Gcrt',
-    title: 'Квест-экскурсия по Джорджтауну + музей!',
-    description:
-      'Увлекательная экскурсия-квест для взрослых и детей по историческому центру Джорджтауна — одному из самых красивых и уютных городков Техаса!',
-    duration: '1.5 часа',
-    price: 0,
-    imageUrl:
-      'https://images.unsplash.com/photo-1606251671317-19fb334213ba?q=80&w=800&h=600&fit=crop',
-
-    highlights: [
-      'Прогулка-квест по центральной площади Джорджтауна — разгадаем загадки зданий, стоящихна ней, рассмотрим архитектуру и скульптуры, познакомимся с прошлым Техаса.',
-      'Перерыв на кофе в уютном кафе.',
-      'Экскурсия по музею Уильямсона — ожившая история округа, интересные экспонаты и атмосфера прошлого.',
-      'Подходит для взрослых и детей 7+',
-      'После экскурсии - кофе-брейк или поход в кафе- мороженое!',
-    ],
-    included: [
-      'Expert food guide',
-      'All food tastings',
-      'Recipe cards to take home',
-      'Market shopping tips',
-      'Dietary restrictions accommodated',
-    ],
-    meetingPoint:
-      'Встречаемся на центральной площади Джорджтауна, около Williamson museum',
-    meetingPointLink: 'https://maps.app.goo.gl/c9spEFwMY7VWcPTS6',
-    difficulty: 'Easy',
-  },
-  {
-    id: 'Albjwc',
-    title: 'Экскурсия в Lady Bird Johnson Wildflower Center',
-    description:
-      'Прогулка по удивительному месту, где природа переплетается с историей и культурным наследием Техаса. Это не просто ботанический сад, а живая энциклопедия южноамериканского ландшафта и дань уважения женщине, чьё влияние навсегда изменило облик страны.',
-    duration: '1-1,5 часа',
-    price: 0,
-    imageUrl:
-      'https://images.unsplash.com/photo-1471644806490-77c53366b18b?w=800&h=600&fit=crop',
-    highlights: [
-      'История Леди Бёрд Джонсон — первой леди США. Мы поговорим о её вкладе в озеленение городов, борьбу за сохранение природной красоты Америки и её роли в культурной истории 60-х годов',
-      'Рассказ об архитектуре и ландшафтном дизайне центра. Вы сделаете потрясающие кадры с расположенной на башне смотровой площадки',
-      'Поговорим о символике растений в искусстве и народной культуре Техаса',
-    ],
-    included: [
-      'Photography guide',
-      'Tripod rental available',
-      'Photo editing tips',
-      'Location map for future visits',
-      'Small group (max 10 people)',
-    ],
-    meetingPoint: 'Lady Bird Johnson Wildflower Center',
-    meetingPointLink: 'https://maps.app.goo.gl/aJf3ShjPhDnvwdJq5',
-    difficulty: 'Moderate',
-  },
-  {
     id: 'Amhry',
     title: "Экскурсия по музею О'Генри",
     description:
@@ -146,6 +125,24 @@ export const tours: Tour[] = [
     meetingPoint:
       'Встречаемся на площади Brush Square, пересечение 4-й Восточной и Neches',
     meetingPointLink: 'https://maps.app.goo.gl/GDtQDZMwxYAMGudHA',
-    difficulty: 'Easy',
-  }
+    difficulty: 'Easy'
+  },
+  {
+    id: 'Acstm',
+    title: "Жемчужины Остина",
+    description:
+            "Эта индивидуальная экскурсия объединяет популярные пешеходные туры по историческому центру, чтобы вы увидели как можно больше достопримечательностей: величественный Капитолий, центральная артерия города Congress Avenue, старинный отель Driskill, динамичный Техасский университет, изысканные здания квартала Bremond, видовая площадка на Mount Bonnell. По желанию загляем в сувенирные магазины, отдохнем в стильном, уютном кафе. Это идеальный вариант для всех, кто хочет погрузиться в историю, тайны и красоты столицы Техаса. Остин ждет именно вас!",
+    duration: 'от 3 до 6 часов, в зависимости от ваших пожеланий',
+    price: 0,
+    imageUrl: '/acustom.jpg',
+    highlights: [
+      'Персонализация под ваш вкус: только то, что интересно именно вам.',
+      'Море положительных впечатлений',
+      'Интересный и насыщенный день в ритме Остина',
+      ],
+      included: [],
+      meetingPoint: 'Назначается индивидуально',
+      meetingPointLink: '',
+      difficulty: 'Easy',
+    }
 ];
