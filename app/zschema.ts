@@ -28,8 +28,7 @@ const phoneSchema = z.string().optional().transform((val) => {
 const telegramNicknameSchema = z.string()
     .min(5, "Ник в Telegram не может быть короче 5 символов")
     .max(32, "Ник в Telegram не может быть длиннее 5 символов")
-    .regex(/^@?[a-zA-Z][a-zA-Z0-9_]*$/, "Ник в Telegram состоит из латинских букв, цифр и знака подчеркивания")
-    .optional();
+    .regex(/^@?[a-zA-Z][a-zA-Z0-9_]*$/, "Ник в Telegram состоит из латинских букв, цифр и знака подчеркивания");
 
 
 export const contactFormSchema = z.object({
@@ -38,7 +37,7 @@ export const contactFormSchema = z.object({
     phone: phoneSchema,
     tour: z.string().optional(),
     whatsapp: z.boolean().default(false),
-    telegram: telegramNicknameSchema,
+    telegram: telegramNicknameSchema.optional().or(z.literal('')),
     success: z.boolean().default(false),
     errMessage: z.string().optional(),
 }).refine((data) => {
