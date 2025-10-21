@@ -6,20 +6,24 @@ import { formatDateToUserLocale } from '@/lib/utils';
 interface UpcomingTourCardProps {
   upcomingTour: UpcomingTour;
   tourName: string;
-  // onReserveSpot: (tourId: string) => void;
+  onReserveSpot: (tourId: string) => void;
 }
 
 const UpcomingTourCard: React.FC<UpcomingTourCardProps> = ({
   upcomingTour,
   tourName,
+  onReserveSpot
 }) => {
-  const handleReserveClick = () => {
+  const handleClick = () => {
       document.getElementById(upcomingTour.tourId + "tour-card")?.scrollIntoView({ behavior: 'smooth' });
   };
-
+    const handleReserveClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+        e.stopPropagation();
+        onReserveSpot(upcomingTour.tourId);
+    };
 
   return (
-    <div className="upcoming-tour-card" onClick={handleReserveClick} >
+    <div className="upcoming-tour-card" onClick={handleClick} >
       <div className="upcoming-tour-content">
         <h4 className="upcoming-tour-name">{tourName}</h4>
         <div className="upcoming-tour-details">
@@ -31,6 +35,9 @@ const UpcomingTourCard: React.FC<UpcomingTourCardProps> = ({
           </div>
           {upcomingTour.price !== undefined && (<div className="tour-price">💲 {upcomingTour.price} долларов</div>)}
         </div>
+          <button className="book-button" onClick={handleReserveClick}>
+              Присоединиться
+          </button>
       </div>
     </div>
   );

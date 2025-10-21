@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import React, { useState } from 'react';
 // import { FacebookEmbed } from 'react-social-media-embed';
 
 // Base interface for social media embeds

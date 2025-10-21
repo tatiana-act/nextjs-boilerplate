@@ -26,12 +26,14 @@ const PastTourCard: React.FC<PastTourCardProps> = ({ tour, tourName }) => {
                 <div className="upcoming-tour-details">
                     <div className="tour-datetime flex items-center space-x-4">
                         📅 {formatDateToUserLocale(tour.date)}
+                        {tour.eventUrl && tour.eventImage &&
                         <button
                         onClick={handleDateClick}
                         className="date text-blue-600 hover:underline cursor-pointer"
                     >
                             Об этой экскурсии
                         </button>
+                        }
                     </div>
                 </div>
             </div>

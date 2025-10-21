@@ -6,11 +6,13 @@ import UpcomingTourCard from './UpcomingTourCard';
 interface UpcomingToursSectionProps {
   upcomingTours: UpcomingTour[];
   allTours: ReadonlyMap<string, Tour>;
+  onReserveSpot: (tourId: string) => void;
 }
 
 const UpcomingToursSection: React.FC<UpcomingToursSectionProps> = ({
   upcomingTours,
   allTours,
+  onReserveSpot
 }) => {
   return (
     <section className="section upcoming-tours-section" id="upcomingTours">
@@ -23,6 +25,7 @@ const UpcomingToursSection: React.FC<UpcomingToursSectionProps> = ({
               key={upcomingTour.id}
               upcomingTour={upcomingTour}
               tourName={allTours.get(upcomingTour.tourId)?.title || ''}
+              onReserveSpot={onReserveSpot}
             />
           ))}
         </div>
