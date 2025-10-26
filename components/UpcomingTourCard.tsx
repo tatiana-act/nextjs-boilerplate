@@ -33,6 +33,7 @@ const UpcomingTourCard: React.FC<UpcomingTourCardProps> = ({
             </span>
             <span className="time">🕐 {upcomingTour.time}</span>
           </div>
+          {upcomingTour.bonus && <div className="tour-highlights">{upcomingTour.bonus}</div>}
           {upcomingTour.price !== undefined && (<div className="tour-price">💲 {upcomingTour.price} долларов</div>)}
         </div>
           <button className="book-button" onClick={handleReserveClick}>

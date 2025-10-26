@@ -7,6 +7,7 @@ export interface Tour {
   imageUrl: string;
   highlights: string[];
   included: string[];
+  extra?: string;
   meetingPoint: string;
   meetingPointLink: string;
   difficulty: 'Easy' | 'Moderate' | 'Challenging';
@@ -23,6 +24,7 @@ export interface UpcomingTour {
   date: string;
   time: string;
   price?: number;
+  bonus?: string;
 }
 
 export interface PastTour extends UpcomingTour {

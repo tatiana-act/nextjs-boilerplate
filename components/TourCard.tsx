@@ -45,6 +45,7 @@ const TourCard: React.FC<TourCardProps> = ({ tour, onBookTour }) => {
           </ul>
         </div>
 
+        {tour.extra && <div className="tour-highlights">{tour.extra}</div>}
         {/*<div className="tour-highlights">
                     <h4 className="highlights-title">What's Included:</h4>
                     <ul className="highlights-list">

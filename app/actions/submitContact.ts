@@ -2,6 +2,7 @@
 
 import { google } from 'googleapis';
 import { ContactFormData, contactFormSchema } from '../zschema'
+import sendTelegramMessage from "@/app/tgmessage";
 
 
 export async function submitContactForm(_prevState: ContactFormData, formData: FormData): Promise<ContactFormData> {
@@ -37,6 +38,10 @@ export async function submitContactForm(_prevState: ContactFormData, formData: F
             if (fmtTelegram.length > 0 && !fmtTelegram.startsWith('@')) {
                 fmtTelegram = '@' + fmtTelegram;
             }
+            const tgMessage = `Received new contact: ${validated.data?.name} -- ${fmtPhone} ${fmtTelegram})`;
+            sendTelegramMessage(tgMessage).catch((error) => {
+                console.error('Unhandled error in sendTelegramMessageInternal:', error);
+            });
             // Append data (adjust range to your sheet, e.g., Sheet1!A:E for 5 columns)
             await sheets.spreadsheets.values.append({
                 spreadsheetId: process.env.GOOGLE_SHEETS_SPREADSHEET_ID!,
@@ -52,7 +57,8 @@ export async function submitContactForm(_prevState: ContactFormData, formData: F
                         validated.data?.tour || '',
                     ]],
                 },
-            });
+            })
+
         } catch (error) {
             success = false;
             msg = String(error?.toString() || 'unknown error');
