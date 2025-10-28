@@ -38,7 +38,7 @@ export async function submitContactForm(_prevState: ContactFormData, formData: F
             if (fmtTelegram.length > 0 && !fmtTelegram.startsWith('@')) {
                 fmtTelegram = '@' + fmtTelegram;
             }
-            const tgMessage = `Received new contact: ${validated.data?.name} -- ${fmtPhone} ${fmtTelegram})`;
+            const tgMessage = `Received new contact: ${validated.data?.name} -- ${fmtPhone} ${fmtTelegram}`;
             sendTelegramMessage(tgMessage).catch((error) => {
                 console.error('Unhandled error in sendTelegramMessageInternal:', error);
             });
