@@ -68,7 +68,7 @@ const PastTourCard: React.FC<PastTourCardProps> = ({ tour, tourName }) => {
                     onKeyDown={(e) => {
                         if (e.key === 'Enter' || e.key === ' ') {
                             e.preventDefault();
-                            handleDetailsClick(e as any);
+                            setOpenPopupIndex(1);
                         }
                     }}
                 >Об этой экскурсии</a>

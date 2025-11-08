@@ -36,7 +36,7 @@ const FeedbackForm: React.FC<FeedbackFormProps> = ({ tourName, tourId, date, onC
         <form action={formAction}>
             <h3 className="tour-header">Отзыв об экскурсии</h3>
             <div className="form-body">
-            Большое спасибо, что вы посетили тур "{tourName}". Пожалуйста опишите свои впечатления:
+            Большое спасибо, что вы посетили тур &quot;{tourName}&quot;. Пожалуйста опишите свои впечатления:
             <div>
                 <label htmlFor="name" className="block text-sm font-bold mb-2">
                     Ваше имя
