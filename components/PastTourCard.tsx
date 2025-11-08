@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import { PastTour } from '@/types/tour';
-import Image from 'next/image';
 import { formatDateToUserLocale } from '@/lib/utils';
+import Popup from "reactjs-popup";
+import FeedbackForm from "@/components/FeedbackForm";
+import AboutTour from "@/components/AboutTour";
 
 interface PastTourCardProps {
     tour: PastTour;
@@ -9,69 +11,84 @@ interface PastTourCardProps {
 }
 
 const PastTourCard: React.FC<PastTourCardProps> = ({ tour, tourName }) => {
-    const [isModalOpen, setIsModalOpen] = useState(false);
+    const [openPopupIndex, setOpenPopupIndex] = useState(0);
 
-    const handleDateClick = () => {
-        setIsModalOpen(true);
+    const handleDetailsClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+        e.preventDefault();
+        setOpenPopupIndex(1);
     };
-
-    const closeModal = () => {
-        setIsModalOpen(false);
+    const handleFeedbackClick = () => {
+        setOpenPopupIndex(2);
+    };
+    const closePopup = () => {
+        setOpenPopupIndex(0);
     };
 
     return (
-        <div className="upcoming-tour-card p-4 bg-white rounded-lg shadow-md max-w-md mx-auto relative">
-            <div className="upcoming-tour-content">
-                <h4 className="upcoming-tour-name text-xl font-bold mb-2">{tourName}</h4>
-                <div className="upcoming-tour-details">
-                    <div className="tour-datetime flex items-center space-x-4">
-                        📅 {formatDateToUserLocale(tour.date)}
-                        {tour.eventUrl && tour.eventImage &&
-                        <button
-                        onClick={handleDateClick}
-                        className="date text-blue-600 hover:underline cursor-pointer"
-                    >
-                            Об этой экскурсии
-                        </button>
-                        }
-                    </div>
+
+    <div className="upcoming-tour-card p-2 bg-white rounded-lg shadow-md max-w-md mx-auto relative">
+        {openPopupIndex === 2 && (
+        <div>
+            <Popup open={openPopupIndex === 2} closeOnDocumentClick onClose={closePopup}>
+                <div className="modal">
+                    <button className="close" onClick={closePopup}>
+                        &times;
+                    </button>
+                    <FeedbackForm tourName={tourName} tourId={tour.tourId} date={tour.date} onClose={closePopup} />
                 </div>
+            </Popup>
+        </div>
+        )
+        }
+        {openPopupIndex === 1 && (
+                    <div>
+                        <Popup open={openPopupIndex === 1} closeOnDocumentClick onClose={closePopup}
+                               contentStyle={{ padding: 0, border: "none", background: "transparent" }}>
+                            <div className="modalfit">
+                                <button className="close" onClick={closePopup}>
+                                    &times;
+                                </button>
+                                <AboutTour eventUrl={tour.eventUrl} eventImage={tour.eventImage} tourName={tourName}/>
+                            </div>
+                        </Popup>
+                    </div>
+                )
+            }
+
+        <div className="upcoming-tour-content">
+            <h4 className="upcoming-tour-name">{tourName}</h4>
+                <div className="upcoming-tour-details tour-datetime">
+                        📅 {formatDateToUserLocale(tour.date)}
+            {tour.eventUrl && tour.eventImage &&
+                <a
+                    href="#"                     // required for accessibility (or use #! for no-scroll)
+                    role="button"                // tells screen readers it’s a button
+                    tabIndex={0}                 // make it focusable with keyboard
+                    onClick={handleDetailsClick}
+                    onKeyDown={(e) => {
+                        if (e.key === 'Enter' || e.key === ' ') {
+                            e.preventDefault();
+                            handleDetailsClick(e as any);
+                        }
+                    }}
+                >Об этой экскурсии</a>
+            }
+                </div>
+
+            { isRecentTour(tour) && <button className="book-button" onClick={handleFeedbackClick}>
+                Оставить свой отзыв
+            </button>
+            }
             </div>
 
-            {isModalOpen && (
-                <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-                    <div className="relative bg-white p-4 rounded-lg max-w-[90vw] max-h-[80vh] overflow-auto">
-                        <button
-                            onClick={closeModal}
-                            className="absolute top-2 right-4 bg-gray-200 text-gray-800 hover:bg-gray-300 hover:text-black text-xl font-bold rounded-full w-8 h-8 flex items-center justify-center transition-colors duration-200 z-60"
-                        >
-                            ✕
-                        </button>
-                        <div className="relative">
-                            <a
-                                href={tour.eventUrl}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="text-blue-600 hover:underline mt-2 block"
-                            >
-                                📬 Посмотреть на Facebook
-                            </a>
-
-                            <Image
-                                src={tour.eventImage}
-                                alt={`Tour ${tourName} Image`}
-                                layout="intrinsic"
-                                width={500}
-                                height={300}
-                                objectFit="contain"
-                                className="rounded"
-                            />
-                        </div>
-                    </div>
-                </div>
-            )}
-        </div>
+    </div>
     );
 };
+
+function isRecentTour(tour: PastTour) {
+    const date = tour.date.split('-')
+    const old = new Date(Number(date[0]), Number(date[1]) - 1, Number(date[2]))
+    return (Date.now() - old.getTime()) < 45* 24 * 60 * 60 * 1000;
+}
 
 export default PastTourCard;

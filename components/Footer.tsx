@@ -11,13 +11,13 @@ const Footer: React.FC = () => {
             <div className="contact-item">
               <span>📞</span>
               <span>
-                <a href="tel:+15128014114">+1-512-801-4114</a>
+                <a className='contact-item-link' href="tel:+15128014114">+1-512-801-4114</a>
               </span>
             </div>
             <div className="contact-item">
               <span>📷</span>
               <span>
-                <a
+                <a className='contact-item-link'
                   href="https://instagram.com/austin.guide/"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -29,7 +29,7 @@ const Footer: React.FC = () => {
             <div className="contact-item">
               <span>✈️</span>
               <span>
-                <a
+                <a className='contact-item-link'
                   href="https://t.me/austin_city_tours"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -41,7 +41,7 @@ const Footer: React.FC = () => {
             <div className="contact-item">
               <span>💥</span>
               <span>
-                <a
+                <a className='contact-item-link'
                   href="https://www.facebook.com/groups/662224066870718/"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -54,7 +54,7 @@ const Footer: React.FC = () => {
               <div className="contact-item">
                 <span>✉️</span>
                 <span>
-                  <a href="mailto:tatiana.city.guide@gmail.com">
+                  <a className='contact-item-link' href="mailto:tatiana.city.guide@gmail.com">
                     tatiana.city.guide@gmail.com
                   </a>
                 </span>

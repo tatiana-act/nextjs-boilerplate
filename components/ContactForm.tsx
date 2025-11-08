@@ -1,4 +1,3 @@
-import '../app/globals.css';
 import React, {useEffect} from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -46,14 +45,14 @@ const ContactForm: React.FC<ContactFormProps> = ({ tourName, onClose }) => {
             <h3 className="tour-header">Контактная информация</h3>
             <div className="form-body">
             <div className="tour-body">Я очень рада, что вас интересует {tourName}. Чтобы присоединиться, оставьте свои контакты:</div>
-            <div>
-                <label className="form-label">Ваше имя&nbsp;&nbsp;
+            <div className="mb-4">
+                <label className="grid gap-1">Ваше имя&nbsp;&nbsp;
                 <input className="p-2 border border-gray-300 rounded" {...register('name')} />
                 {errors.name && <div className="form-error">{errors.name.message}</div>}
                 </label>
             </div>
             <div className="mb-4">
-            <label className="form-label">
+            <label className="grid gap-1">
                 Адрес эл почты&nbsp;&nbsp;
                 <input className="p-2 border border-gray-300 rounded" {...register('email')} />
                 {errors.email && <div className="form-error">{errors.email.message}</div>}
