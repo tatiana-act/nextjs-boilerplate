@@ -1,16 +1,16 @@
 import React, { useState } from 'react';
-import { PastTour } from '@/types/tour';
+import { PastTourEvent } from '@/types/tour';
 import { formatDateToUserLocale } from '@/lib/utils';
 import Popup from "reactjs-popup";
 import FeedbackForm from "@/components/FeedbackForm";
 import AboutTour from "@/components/AboutTour";
 
 interface PastTourCardProps {
-    tour: PastTour;
+    tour: PastTourEvent;
     tourName: string;
 }
 
-const PastTourCard: React.FC<PastTourCardProps> = ({ tour, tourName }) => {
+const RecentEventCard: React.FC<PastTourCardProps> = ({ tour, tourName }) => {
     const [openPopupIndex, setOpenPopupIndex] = useState(0);
 
     const handleDetailsClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
@@ -34,7 +34,7 @@ const PastTourCard: React.FC<PastTourCardProps> = ({ tour, tourName }) => {
                     <button className="close" onClick={closePopup}>
                         &times;
                     </button>
-                    <FeedbackForm tourName={tourName} tourId={tour.tourId} date={tour.date} onClose={closePopup} />
+                    <FeedbackForm tourName={tourName} tourId={tour.tourProgramId} date={tour.date} onClose={closePopup} />
                 </div>
             </Popup>
         </div>
@@ -85,10 +85,10 @@ const PastTourCard: React.FC<PastTourCardProps> = ({ tour, tourName }) => {
     );
 };
 
-function isRecentTour(tour: PastTour) {
+function isRecentTour(tour: PastTourEvent) {
     const date = tour.date.split('-')
     const old = new Date(Number(date[0]), Number(date[1]) - 1, Number(date[2]))
     return (Date.now() - old.getTime()) < 45* 24 * 60 * 60 * 1000;
 }
 
-export default PastTourCard;
+export default RecentEventCard;

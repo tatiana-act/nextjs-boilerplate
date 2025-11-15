@@ -1,6 +1,6 @@
-import { Tour } from '@/types/tour';
+import { TourProgram } from '@/types/tour';
 
-export const tours: Tour[] = [
+export const tours: TourProgram[] = [
     {
         id: 'Milt',
         title: 'Историческая прогулка по Конгресс-авеню и тайны Millett Opera House!',

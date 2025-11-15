@@ -1,9 +1,9 @@
 import React from 'react';
-import { Tour } from '@/types/tour';
+import { TourProgram } from '@/types/tour';
 import TourCard from './TourCard';
 
 interface ToursSectionProps {
-  tours: Tour[];
+  tours: TourProgram[];
   onBookTour: (tourId: string) => void;
 }
 

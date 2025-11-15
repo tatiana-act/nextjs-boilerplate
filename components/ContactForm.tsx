@@ -39,7 +39,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ tourName, onClose }) => {
      setValue('whatsapp', state.whatsapp || false);
      setValue('telegram', state.telegram || '');
      setValue('tour', state.tour || '');
-    }, [state]);
+    }, [state, setValue]);
     return (
         <form action={formAction}>
             <h3 className="tour-header">Контактная информация</h3>

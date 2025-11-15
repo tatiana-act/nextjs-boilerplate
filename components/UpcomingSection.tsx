@@ -1,11 +1,11 @@
 // components/UpcomingToursSection.tsx
 import React from 'react';
-import { Tour, UpcomingTour } from '@/types/tour';
+import { TourProgram, UpcomingTourEvent } from '@/types/tour';
 import UpcomingTourCard from './UpcomingTourCard';
 
 interface UpcomingToursSectionProps {
-  upcomingTours: UpcomingTour[];
-  allTours: ReadonlyMap<string, Tour>;
+  upcomingTours: UpcomingTourEvent[];
+  allTours: ReadonlyMap<string, TourProgram>;
   onReserveSpot: (tourId: string) => void;
 }
 
@@ -24,7 +24,7 @@ const UpcomingToursSection: React.FC<UpcomingToursSectionProps> = ({
             <UpcomingTourCard
               key={upcomingTour.id}
               upcomingTour={upcomingTour}
-              tourName={allTours.get(upcomingTour.tourId)?.title || ''}
+              tourName={allTours.get(upcomingTour.tourProgramId)?.title || ''}
               onReserveSpot={onReserveSpot}
             />
           ))}

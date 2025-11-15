@@ -1,4 +1,4 @@
-export interface Tour {
+export interface TourProgram {
   id: string;
   title: string;
   description: string;
@@ -18,16 +18,16 @@ export interface FAQ {
   answer: string;
 }
 
-export interface UpcomingTour {
+export interface UpcomingTourEvent {
   id: string;
-  tourId: string;
+  tourProgramId: string;
   date: string;
   time: string;
   price?: number;
   bonus?: string;
 }
 
-export interface PastTour extends UpcomingTour {
+export interface PastTourEvent extends UpcomingTourEvent {
   eventUrl: string;
   eventImage: string;
   feedbacks: string[];

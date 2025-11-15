@@ -1,9 +1,9 @@
 import React from 'react';
-import { Tour } from '@/types/tour';
+import { TourProgram } from '@/types/tour';
 import Image from 'next/image';
 
 interface TourCardProps {
-  tour: Tour;
+  tour: TourProgram;
   onBookTour: (tourId: string) => void;
 }
 

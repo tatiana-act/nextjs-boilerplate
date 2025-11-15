@@ -1,9 +1,9 @@
 import React, { JSX, useState } from 'react';
-import { Tour, UpcomingTour } from '@/types/tour';
+import { TourProgram, UpcomingTourEvent } from '@/types/tour';
 
 interface CalendarSectionProps {
-  allTours: ReadonlyMap<string, Tour>;
-  upcomingTours: UpcomingTour[];
+  allTours: ReadonlyMap<string, TourProgram>;
+  upcomingTours: UpcomingTourEvent[];
 }
 
 const CalendarSection: React.FC<CalendarSectionProps> = ({
@@ -40,7 +40,7 @@ const CalendarSection: React.FC<CalendarSectionProps> = ({
     const days: JSX.Element[] = [];
 
     // map upcomingEvents
-    const mapTours: Map<string, UpcomingTour> = new Map();
+    const mapTours: Map<string, UpcomingTourEvent> = new Map();
     // upcomingTours.map(tour => [`${tour.date.getFullYear()}-${tour.date.getMonth() + 1}-${tour.date.getDate()}`, tour] as const));
 
     // Add day headers
@@ -75,7 +75,7 @@ const CalendarSection: React.FC<CalendarSectionProps> = ({
           }`}
           title={
             hasEvent
-              ? allTours.get(mapTours.get(dateKey)?.tourId || '')?.title
+              ? allTours.get(mapTours.get(dateKey)?.tourProgramId || '')?.title
               : ''
           }
         >
@@ -147,7 +147,7 @@ const CalendarSection: React.FC<CalendarSectionProps> = ({
                 >
                   <div>
                     <div className="font-bold text-gray-800">
-                      {allTours.get(tour.tourId)?.title || ''}
+                      {allTours.get(tour.tourProgramId)?.title || ''}
                     </div>
                     {/*<div className="text-sm text-gray-600">
                                             {event.spotsAvailable} spots available • Guide: {event.guide}

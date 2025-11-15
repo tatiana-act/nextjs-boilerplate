@@ -1,9 +1,9 @@
-import { PastTour } from '@/types/tour';
+import {PastTourEvent} from '@/types/tour';
 
-const pastTours: PastTour[] = [
+const pastTourEvents: PastTourEvent[] = [
     {
         id: 'tour21',
-        tourId: 'Acstm',
+        tourProgramId: 'Acstm',
         date: '2025-11-08',
         time: '10:00',
         eventUrl: 'https://www.facebook.com/groups/662224066870718/posts/739147259178398/',
@@ -12,7 +12,7 @@ const pastTours: PastTour[] = [
     },
     {
         id: 'tour22',
-        tourId: 'Gcrt',
+        tourProgramId: 'Gcrt',
         date: '2025-11-04',
         time: '11:00',
         eventUrl: 'https://www.facebook.com/groups/662224066870718/posts/754095341016923/',
@@ -21,7 +21,7 @@ const pastTours: PastTour[] = [
     },
     {
         id: 'tour14',
-        tourId: 'Milt',
+        tourProgramId: 'Milt',
         date: '2025-10-27',
         time: '10:30',
         eventUrl: 'https://www.facebook.com/groups/662224066870718/posts/747404718352652/',
@@ -30,7 +30,7 @@ const pastTours: PastTour[] = [
     },
     {
         id: 'tour16',
-        tourId: 'Gcrt',
+        tourProgramId: 'Gcrt',
         date: '2025-10-11',
         time: '12:00',
         price: 40,
@@ -40,7 +40,7 @@ const pastTours: PastTour[] = [
     },
     {
         id: 'tour7',
-        tourId: 'Gcrt',
+        tourProgramId: 'Gcrt',
         date: '2025-09-27',
         time: '12:30',
         eventUrl: 'https://www.facebook.com/groups/662224066870718/posts/721785767581214/',
@@ -49,7 +49,7 @@ const pastTours: PastTour[] = [
     },
     {
         id: 'tour12',
-        tourId: 'Acap',
+        tourProgramId: 'Acap',
         date: '2025-09-20',
         time: '13:00',
         eventUrl: 'https://www.facebook.com/groups/662224066870718/posts/716853981407726/',
@@ -58,7 +58,7 @@ const pastTours: PastTour[] = [
     },
     {
         id: 'tour8',
-        tourId: 'Acap',
+        tourProgramId: 'Acap',
         date: '2025-09-14',
         time: '09:00',
         eventUrl: 'https://www.facebook.com/groups/662224066870718/posts/709989568760834/',
@@ -67,7 +67,7 @@ const pastTours: PastTour[] = [
     },
     {
         id: 'tour10',
-        tourId: 'Amhry',
+        tourProgramId: 'Amhry',
         date: '2025-09-07',
         time: '12:00',
         eventUrl: 'https://www.facebook.com/orlowa.tatiana/posts/3655321031268146',
@@ -76,7 +76,7 @@ const pastTours: PastTour[] = [
     },
     {
         id: 'tour9',
-        tourId: 'Gcrt',
+        tourProgramId: 'Gcrt',
         date: '2025-09-06',
         time: '11:30',
         eventUrl:
@@ -86,7 +86,7 @@ const pastTours: PastTour[] = [
     },
     {
         id: 'tour4',
-        tourId: 'Gcrt',
+        tourProgramId: 'Gcrt',
         date: '2025-08-17',
         time: '12:00',
         eventUrl:
@@ -96,7 +96,7 @@ const pastTours: PastTour[] = [
     },
     {
         id: 'tour2',
-        tourId: 'Gcrt',
+        tourProgramId: 'Gcrt',
         date: '2025-08-16',
         time: '10:00',
         eventUrl:
@@ -105,14 +105,14 @@ const pastTours: PastTour[] = [
         feedbacks: [],
     },
     {
-    id: 'tour1',
-    tourId: 'Acap',
-    date: '2025-07-27',
-    time: '10:00',
-    eventUrl: 'https://www.facebook.com/groups/662224066870718/posts/670617699364688/',
-    eventImage: '/072725ac.jpg',
-    feedbacks: [],
-  }
+        id: 'tour1',
+        tourProgramId: 'Acap',
+        date: '2025-07-27',
+        time: '10:00',
+        eventUrl: 'https://www.facebook.com/groups/662224066870718/posts/670617699364688/',
+        eventImage: '/072725ac.jpg',
+        feedbacks: [],
+    }
 ];
 
-export default pastTours;
+export default pastTourEvents;

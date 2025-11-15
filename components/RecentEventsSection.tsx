@@ -1,14 +1,14 @@
 // components/UpcomingToursSection.tsx
 import React from 'react';
-import { PastTour, Tour } from '@/types/tour';
-import PastTourCard from './PastTourCard';
+import { PastTourEvent, TourProgram } from '@/types/tour';
+import RecentEventCard from './RecentEventCard';
 
 interface PastToursSectionProps {
-  pastTours: PastTour[];
-  allTours: ReadonlyMap<string, Tour>;
+  pastTours: PastTourEvent[];
+  allTours: ReadonlyMap<string, TourProgram>;
 }
 
-const PastToursSection: React.FC<PastToursSectionProps> = ({
+const RecentEventsSection: React.FC<PastToursSectionProps> = ({
   pastTours,
   allTours,
 }) => {
@@ -19,10 +19,10 @@ const PastToursSection: React.FC<PastToursSectionProps> = ({
         {/*<p className="section-subtitle">Reserve your spot for these scheduled tours</p>*/}
         <div className="upcoming-tours-grid">
           {pastTours.map(pastTour => (
-            <PastTourCard
+            <RecentEventCard
               key={pastTour.id}
               tour={pastTour}
-              tourName={allTours.get(pastTour.tourId)?.title || ''}
+              tourName={allTours.get(pastTour.tourProgramId)?.title || ''}
             />
           ))}
         </div>
@@ -31,4 +31,4 @@ const PastToursSection: React.FC<PastToursSectionProps> = ({
   );
 };
 
-export default PastToursSection;
+export default RecentEventsSection;

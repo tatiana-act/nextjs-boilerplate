@@ -1,10 +1,10 @@
 // components/UpcomingTourCard.tsx
 import React from 'react';
-import { UpcomingTour } from '@/types/tour';
+import { UpcomingTourEvent } from '@/types/tour';
 import { formatDateToUserLocale } from '@/lib/utils';
 
 interface UpcomingTourCardProps {
-  upcomingTour: UpcomingTour;
+  upcomingTour: UpcomingTourEvent;
   tourName: string;
   onReserveSpot: (tourId: string) => void;
 }
@@ -15,11 +15,11 @@ const UpcomingTourCard: React.FC<UpcomingTourCardProps> = ({
   onReserveSpot
 }) => {
   const handleClick = () => {
-      document.getElementById(upcomingTour.tourId + "tour-card")?.scrollIntoView({ behavior: 'smooth' });
+      document.getElementById(upcomingTour.tourProgramId + "tour-card")?.scrollIntoView({ behavior: 'smooth' });
   };
     const handleReserveClick = (e: React.MouseEvent<HTMLButtonElement>) => {
         e.stopPropagation();
-        onReserveSpot(upcomingTour.tourId);
+        onReserveSpot(upcomingTour.tourProgramId);
     };
 
   return (

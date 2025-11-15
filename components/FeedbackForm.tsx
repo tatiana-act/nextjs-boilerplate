@@ -30,7 +30,7 @@ const FeedbackForm: React.FC<FeedbackFormProps> = ({ tourName, tourId, date, onC
      setValue('tourId', state.tourId || '');
      setValue('date', state.date || '');
      setValue('text', state.text || '');
-    }, [state]);
+    }, [state, setValue]);
     return (
         // <div className="tour-body">Большое спасибо, что вы посетили тур "{tourName}". Пожалуйста опишите свои впечатления:</div>
         <form action={formAction}>

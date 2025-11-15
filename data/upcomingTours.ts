@@ -1,28 +1,77 @@
-import { UpcomingTour } from '@/types/tour';
+import { UpcomingTourEvent } from '@/types/tour';
 
-export const upcomingTours: UpcomingTour[] = [
-    {
-        id: 'tour23',
-        tourId: 'Brmn',
-        date: '2025-11-16',
-        time: '10:00',
-        price: 40,
-        bonus: ''
-    },
+export const upcomingTours: UpcomingTourEvent[] = [
     {
         id: 'tour24',
-        tourId: 'Acap',
-        date: '2025-11-23',
-        time: '11:00',
+        tourProgramId: 'Acap',
+        date: '2025-11-21',
+        time: '10:00',
         price: 40,
         bonus: '️с посещением Капитолия'
     },
     {
         id: 'tour25',
-        tourId: 'Acap',
+        tourProgramId: 'Acap',
+        date: '2025-11-24',
+        time: '14:00',
+        price: 40,
+        bonus: '️с посещением Капитолия'
+    },
+    {
+        id: 'tour26',
+        tourProgramId: 'Acap',
+        date: '2025-11-25',
+        time: '10:00',
+        price: 40,
+        bonus: '️с посещением Капитолия'
+    },
+    {
+        id: 'tour27',
+        tourProgramId: 'hyde',
+        date: '2025-11-29',
+        time: '11:00',
+        price: 40,
+        bonus: ''
+    },
+    {
+        id: 'tour23',
+        tourProgramId: 'Acap',
         date: '2025-11-30',
         time: '12:00',
         price: 40,
         bonus: 'без посещения Капитолия'
     },
+    {
+        id: 'tour28',
+        tourProgramId: 'Acap',
+        date: '2025-12-03',
+        time: '10:00',
+        price: 40,
+        bonus: '️с посещением Капитолия'
+    },
+    {
+        id: 'tour29',
+        tourProgramId: 'Acap',
+        date: '2025-12-06',
+        time: '10:00',
+        price: 40,
+        bonus: '️с посещением Капитолия'
+    },
+    {
+        id: 'tour30',
+        tourProgramId: 'Acap',
+        date: '2025-12-08',
+        time: '10:00',
+        price: 40,
+        bonus: ''
+    },
+    {
+        id: 'tour31',
+        tourProgramId: 'hyde',
+        date: '2025-12-15',
+        time: '10:00',
+        price: 40,
+        bonus: ''
+    },
+
 ];
