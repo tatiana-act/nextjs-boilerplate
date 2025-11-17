@@ -21,7 +21,6 @@ const TourCard: React.FC<TourCardProps> = ({ tour, onBookTour }) => {
         width={400}
         height={300}
       />
-      {/*<img src={tour.imageUrl} alt={tour.title} className="tour-image" />*/}
       <div className="tour-content">
         <div className="tour-header">
           <div>
@@ -63,11 +62,11 @@ const TourCard: React.FC<TourCardProps> = ({ tour, onBookTour }) => {
               </a>
           }
         </div>
-        {
+        <div className="button-container">
           <button className="book-button" onClick={handleBookClick}>
             Запись на экскурсию
           </button>
-        }
+        </div>
       </div>
     </div>
   );

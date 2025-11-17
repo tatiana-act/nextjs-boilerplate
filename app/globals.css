@@ -155,6 +155,8 @@ body {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
     border: 1px solid #eee;
+    display: flex;
+    flex-direction: column;
 }
 
 .tour-card:hover {
@@ -170,6 +172,13 @@ body {
 
 .tour-content {
     padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.button-container {
+  margin-top: auto;
 }
 
 .tour-header {
