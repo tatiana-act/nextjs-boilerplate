@@ -15,9 +15,6 @@ const CalendarSection: React.FC<CalendarSectionProps> = ({
   upcomingTours,
   onEventClick
 }) => {
-  const handleDateClick = (arg: any) => {
-    alert(JSON.stringify(arg));
-  }
   const handleEventClick = (info: any) => {
       onEventClick(info.event.extendedProps.programId);
   }
