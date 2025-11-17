@@ -13,6 +13,7 @@ import { TourProgram } from '@/types/tour';
 import UpcomingToursSection from '@/components/UpcomingSection';
 import RecentEventsSection from '@/components/RecentEventsSection';
 import Modal from '@/components/Modal';
+import CalendarSection from "@/components/CalendarSection";
 
 const Home : React.FC = () => {
     const [isContactsOpen, setContactsOpen] = useState(false)
@@ -34,6 +35,7 @@ const Home : React.FC = () => {
     <main>
       <Hero onExploreClick={scrollToSection} />
       <ToursSection tours={tours} onBookTour={handleBookTour} />
+      <CalendarSection allTours={allTours} upcomingTours={upcomingTours} onEventClick={handleBookTour}/>
       <UpcomingToursSection allTours={allTours} upcomingTours={upcomingTours} onReserveSpot={handleBookTour} />
       <Modal isOpen={isContactsOpen} tourName={tourProgramName} onClose={() => setContactsOpen(false)}>
       </Modal>
