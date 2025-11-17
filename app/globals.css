@@ -560,6 +560,13 @@ body {
     cursor: pointer;
 }
 
+.fc-daygrid-event,
+.fc-event-title {
+    white-space: normal !important; /* Allow text to wrap */
+    word-wrap: break-word !important; /* Ensure long words break */
+    overflow-wrap: break-word !important; /* Modern alternative to word-wrap */
+}
+
 @media (max-width: 768px) {
     .upcoming-tours-grid {
         grid-template-columns: 1fr;

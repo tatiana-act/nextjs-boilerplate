@@ -17,8 +17,8 @@ const Hero: React.FC<HeroProps> = ({ onExploreClick }) => {
         <button className="cta-button" onClick={() => onExploreClick(MyConstants.idTours)}>
           Наши экскурсии
         </button>
-        <button className="cta-button" onClick={() => onExploreClick(MyConstants.idEvents)}>
-          Ближайшие события
+        <button className="cta-button" onClick={() => onExploreClick(MyConstants.idCalendar)}>
+          Календарь
         </button>
         <button className="cta-button" onClick={() => onExploreClick(MyConstants.idFAQ)}>
           Ответы на вопросы
