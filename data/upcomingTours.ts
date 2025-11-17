@@ -20,10 +20,18 @@ export const upcomingTours: UpcomingTourEvent[] = [
     {
         id: 'tour26',
         tourProgramId: 'Acap',
-        date: '2025-11-25',
+        date: '2025-11-26',
         time: '10:00',
         price: 40,
         bonus: '️с посещением Капитолия'
+    },
+    {
+        id: 'tour32',
+        tourProgramId: 'Brmn',
+        date: '2025-11-27',
+        time: '10:00',
+        price: 40,
+        bonus: '️'
     },
     {
         id: 'tour27',

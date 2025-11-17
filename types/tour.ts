@@ -1,6 +1,7 @@
 export interface TourProgram {
   id: string;
   title: string;
+  shortTitle: string;
   description: string;
   duration: string;
   price: number;

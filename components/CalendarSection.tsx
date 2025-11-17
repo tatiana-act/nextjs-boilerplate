@@ -7,21 +7,20 @@ import MyConstants from "@/lib/MyConstants";
 interface CalendarSectionProps {
   allTours: ReadonlyMap<string, TourProgram>;
   upcomingTours: UpcomingTourEvent[];
-  onEventClick: (tourId: string) => void;
 }
 
 const CalendarSection: React.FC<CalendarSectionProps> = ({
   allTours,
-  upcomingTours,
-  onEventClick
+  upcomingTours
 }) => {
   const handleEventClick = (info: any) => {
-      onEventClick(info.event.extendedProps.programId);
+      //onEventClick(info.event.extendedProps.programId);
+      document.getElementById(info.event.extendedProps.programId + "tour-card")?.scrollIntoView({ behavior: 'smooth' });
   }
 
   const events = upcomingTours.map((ut)=> {
       return {
-          title: allTours.get(ut.tourProgramId)?.title || '',
+          title: allTours.get(ut.tourProgramId)?.shortTitle || '',
           date: ut.date,
           allDay: true,
           extendedProps: {

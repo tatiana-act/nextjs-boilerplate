@@ -35,7 +35,7 @@ const Home : React.FC = () => {
     <main>
       <Hero onExploreClick={scrollToSection} />
       <ToursSection tours={tours} onBookTour={handleBookTour} />
-      <CalendarSection allTours={allTours} upcomingTours={upcomingTours} onEventClick={handleBookTour}/>
+      <CalendarSection allTours={allTours} upcomingTours={upcomingTours} />
       <UpcomingToursSection allTours={allTours} upcomingTours={upcomingTours} onReserveSpot={handleBookTour} />
       <Modal isOpen={isContactsOpen} tourName={tourProgramName} onClose={() => setContactsOpen(false)}>
       </Modal>
