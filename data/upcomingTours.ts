@@ -2,14 +2,6 @@ import { UpcomingTourEvent } from '@/types/tour';
 
 export const upcomingTours: UpcomingTourEvent[] = [
     {
-        id: 'tour24',
-        tourProgramId: 'Acap',
-        date: '2025-11-21',
-        time: '10:00',
-        price: 40,
-        bonus: '️с посещением Капитолия'
-    },
-    {
         id: 'tour25',
         tourProgramId: 'Acap',
         date: '2025-11-24',
@@ -24,22 +16,6 @@ export const upcomingTours: UpcomingTourEvent[] = [
         time: '10:00',
         price: 40,
         bonus: '️с посещением Капитолия'
-    },
-    {
-        id: 'tour32',
-        tourProgramId: 'Brmn',
-        date: '2025-11-27',
-        time: '10:00',
-        price: 40,
-        bonus: '️'
-    },
-    {
-        id: 'tour27',
-        tourProgramId: 'hyde',
-        date: '2025-11-29',
-        time: '11:00',
-        price: 40,
-        bonus: ''
     },
     {
         id: 'tour23',
@@ -67,8 +43,8 @@ export const upcomingTours: UpcomingTourEvent[] = [
     },
     {
         id: 'tour30',
-        tourProgramId: 'Acap',
-        date: '2025-12-08',
+        tourProgramId: 'Brmn',
+        date: '2025-12-14',
         time: '10:00',
         price: 40,
         bonus: ''
@@ -81,5 +57,4 @@ export const upcomingTours: UpcomingTourEvent[] = [
         price: 40,
         bonus: ''
     },
-
 ];
