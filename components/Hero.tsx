@@ -1,11 +1,13 @@
+'use client';
+
 import React from 'react';
 import MyConstants from './../lib/MyConstants'
 
-interface HeroProps {
-  onExploreClick: (sectionId: string) => void;
-}
+const Hero: React.FC = () => {
+  const scrollToSection = (sectionId: string) => {
+    document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
+  };
 
-const Hero: React.FC<HeroProps> = ({ onExploreClick }) => {
   return (
     <section className="hero">
       <div className="hero-content">
@@ -14,13 +16,13 @@ const Hero: React.FC<HeroProps> = ({ onExploreClick }) => {
           Присоединяйтесь к экскурсиям и откройте для себя скрытые жемчужины,
           богатую историю и яркую культуру нашего города!
         </p>
-        <button className="cta-button" onClick={() => onExploreClick(MyConstants.idTours)}>
+        <button className="cta-button" onClick={() => scrollToSection(MyConstants.idTours)}>
           Наши экскурсии
         </button>
-        <button className="cta-button" onClick={() => onExploreClick(MyConstants.idCalendar)}>
+        <button className="cta-button" onClick={() => scrollToSection(MyConstants.idCalendar)}>
           Календарь
         </button>
-        <button className="cta-button" onClick={() => onExploreClick(MyConstants.idFAQ)}>
+        <button className="cta-button" onClick={() => scrollToSection(MyConstants.idFAQ)}>
           Ответы на вопросы
         </button>
       </div>

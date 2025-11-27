@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useState } from 'react';
 import { PastTourEvent } from '@/types/tour';
 import { formatDateToUserLocale } from '@/lib/utils';

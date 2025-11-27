@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useState } from 'react';
 import { FAQ } from '@/types/tour';
 import FAQItem from './FAQItem';
@@ -14,7 +16,7 @@ const FAQSection: React.FC<FAQSectionProps> = ({ faqs }) => {
   };
 
   return (
-    <section className="section faq-section" id="faqSection">
+      <section className="section faq-section" id="faqSection">
       <div className="container">
         <h2 className="section-title">Ответы на часто задаваемые вопросы</h2>
         <div className="faq-container">

@@ -10,16 +10,16 @@ interface ModalProps {
 
 const Modal: React.FC<ModalProps> = ({ isOpen, onClose, tourName }) =>
     isOpen ? (
-            <div>
-                <Popup open={isOpen} closeOnDocumentClick onClose={onClose}>
-                    <div className="modal">
-                        <button className="close" onClick={onClose}>
-                            &times;
-                        </button>
-                        <ContactForm tourName={tourName} onClose={onClose} />
-                    </div>
-                </Popup>
-            </div>
+        <div>
+            <Popup open={isOpen} closeOnDocumentClick onClose={onClose}>
+                <div className="modal" role="dialog" aria-modal="true">
+                    <button className="close" onClick={onClose} aria-label="Close modal">
+                        &times;
+                    </button>
+                    <ContactForm tourName={tourName} onClose={onClose} />
+                </div>
+            </Popup>
+        </div>
     ) : null;
 
 export default Modal;
