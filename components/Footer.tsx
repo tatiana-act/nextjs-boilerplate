@@ -1,4 +1,5 @@
 import React from 'react';
+import { FaFacebook, FaTelegram, FaInstagram, FaPhone, FaEnvelope } from 'react-icons/fa';
 
 const Footer: React.FC = () => {
   return (
@@ -9,13 +10,13 @@ const Footer: React.FC = () => {
           <p>Лучшие впечатления начинаются здесь</p>
           <div className="contact-info" id="contactInfoSection">
             <div className="contact-item">
-              <span>📞</span>
+              <span><FaPhone color="#25D366" /></span>
               <span>
                 <a className='contact-item-link' href="tel:+15128014114">+1-512-801-4114</a>
               </span>
             </div>
             <div className="contact-item">
-              <span>📷</span>
+              <span><FaInstagram color="#E4405F" /></span>
               <span>
                 <a className='contact-item-link'
                   href="https://instagram.com/austin.guide/"
@@ -27,7 +28,7 @@ const Footer: React.FC = () => {
               </span>
             </div>
             <div className="contact-item">
-              <span>✈️</span>
+              <span><FaTelegram color="#229ED9" /></span>
               <span>
                 <a className='contact-item-link'
                   href="https://t.me/austin_city_tours"
@@ -39,7 +40,7 @@ const Footer: React.FC = () => {
               </span>
             </div>
             <div className="contact-item">
-              <span>💥</span>
+              <span><FaFacebook color="#1877F2" /></span>
               <span>
                 <a className='contact-item-link'
                   href="https://www.facebook.com/groups/662224066870718/"
@@ -52,7 +53,7 @@ const Footer: React.FC = () => {
             </div>
             {
               <div className="contact-item">
-                <span>✉️</span>
+                <span><FaEnvelope color="#D44638" /></span>
                 <span>
                   <a className='contact-item-link' href="mailto:tatiana.city.guide@gmail.com">
                     tatiana.city.guide@gmail.com
