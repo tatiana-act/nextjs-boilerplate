@@ -15,7 +15,7 @@ export const upcomingTours: UpcomingTourEvent[] = [
         date: '2025-12-05',
         time: '12:00',
         price: 40,
-        bonus: 'без посещения Капитолия'
+        bonus: ''
     },
     {
         id: 'tour29',
