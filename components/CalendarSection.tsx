@@ -28,6 +28,8 @@ const CalendarSection: React.FC<CalendarSectionProps> = ({
           }
       }
   })
+  const initDate = upcomingTours.length === 0 ? new Date() : new Date(upcomingTours[0].date);
+
   return (
       <section className="section upcoming-tours-section" id={MyConstants.idCalendar}>
          <div className="container">
@@ -43,6 +45,7 @@ const CalendarSection: React.FC<CalendarSectionProps> = ({
         }}
         locale={'ru-RU'}
         initialView='dayGridMonth'
+        initialDate={initDate}
         nowIndicator={true}
         editable={false}
         selectable={true}
