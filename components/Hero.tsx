@@ -22,8 +22,8 @@ const Hero: React.FC = () => {
         <button className="cta-button" onClick={() => scrollToSection(MyConstants.idCalendar)}>
           Календарь
         </button>
-        <button className="cta-button" onClick={() => scrollToSection(MyConstants.idFAQ)}>
-          Ответы на вопросы
+        <button className="cta-button" onClick={() => scrollToSection(MyConstants.idContactInfo)}>
+          Контакты
         </button>
       </div>
     </section>

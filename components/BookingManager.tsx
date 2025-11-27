@@ -20,7 +20,7 @@ const BookingManager: React.FC<BookingManagerProps> = ({ children, allTours }) =
 
     return (
         <>
-            {/*{children(handleBookTour)}*/}
+            {children(handleBookTour)}
             <Modal
                 isOpen={isContactsOpen}
                 tourName={tourProgramName}

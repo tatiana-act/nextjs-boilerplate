@@ -20,12 +20,6 @@ const ContactForm: React.FC<ContactFormProps> = ({ tourName, onClose }) => {
     });
     const [state, formAction, isPending] = useActionState(submitContactForm, contactFormInitState);
 
-    /*
-    const onSubmitForm = (data: ContactFormData) => {
-        console.log('Form submitted:' , JSON.stringify(data));
-        console.log(JSON.stringify(state));
-    };*/
-
     useEffect(() => {
         if (state.success) {
             onClose();
