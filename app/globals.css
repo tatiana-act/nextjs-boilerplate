@@ -29,24 +29,6 @@
     }
 }
 
-@layer utilities {
-    .mt-screen {
-        margin-top: 100vh;
-    }
-
-
-
-    .animation-delay-300 {
-        animation-delay: 0.3s;
-    }
-
-    .animation-delay-600 {
-        animation-delay: 0.6s;
-    }
-}
-
-
-
 * {
     box-sizing: border-box;
     padding: 0;
@@ -504,77 +486,6 @@ body {
     display: flex;
     align-items: center;
     gap: 0.3rem;
-}
-
-.tour-availability {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 0.5rem;
-}
-
-.availability-badge {
-    padding: 0.3rem 0.8rem;
-    border-radius: 20px;
-    font-size: 0.8rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-.availability-high {
-    background: #d4edda;
-    color: #155724;
-}
-
-.availability-medium {
-    background: #fff3cd;
-    color: #856404;
-}
-
-.availability-low {
-    background: #f8d7da;
-    color: #721c24;
-}
-
-.spots-remaining {
-    font-size: 0.85rem;
-    color: #666;
-    font-weight: 500;
-}
-
-.reserve-button {
-    width: 100%;
-    background: linear-gradient(45deg, #28a745, #20c997);
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 8px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    font-size: 0.95rem;
-}
-
-.reserve-button:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgba(40, 167, 69, 0.3);
-    background: linear-gradient(45deg, #218838, #1dc98e);
-}
-
-.expand-button {
-    display: inline-block;
-    background: linear-gradient(45deg, #999999, #444444);
-    color: black;
-    padding: 15px 30px;
-    margin: 10px 20px;
-    border-radius: 30px;
-    font-weight: 600;
-    font-size: 1rem;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
-    border: none;
-    cursor: pointer;
 }
 
 .fc-daygrid-event,

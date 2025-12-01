@@ -16,8 +16,8 @@ const CalendarSection: React.FC<CalendarSectionProps> = ({
   upcomingTours
 }) => {
   const handleEventClick = (info: any) => {
-      //onEventClick(info.event.extendedProps.programId);
-      document.getElementById(info.event.extendedProps.programId + "tour-card")?.scrollIntoView({ behavior: 'smooth' });
+      document.getElementById('upcoming-' + info.event.extendedProps.eventId)?.scrollIntoView({ behavior: 'smooth' });
+      //document.getElementById(info.event.extendedProps.programId + "tour-card")?.scrollIntoView({ behavior: 'smooth' });
   }
 
   const events = upcomingTours.map((ut)=> {
@@ -27,6 +27,7 @@ const CalendarSection: React.FC<CalendarSectionProps> = ({
           allDay: true,
           extendedProps: {
               programId: ut.tourProgramId,
+              eventId: ut.id,
           }
       }
   })
