@@ -48,6 +48,9 @@ export const metadata: Metadata = {
   description:
     'Присоединяйтесь к экскурсиям и откройте для себя скрытые жемчужины, богатую историю и яркую культуру нашего города!',
   keywords: ['Остин', 'Техас', 'экскурсии', 'русский гид', 'туры', 'путешествия', 'Austin', 'Texas', 'tours', 'guide'],
+  verification: {
+    google: "B7Ct-qStJLf0MwYWx5zZwurbBgaNG14Zr_uRJkOJaiQ"
+  },
   openGraph: {
     title: 'Austin City Tours - Город, который ты ещё не знаешь',
     description: 'Присоединяйтесь к экскурсиям и откройте для себя скрытые жемчужины, богатую историю и яркую культуру нашего города!',

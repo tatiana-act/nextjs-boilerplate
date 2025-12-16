@@ -2,14 +2,25 @@ import {PastTourEvent} from '@/types/tour';
 
 const pastTourEvents: PastTourEvent[] = [
     {
-        id: 'tour33',
+        id: 'tour34',
         tourProgramId: 'Acap',
-        date: '2025-12-13',
+        date: '2025-12-16',
         time: '10:30',
         price: 40,
-        bonus: "с посещением музея О'Генри",
+        bonus: '️с посещением Капитолия',
         eventUrl: '',
         eventImage: '',
+        feedbacks: []
+    },
+    {
+        id: 'tour31',
+        tourProgramId: 'Brmn',
+        date: '2025-12-15',
+        time: '11:00',
+        price: 40,
+        bonus: 'с посещением Шато Бельвью',
+        eventUrl: 'https://www.facebook.com/orlowa.tatiana/posts/pfbid0TjvQ5WjLa3KnVkHaZrmE2eyrDWVTDm6L5HRkVoCqe3vm7R2tMxzXS9hNDrMGWhg5l?__cft__[0]=AZajdAn_a34aXhLSfvZ0q0KKv_mwSgZ9PqgDtRzsNkmZ-hmYWdE7pRS0yJC_f_z1ufYMo38MikAECR5sIAzAWtCWp-fF5HMu1wj4iwpycdn9olImfTzKrCkfoSVLgO4n-TdwNdFACJX3nNePtRJuwMm5Zuljtq8xaAO8yG4AGo0C3w',
+        eventImage: '121525brm.jpg',
         feedbacks: []
     },
     {
@@ -19,6 +30,17 @@ const pastTourEvents: PastTourEvent[] = [
         time: '12:00',
         price: 30,
         bonus: '',
+        eventUrl: '',
+        eventImage: '',
+        feedbacks: []
+    },
+    {
+        id: 'tour33',
+        tourProgramId: 'Acap',
+        date: '2025-12-13',
+        time: '10:30',
+        price: 40,
+        bonus: "с посещением музея О'Генри",
         eventUrl: '',
         eventImage: '',
         feedbacks: []
