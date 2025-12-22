@@ -18,6 +18,14 @@ export const upcomingTours: UpcomingTourEvent[] = [
         bonus: 'с посещением Капитолия'
     },
     {
+        id: 'tour38',
+        tourProgramId: 'Hyde',
+        date: '2025-12-29',
+        time: '15:30',
+        price: 40,
+        bonus: 'посмотрим на Рождественские огни на 37-й улице'
+    },
+    {
         id: 'tour37',
         tourProgramId: 'Brmn',
         date: '2026-01-05',
