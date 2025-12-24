@@ -23,7 +23,7 @@ const UpcomingTourCard: React.FC<UpcomingTourCardProps> = ({
     };
 
   return (
-    <div className="upcoming-tour-card" onClick={handleClick} id={'upcoming-' + upcomingTour.id.valueOf()}>
+    <div className="upcoming-tour-card" onClick={handleClick} id={'tour-card-' + upcomingTour.id.valueOf()}>
       <div className="upcoming-tour-content">
         <h4 className="upcoming-tour-name">{tourName}</h4>
         <div className="upcoming-tour-details">

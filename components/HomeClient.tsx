@@ -6,6 +6,8 @@ import CalendarSection from "@/components/CalendarSection";
 import UpcomingToursSection from '@/components/UpcomingSection';
 import BookingManager from '@/components/BookingManager';
 import { TourProgram, UpcomingTourEvent } from '@/types/tour';
+import pastTours from '@/data/RecentTours';
+
 
 interface HomeClientProps {
     allTours: Map<string, TourProgram>;
@@ -19,7 +21,7 @@ const HomeClient: React.FC<HomeClientProps> = ({ allTours, tours, upcomingTours 
             {(handleBookTour) => (
                 <>
                     <ToursSection tours={tours} onBookTour={handleBookTour} />
-                    <CalendarSection allTours={allTours} upcomingTours={upcomingTours} />
+                    <CalendarSection allTours={allTours} upcomingTours={upcomingTours} recentTours={pastTours}/>
                     <UpcomingToursSection allTours={allTours} upcomingTours={upcomingTours} onReserveSpot={handleBookTour} />
                 </>
             )}

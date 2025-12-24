@@ -1,7 +1,7 @@
 'use client';
 
 import React  from 'react';
-import { TourProgram, UpcomingTourEvent } from '@/types/tour';
+import {PastTourEvent, TourProgram, UpcomingTourEvent} from '@/types/tour';
 import FullCalendar from '@fullcalendar/react'
 import dayGridPlugin from '@fullcalendar/daygrid'
 import MyConstants from "@/lib/MyConstants";
@@ -9,18 +9,20 @@ import MyConstants from "@/lib/MyConstants";
 interface CalendarSectionProps {
   allTours: ReadonlyMap<string, TourProgram>;
   upcomingTours: UpcomingTourEvent[];
+  recentTours: PastTourEvent[];
 }
 
 const CalendarSection: React.FC<CalendarSectionProps> = ({
   allTours,
-  upcomingTours
+  upcomingTours,
+  recentTours,
 }) => {
   const handleEventClick = (info: any) => {
-      document.getElementById('upcoming-' + info.event.extendedProps.eventId)?.scrollIntoView({ behavior: 'smooth' });
+      document.getElementById('tour-card-' + info.event.extendedProps.eventId)?.scrollIntoView({ behavior: 'smooth' });
       //document.getElementById(info.event.extendedProps.programId + "tour-card")?.scrollIntoView({ behavior: 'smooth' });
   }
 
-  const events = upcomingTours.map((ut)=> {
+  const futureEvents = upcomingTours.map((ut)=> {
       return {
           title: allTours.get(ut.tourProgramId)?.shortTitle || '',
           date: ut.date,
@@ -31,6 +33,19 @@ const CalendarSection: React.FC<CalendarSectionProps> = ({
           }
       }
   })
+
+    const pastEvents = recentTours.map((rt)=> {
+        return {
+            title: allTours.get(rt.tourProgramId)?.shortTitle || '',
+            date: rt.date,
+            allDay: true,
+            extendedProps: {
+                programId: rt.tourProgramId,
+                eventId: rt.id,
+            }
+        }
+    })
+    const events = pastEvents.concat(futureEvents);
   const initDate = upcomingTours.length === 0 ? new Date() : new Date(upcomingTours[0].date);
 
   return (

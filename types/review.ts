@@ -4,6 +4,7 @@ export interface Review {
     tourEventId: string;
     tourDate: string; // for tours that are not listed as public events
     reviewer: string;
-    reviewLink: string;
-    reviewImage: string;
+    text: string;
+    link: string;
+    image: string;
 }

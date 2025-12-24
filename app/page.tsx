@@ -9,6 +9,10 @@ import pastTours from '@/data/RecentTours';
 import { TourProgram } from '@/types/tour';
 import RecentEventsSection from '@/components/RecentEventsSection';
 import HomeClient from '@/components/HomeClient';
+import { getAllReviews } from "@/app/actions/readAllFeedbacks";
+import ReviewSection from "@/components/ReviewsSection";
+
+const allReviews = await getAllReviews();
 
 const Home: React.FC = () => {
   const allTours: Map<string, TourProgram> = new Map(
@@ -19,7 +23,8 @@ const Home: React.FC = () => {
     <main>
       <Hero />
       <HomeClient allTours={allTours} tours={tours} upcomingTours={upcomingTours} />
-      <RecentEventsSection pastTours={pastTours} allTours={allTours} />
+      <RecentEventsSection pastTours={pastTours} tours={tours} />
+      <ReviewSection reviews={allReviews} allTours={allTours} />
       <FAQSection faqs={faqs} />
       <Footer />
     </main>
