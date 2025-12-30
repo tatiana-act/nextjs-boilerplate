@@ -29,7 +29,7 @@ export const upcomingTours: UpcomingTourEvent[] = [
         id: 'tour37',
         tourProgramId: 'Brmn',
         date: '2026-01-05',
-        time: '11:00',
+        time: '12:00',
         price: 40,
         bonus: 'с посещением Шато Бельвью'
     },
