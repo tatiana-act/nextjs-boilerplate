@@ -2,14 +2,6 @@ import { UpcomingTourEvent } from '@/types/tour';
 
 export const upcomingTours: UpcomingTourEvent[] = [
     {
-        id: 'tour39',
-        tourProgramId: 'Acap',
-        date: '2026-01-02',
-        time: '14:30',
-        price: 40,
-        bonus: 'с посещением Капитолия',
-    },
-    {
         id: 'tour40',
         tourProgramId: 'Acap',
         date: '2026-01-03',
