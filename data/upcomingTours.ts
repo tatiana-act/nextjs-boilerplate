@@ -33,4 +33,44 @@ export const upcomingTours: UpcomingTourEvent[] = [
         price: 40,
         bonus: 'с посещением Шато Бельвью'
     },
+    {
+        id: 'tour42',
+        tourProgramId: 'Acap',
+        date: '2026-01-10',
+        time: '11:00',
+        price: 40,
+        bonus: 'с посещением Капитолия'
+    },
+    {
+        id: 'tour43',
+        tourProgramId: 'Hyde',
+        date: '2026-01-11',
+        time: '11:00',
+        price: 40,
+        bonus: ''
+    },
+    {
+        id: 'tour44',
+        tourProgramId: 'Acap',
+        date: '2026-01-18',
+        time: '11:00',
+        price: 40,
+        bonus: "с посещением музея О'Генри"
+    },
+    {
+        id: 'tour45',
+        tourProgramId: 'Gcrt',
+        date: '2026-01-24',
+        time: '11:00',
+        price: 40,
+        bonus: 'с посещением музея'
+    },
+    {
+        id: 'tour46',
+        tourProgramId: 'Brmn',
+        date: '2026-01-25',
+        time: '11:00',
+        price: 40,
+        bonus: "кофе-брейк в Phoebe's"
+    },
 ];
