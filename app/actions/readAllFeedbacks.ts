@@ -47,6 +47,6 @@ function convertToFeedbacks(values: string[][]): Review[] {
 
 export const getAllReviews = unstable_cache(
     fetchFromGoogle,
-    ['reviews-v3'],
+    ['reviews-v1'],
     { revalidate: 10800 }
 );
