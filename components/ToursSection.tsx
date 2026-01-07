@@ -37,6 +37,28 @@ const ToursSection: React.FC<ToursSectionProps> = ({ tours, onBookTour }) => {
     return () => mediaQuery.removeEventListener('change', handleResize);
   }, []);
 
+  useEffect(() => {
+    const handleShowAllAndScroll = (event: Event) => {
+      const customEvent = event as CustomEvent;
+      const tourId = customEvent.detail?.tourId;
+      if (tourId) {
+        setVisibleCount(tours.length);
+        setTimeout(() => {
+          const elementId = tourId + 'tour-card';
+          const element = document.getElementById(elementId);
+          element?.scrollIntoView({ behavior: 'smooth' });
+        }, 100);
+      }
+    };
+
+    window.addEventListener('show-all-tours-and-scroll', handleShowAllAndScroll);
+    return () =>
+      window.removeEventListener(
+        'show-all-tours-and-scroll',
+        handleShowAllAndScroll
+      );
+  }, [tours.length]);
+
   const handleLoadMore = () => {
     setVisibleCount(prev => prev + increment);
   };

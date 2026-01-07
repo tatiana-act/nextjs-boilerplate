@@ -15,12 +15,21 @@ const UpcomingTourCard: React.FC<UpcomingTourCardProps> = ({
   onReserveSpot
 }) => {
   const handleClick = () => {
-      document.getElementById(upcomingTour.tourProgramId + "tour-card")?.scrollIntoView({ behavior: 'smooth' });
+    const elementId = upcomingTour.tourProgramId + 'tour-card';
+    const element = document.getElementById(elementId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      const event = new CustomEvent('show-all-tours-and-scroll', {
+        detail: { tourId: upcomingTour.tourProgramId },
+      });
+      window.dispatchEvent(event);
+    }
   };
-    const handleReserveClick = (e: React.MouseEvent<HTMLButtonElement>) => {
-        e.stopPropagation();
-        onReserveSpot(upcomingTour.tourProgramId);
-    };
+  const handleReserveClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.stopPropagation();
+    onReserveSpot(upcomingTour.tourProgramId);
+  };
 
   return (
     <div className="upcoming-tour-card" onClick={handleClick} id={'tour-card-' + upcomingTour.id.valueOf()}>
@@ -36,9 +45,9 @@ const UpcomingTourCard: React.FC<UpcomingTourCardProps> = ({
           {upcomingTour.bonus && <div className="tour-highlights">{upcomingTour.bonus}</div>}
           {upcomingTour.price !== undefined && (<div className="tour-price">💲 {upcomingTour.price} долларов</div>)}
         </div>
-          <button className="book-button" onClick={handleReserveClick}>
-              Присоединиться
-          </button>
+        <button className="book-button" onClick={handleReserveClick}>
+          Присоединиться
+        </button>
       </div>
     </div>
   );
