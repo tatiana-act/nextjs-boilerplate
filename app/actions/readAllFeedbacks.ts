@@ -5,6 +5,7 @@ import { Review } from 'types/review'
 import { unstable_cache } from "next/cache";
 
 async function fetchFromGoogle(): Promise<Review[]> {
+    console.log('Fetching fresh reviews from Google Sheets...');
     let rawData: string[][];
     try {
         // Authenticate with Google
@@ -30,23 +31,25 @@ async function fetchFromGoogle(): Promise<Review[]> {
 
 function convertToFeedbacks(values: string[][]): Review[] {
     if (!values.length) return [];
-    return values.slice(1).map((row) => {
+    return values.slice(1).map((row, index) => {
+        const approved = (row[4] || "").length > 0;
+        const text = approved ? (row[5] || "") : "";
         const obj: Review = {
-            id: (!!row[4] ? "string" : ""),
+            id: index.toString(),
             tourProgramId: row[2],
             tourEventId: "string",
             tourDate: row[3],
             reviewer: row[0],
             link: "",
             image: "",
-            text: row[5],
+            text: text,
         }
         return obj;
-    }).filter((review: Review) => review.id !== "" && review.reviewer !== "Имя" && review.reviewer !== "Name");
+    }).filter((review: Review) => review.id !== "" && review.text.length > 0);
 }
 
 export const getAllReviews = unstable_cache(
     fetchFromGoogle,
-    ['reviews-v1'],
-    { revalidate: 10800 }
+    ['reviews-v4'],
+    { revalidate: 10 }
 );
