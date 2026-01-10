@@ -57,6 +57,7 @@ const CalendarSection: React.FC<CalendarSectionProps> = ({
         plugins={[
         dayGridPlugin,
         ]}
+        firstDay={1}
         headerToolbar={{
             left: 'prev,next',
             center: 'title'

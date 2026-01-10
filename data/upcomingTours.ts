@@ -18,14 +18,6 @@ export const upcomingTours: UpcomingTourEvent[] = [
         bonus: 'изысканный обед прямо в здании театра'
     },
     {
-        id: 'tour43',
-        tourProgramId: 'Hyde',
-        date: '2026-01-18',
-        time: '11:00',
-        price: 40,
-        bonus: ''
-    },
-    {
         id: 'tour50',
         tourProgramId: 'Brmn',
         date: '2026-01-19',
@@ -47,14 +39,22 @@ export const upcomingTours: UpcomingTourEvent[] = [
         date: '2026-01-24',
         time: '11:00',
         price: 40,
-        bonus: 'с посещением музея'
+        bonus: 'с посещением музея',
     },
     {
         id: 'tour47',
-        tourProgramId: 'Auhnry',
+        tourProgramId: 'Acap',
         date: '2026-01-25',
-        time: '11:00',
+        time: '12:00',
         price: 40,
-        bonus: ""
-    }
+        bonus: 'с посещением Капитолия',
+    },
+    {
+        id: 'tour43',
+        tourProgramId: 'Milt',
+        date: '2026-02-07',
+        time: '16:30',
+        price: 40,
+        bonus: 'изысканный обед прямо в здании театра',
+    },
 ];
