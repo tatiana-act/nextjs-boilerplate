@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import Link from 'next/link';
+import { Link } from '@/i18n/routing';
+import LanguageSwitcher from './LanguageSwitcher';
 
 const Header: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState<boolean>(false);
@@ -16,11 +17,10 @@ const Header: React.FC = () => {
 
   return (
     <header
-      className={`fixed w-full top-0 z-50 transition-all duration-300 ${
-        isScrolled
-          ? 'bg-white/95 backdrop-blur-md'
-          : 'bg-white/10 backdrop-blur-sm'
-      }`}
+      className={`fixed w-full top-0 z-50 transition-all duration-300 ${isScrolled
+        ? 'bg-white/95 backdrop-blur-md'
+        : 'bg-white/10 backdrop-blur-sm'
+        }`}
     >
       <nav className="max-w-6xl mx-auto px-4 py-4">
         <div className="flex justify-between items-center">
@@ -31,7 +31,7 @@ const Header: React.FC = () => {
             🌆 Discover Tours
           </Link>
 
-          <ul className="hidden md:flex space-x-8">
+          <ul className="hidden md:flex space-x-8 items-center">
             {navItems.map(item => (
               <li key={item}>
                 <a
@@ -42,6 +42,9 @@ const Header: React.FC = () => {
                 </a>
               </li>
             ))}
+            <li>
+              <LanguageSwitcher />
+            </li>
           </ul>
         </div>
       </nav>

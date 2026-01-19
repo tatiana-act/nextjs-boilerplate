@@ -1,7 +1,11 @@
 import type { Metadata } from 'next';
 import { Analytics } from '@vercel/analytics/next';
-import './globals.css';
+import '../globals.css';
 import React from "react";
+import { NextIntlClientProvider } from 'next-intl';
+import { getMessages } from 'next-intl/server';
+import { notFound } from 'next/navigation';
+import { routing } from '@/i18n/routing';
 
 import type { Graph } from 'schema-dts';
 
@@ -80,21 +84,36 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
+  params
 }: {
   children: React.ReactNode;
+  params: Promise<{ locale: string }>;
 }) {
+  const { locale } = await params;
+
+  // Ensure that the incoming `locale` is valid
+  if (!routing.locales.includes(locale as any)) {
+    notFound();
+  }
+
+  // Providing all messages to the client
+  // side is the easiest way to get started
+  const messages = await getMessages();
+
   return (
-    <html lang="ru">
+    <html lang={locale}>
       <body>
-      {/*<script
+        {/*<script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify(graph).replace(/</g, '\\u003c'),
           }}
         />*/}
-        {children}
+        <NextIntlClientProvider messages={messages}>
+          {children}
+        </NextIntlClientProvider>
         <Analytics />
       </body>
     </html>

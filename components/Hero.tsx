@@ -2,6 +2,7 @@
 
 import React from 'react';
 import MyConstants from './../lib/MyConstants'
+import LanguageSwitcher from './LanguageSwitcher';
 
 const Hero: React.FC = () => {
   const scrollToSection = (sectionId: string) => {
@@ -25,6 +26,8 @@ const Hero: React.FC = () => {
         <button className="cta-button" onClick={() => scrollToSection(MyConstants.idContactInfo)}>
           Контакты
         </button>
+        <br />
+        <LanguageSwitcher />
       </div>
     </section>
   );
