@@ -200,6 +200,7 @@ body {
     color: #666;
     margin-bottom: 1.5rem;
     line-height: 1.6;
+    white-space: pre-wrap;
 }
 
 .tour-highlights {

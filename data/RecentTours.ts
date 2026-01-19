@@ -2,6 +2,17 @@ import {PastTourEvent} from '@/types/tour';
 
 const pastTourEvents: PastTourEvent[] = [
     {
+        id: 'tour50',
+        tourProgramId: 'Brmn',
+        date: '2026-01-19',
+        time: '11:00',
+        price: 40,
+        bonus: "с посещением Шато Бельвью",
+        eventUrl: '',
+        eventImage: '',
+        feedbacks: []
+    },
+    {
         id: 'tour49',
         tourProgramId: 'Milt',
         date: '2026-01-17',
