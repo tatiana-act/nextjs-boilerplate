@@ -30,8 +30,8 @@ export const upcomingTours: UpcomingTourEvent[] = [
         tourProgramId: 'Haust',
         date: '2026-02-15',
         time: '11:00',
-        price: 40,
-        bonus: "с посещением Шато Бельвью"
+        price: 30,
+        bonus: ""
     },
     {
         id: 'tour52',
