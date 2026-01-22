@@ -105,12 +105,6 @@ export default async function RootLayout({
   return (
     <html lang={locale}>
       <body>
-        {/*<script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(graph).replace(/</g, '\\u003c'),
-          }}
-        />*/}
         <NextIntlClientProvider messages={messages}>
           {children}
         </NextIntlClientProvider>
