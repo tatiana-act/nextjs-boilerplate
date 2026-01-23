@@ -44,3 +44,7 @@ next-env.d.ts
 /.idea/copilot.data.migration.agent.xml
 /.idea/copilot.data.migration.edit.xml
 /opencode.exe
+/.idea/codeStyles/codeStyleConfig.xml
+/.idea/prettier.xml
+/.idea/codeStyles/Project.xml
+/.idea/inspectionProfiles/Project_Default.xml
