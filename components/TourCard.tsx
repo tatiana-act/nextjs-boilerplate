@@ -11,6 +11,16 @@ interface TourCardProps {
 const TourCard: React.FC<TourCardProps> = ({ tour, onBookTour, isCompact = false }) => {
   const [isExpanded, setIsExpanded] = useState(false);
   const longPressTimer = useRef<NodeJS.Timeout | null>(null);
+  const prevExpanded = useRef(isExpanded);
+
+  useEffect(() => {
+    if (prevExpanded.current && !isExpanded) {
+      const elementId = tour.id.valueOf() + 'tour-card';
+      const element = document.getElementById(elementId);
+      element?.scrollIntoView({ behavior: 'smooth' });
+    }
+    prevExpanded.current = isExpanded;
+  }, [isExpanded, tour.id]);
 
   const handleBookClick = () => {
     onBookTour(tour.id);
@@ -30,17 +40,7 @@ const TourCard: React.FC<TourCardProps> = ({ tour, onBookTour, isCompact = false
   };
 
   const toggleExpand = () => {
-    let element : HTMLElement | null = null
-    if (isExpanded) {
-      const elementId = tour.id.valueOf() + 'tour-card';
-      element = document.getElementById(elementId);
-    }
     setIsExpanded(!isExpanded);
-    if (element) {
-      useEffect(() => {
-        element.scrollIntoView({ behavior: 'smooth' });
-        });
-    }
   };
 
   const showDetails = !isCompact || isExpanded;
@@ -69,7 +69,7 @@ const TourCard: React.FC<TourCardProps> = ({ tour, onBookTour, isCompact = false
             {showDetails && <div className="tour-meta">
               <span>⏱️ {tour.duration}</span>
               {/*<span>🚶 {tour.difficulty}</span>*/}
-              </div>
+            </div>
             }
           </div>
           {/*<div className="tour-price">${tour.price}</div>*/}
@@ -112,9 +112,9 @@ const TourCard: React.FC<TourCardProps> = ({ tour, onBookTour, isCompact = false
             )}
           </>
         ) : (
-          <div className="mt-4 text-center">
-            <button onClick={toggleExpand} className="text-blue-500 hover:text-blue-700 underline font-medium">
-              Подробнее...
+          <div className="mt-4 flex justify-end">
+            <button onClick={toggleExpand} className="book-button !w-auto">
+              Подробнее
             </button>
           </div>
         )}
