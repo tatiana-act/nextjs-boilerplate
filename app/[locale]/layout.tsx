@@ -1,9 +1,8 @@
-import type { Metadata } from 'next';
 import { Analytics } from '@vercel/analytics/next';
 import '../globals.css';
 import React from "react";
 import { NextIntlClientProvider } from 'next-intl';
-import { getMessages } from 'next-intl/server';
+import { getMessages, getTranslations } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import { routing } from '@/i18n/routing';
 
@@ -43,46 +42,60 @@ const graph: Graph = {
   ],
 };
 
-export const metadata: Metadata = {
-  metadataBase: new URL('https://austin-city-tours.vercel.app'),
-  title: {
-    default: 'Austin City Tours - Город, который ты ещё не знаешь',
-    template: '%s | Austin City Tours',
-  },
-  description:
-    'Присоединяйтесь к экскурсиям и откройте для себя скрытые жемчужины, богатую историю и яркую культуру нашего города!',
-  keywords: ['Остин', 'Техас', 'экскурсии', 'русский гид', 'туры', 'путешествия', 'Austin', 'Texas', 'tours', 'guide'],
-  verification: {
-    google: "B7Ct-qStJLf0MwYWx5zZwurbBgaNG14Zr_uRJkOJaiQ"
-  },
-  openGraph: {
-    title: 'Austin City Tours - Город, который ты ещё не знаешь',
-    description: 'Присоединяйтесь к экскурсиям и откройте для себя скрытые жемчужины, богатую историю и яркую культуру нашего города!',
-    url: 'https://austin-city-tours.vercel.app',
-    siteName: 'Austin City Tours',
-    images: [
-      {
-        url: '/acustom.jpg',
-        width: 696,
-        height: 524,
-        alt: 'Austin City Tours',
+export async function generateMetadata({
+  params
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: 'Metadata' });
+
+  return {
+    metadataBase: new URL('https://austin-city-tours.vercel.app'),
+    title: {
+      default: t('title'),
+      template: '%s | Austin City Tours',
+    },
+    description: t('description'),
+    keywords: t('keywords').split(',').map((k: string) => k.trim()),
+    verification: {
+      google: "B7Ct-qStJLf0MwYWx5zZwurbBgaNG14Zr_uRJkOJaiQ"
+    },
+    openGraph: {
+      title: t('title'),
+      description: t('description'),
+      url: 'https://austin-city-tours.vercel.app',
+      siteName: 'Austin City Tours',
+      images: [
+        {
+          url: '/acustom.jpg',
+          width: 696,
+          height: 524,
+          alt: 'Austin City Tours',
+        },
+      ],
+      locale: locale === 'ru' ? 'ru_RU' : 'en_US',
+      type: 'website',
+    },
+    alternates: {
+      languages: {
+        'en': '/en',
+        'ru': '/ru',
       },
-    ],
-    locale: 'ru_RU',
-    type: 'website',
-  },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
+    },
+    robots: {
       index: true,
       follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
+      googleBot: {
+        index: true,
+        follow: true,
+        'max-video-preview': -1,
+        'max-image-preview': 'large',
+        'max-snippet': -1,
+      },
     },
-  },
-};
+  };
+}
 
 export default async function RootLayout({
   children,

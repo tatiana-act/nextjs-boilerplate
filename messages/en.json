@@ -8,6 +8,11 @@
         "en": "English",
         "ru": "Russian"
     },
+    "Metadata": {
+        "title": "Austin City Tours - The city you don't know yet",
+        "description": "Join our tours and discover the hidden gems, rich history, and vibrant culture of our city!",
+        "keywords": "Austin, Texas, tours, guide, travel, history, culture"
+    },
     "Hero": {
         "title": "Discover Austin",
         "description": "Join our tours and discover the hidden gems, rich history, and vibrant culture of our city!",
