@@ -1,10 +1,12 @@
 'use client';
 
 import React from 'react';
+import { useTranslations } from 'next-intl';
 import MyConstants from './../lib/MyConstants'
 import LanguageSwitcher from './LanguageSwitcher';
 
 const Hero: React.FC = () => {
+  const t = useTranslations('Hero');
   const scrollToSection = (sectionId: string) => {
     document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
   };
@@ -12,22 +14,21 @@ const Hero: React.FC = () => {
   return (
     <section className="hero">
       <div className="hero-content">
-        <h1>Открой для себя Остин</h1>
-        <p>
-          Присоединяйтесь к экскурсиям и откройте для себя скрытые жемчужины,
-          богатую историю и яркую культуру нашего города!
-        </p>
+        <h1>{t('title')}</h1>
+        <p>{t('description')}</p>
         <button className="cta-button" onClick={() => scrollToSection(MyConstants.idTours)}>
-          Наши экскурсии
+          {t('tours')}
         </button>
         <button className="cta-button" onClick={() => scrollToSection(MyConstants.idCalendar)}>
-          Календарь
+          {t('calendar')}
         </button>
         <button className="cta-button" onClick={() => scrollToSection(MyConstants.idContactInfo)}>
-          Контакты
+          {t('contacts')}
         </button>
         <br />
-        <LanguageSwitcher />
+        <div className="absolute top-4 right-4 z-50 md:top-6 md:right-8">
+          <LanguageSwitcher />
+        </div>
       </div>
     </section>
   );

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { TourProgram } from '@/types/tour';
 import TourCard from './TourCard';
+import {useTranslations} from "next-intl";
 
 interface ToursSectionProps {
   tours: TourProgram[];
@@ -87,11 +88,12 @@ const ToursSection: React.FC<ToursSectionProps> = ({ tours, onBookTour }) => {
   };
 
   const visibleTours = tours.slice(0, visibleCount);
+  const t = useTranslations('ToursSection');
 
   return (
     <section id="tours" className="section">
       <div className="container">
-        <h2 className="section-title">Наши экскурсии</h2>
+        <h2 className="section-title">{t('title')}</h2>
         <div className="tours-grid">
           {visibleTours.map(tour => (
             <TourCard
@@ -105,11 +107,10 @@ const ToursSection: React.FC<ToursSectionProps> = ({ tours, onBookTour }) => {
         {visibleCount < tours.length && !isMobile && (
           <div className="flex justify-center mt-8">
             <button onClick={handleLoadMore} className="cta-button">
-              Показать ещё туры
+              {t('btnMore')}
             </button>
           </div>
         )}
-
       </div>
     </section>
   );

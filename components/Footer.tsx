@@ -1,13 +1,15 @@
 import React from 'react';
 import { FaFacebook, FaTelegram, FaInstagram, FaPhone, FaEnvelope } from 'react-icons/fa';
+import {useTranslations} from "next-intl";
 
 const Footer: React.FC = () => {
+  const t = useTranslations('Footer');
   return (
     <footer className="footer">
       <div className="container">
         <div className="footer-content">
           <h3>Austin City Tours</h3>
-          <p>Лучшие впечатления начинаются здесь</p>
+          <p>{t('title')}</p>
           <div className="contact-info" id="contactInfoSection">
             <div className="contact-item">
               <span><FaPhone color="#25D366" /></span>
@@ -23,7 +25,7 @@ const Footer: React.FC = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  austin.guide
+                  Instagram
                 </a>
               </span>
             </div>
@@ -35,7 +37,7 @@ const Footer: React.FC = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  telegram
+                  Telegram
                 </a>
               </span>
             </div>
@@ -47,7 +49,7 @@ const Footer: React.FC = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  facebook
+                  Facebook
                 </a>
               </span>
             </div>

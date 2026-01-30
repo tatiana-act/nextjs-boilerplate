@@ -31,7 +31,7 @@ export const upcomingTours: UpcomingTourEvent[] = [
     date: '2026-02-07',
     time: '11:00',
     price: 40,
-    bonus: 'с посещением музея',
+    bonus: 'bonusMuseum',
   },
   {
     id: 'tour43',
@@ -55,6 +55,6 @@ export const upcomingTours: UpcomingTourEvent[] = [
     date: '2026-02-16',
     time: '11:00',
     price: 40,
-    bonus: 'с посещением Шато Бельвью',
+    bonus: 'bonusChat',
   },
 ];

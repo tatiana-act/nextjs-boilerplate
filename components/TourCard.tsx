@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { TourProgram } from '@/types/tour';
 import Image from 'next/image';
+import {useTranslations} from "next-intl";
 
 interface TourCardProps {
   tour: TourProgram;
@@ -44,6 +45,7 @@ const TourCard: React.FC<TourCardProps> = ({ tour, onBookTour, isCompact = false
   };
 
   const showDetails = !isCompact || isExpanded;
+  const t = useTranslations('ToursSection');
 
   return (
     <div className="tour-card" id={tour.id.valueOf() + 'tour-card'}>
@@ -80,7 +82,7 @@ const TourCard: React.FC<TourCardProps> = ({ tour, onBookTour, isCompact = false
             <p className="tour-description">{tour.description}</p>
 
             <div className="tour-highlights">
-              <h4 className="highlights-title">Вам понравится:</h4>
+              <h4 className="highlights-title">{t('youLike')}</h4>
               <ul className="highlights-list">
                 {tour.highlights.slice(0, 4).map((highlight, index) => (
                   <li key={index}>{highlight}</li>
@@ -91,7 +93,7 @@ const TourCard: React.FC<TourCardProps> = ({ tour, onBookTour, isCompact = false
             {tour.extra && <div className="tour-highlights">{tour.extra}</div>}
 
             <div className="meeting-point">
-              <strong>Место встречи:</strong>{' '}
+              <strong>{t('meetingPoint')}</strong>{' '}
               {tour.meetingPointLink.trim() === '' ? <span>{tour.meetingPoint}</span> :
                 <a href={tour.meetingPointLink} target="_blank">
                   📍{tour.meetingPoint}📍
@@ -100,13 +102,13 @@ const TourCard: React.FC<TourCardProps> = ({ tour, onBookTour, isCompact = false
             </div>
             <div className="button-container">
               <button className="book-button" onClick={handleBookClick}>
-                Запись на экскурсию
+                {t('reserve')}
               </button>
             </div>
             {isCompact && (
               <div className="mt-4 text-center">
                 <button onClick={toggleExpand} className="text-blue-500 hover:text-blue-700 underline text-sm">
-                  Свернуть
+                  {t('collapse')}
                 </button>
               </div>
             )}
@@ -114,7 +116,7 @@ const TourCard: React.FC<TourCardProps> = ({ tour, onBookTour, isCompact = false
         ) : (
           <div className="mt-4 flex justify-end">
             <button onClick={toggleExpand} className="book-button !w-auto">
-              Подробнее
+              {t('expand')}
             </button>
           </div>
         )}

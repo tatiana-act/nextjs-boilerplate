@@ -18,18 +18,24 @@ export default function LanguageSwitcher() {
     };
 
     return (
-        <div className="flex gap-2">
+        <div className="flex gap-4">
             <button
-                disabled={isPending}
-                className={`px-3 py-1 rounded ${locale === 'en' ? 'bg-blue-600 text-white' : 'bg-gray-200'}`}
+                className={`text-2xl font-bold transition-all duration-200 ${locale === 'en'
+                    ? 'text-yellow-400 scale-110'
+                    : 'text-white hover:text-yellow-200'
+                    }`}
                 onClick={() => onSelectChange('en')}
+                disabled={isPending}
             >
                 {t('en')}
             </button>
             <button
-                disabled={isPending}
-                className={`px-3 py-1 rounded ${locale === 'ru' ? 'bg-blue-600 text-white' : 'bg-gray-200'}`}
+                className={`text-2xl font-bold transition-all duration-200 ${locale === 'ru'
+                    ? 'text-yellow-400 scale-110'
+                    : 'text-white hover:text-yellow-200'
+                    }`}
                 onClick={() => onSelectChange('ru')}
+                disabled={isPending}
             >
                 {t('ru')}
             </button>

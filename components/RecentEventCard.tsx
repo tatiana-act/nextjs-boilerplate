@@ -6,15 +6,17 @@ import { formatDateToUserLocale } from '@/lib/utils';
 import Popup from "reactjs-popup";
 import FeedbackForm from "@/components/FeedbackForm";
 import AboutTour from "@/components/AboutTour";
+import {useTranslations} from "next-intl";
 
 interface PastTourCardProps {
     tour: PastTourEvent;
     tourName: string;
+    locale: string;
 }
 
-const RecentEventCard: React.FC<PastTourCardProps> = ({ tour, tourName }) => {
+const RecentEventCard: React.FC<PastTourCardProps> = ({ tour, tourName, locale }) => {
     const [openPopupIndex, setOpenPopupIndex] = useState(0);
-
+    const t = useTranslations('Recent');
     const handleDetailsClick = (e: React.MouseEvent<HTMLButtonElement>) => {
         e.preventDefault();
         setOpenPopupIndex(1);
@@ -60,16 +62,16 @@ const RecentEventCard: React.FC<PastTourCardProps> = ({ tour, tourName }) => {
             <div className="upcoming-tour-content">
                 <h4 className="upcoming-tour-name">{tourName}</h4>
                 <div className="upcoming-tour-details tour-datetime flex items-center">
-                    <span>📅 {formatDateToUserLocale(tour.date)}</span>
+                    <span>📅 {formatDateToUserLocale(tour.date, locale)}</span>
                     {tour.eventUrl && tour.eventImage &&
                         <button onClick={handleDetailsClick}
                             className="text-indigo-500 hover:text-indigo-700 text-sm font-medium focus:outline-none ml-2 cursor-pointer"
-                        >Об этой экскурсии</button>
+                        >{t('review')}</button>
                     }
                 </div>
 
                 {isRecentTour(tour) && <button className="book-button" onClick={handleFeedbackClick}>
-                    Оставить свой отзыв
+                    {t('feedback')}
                 </button>
                 }
             </div>

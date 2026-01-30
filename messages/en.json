@@ -3,16 +3,75 @@
         "title": "Austin City Tours",
         "description": "Discover the hidden gems, rich history, and vibrant culture of our city!"
     },
-    "Navigation": {
-        "home": "Home",
-        "tours": "Tours",
-        "about": "About",
-        "faq": "FAQ",
-        "contact": "Contact"
-    },
     "LanguageSwitcher": {
         "label": "Language",
         "en": "English",
         "ru": "Russian"
+    },
+    "Hero": {
+        "title": "Discover Austin",
+        "description": "Join our tours and discover the hidden gems, rich history, and vibrant culture of our city!",
+        "tours": "Our Tours",
+        "calendar": "Calendar",
+        "contacts": "Contact"
+    },
+    "ToursSection": {
+        "title": "Our tours",
+        "btnMore": "Load more tours",
+        "expand": "Expand",
+        "collapse": "Collapse",
+        "youLike": "You will love it:",
+        "meetingPoint": "Meeting point:",
+        "reserve": "Reserve"
+    },
+    "Calendar": {
+        "title": "Tours calendar"
+    },
+    "Reviews": {
+        "title": "Customer reviews"
+    },
+    "FAQ": {
+        "title": "Frequently asked questions"
+    },
+    "Upcoming": {
+        "title": "Scheduled tours",
+        "currency": " USD",
+        "join": "Join this tour",
+        "bonusMuseum": "Includes the museum",
+        "bonusHenryMuseum": "Includes the O. Henry Museum",
+        "bonusCap": "Includes the Texas State Capitol!",
+        "bonusChat": "Includes The Chateau Bellevue!",
+        "bonusMillet": "Includes the gourmet lunch"
+    },
+    "Recent": {
+        "title": "Past tours",
+        "load": "Show more",
+        "feedback": "Leave your review",
+        "review": "About this tour"
+    },
+    "AboutTour": {
+        "fb": "View on Facebook"
+    },
+    "FeedbackForm": {
+        "title": "Tour review",
+        "yourName": "Your name",
+        "body": "Thank you so much for joining the tour {tour}! Please share your impressions:",
+        "text": "Your review",
+        "submit": "Submit",
+        "pending": "Recording..."
+    },
+    "ContactForm": {
+        "title": "Contact information",
+        "body": "I'm thrilled you're interested in {tour}! To start the reservation, please share your info:",
+        "yourName": "Your name",
+        "email": "Email address",
+        "phone": "Phone number",
+        "tg": "Telegram username",
+        "what": "I use WhatsApp",
+        "submit": "Submit",
+        "pending": "Recording..."
+    },
+    "Footer": {
+        "title": "Where the best experiences begin"
     }
 }

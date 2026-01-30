@@ -5,6 +5,7 @@ import { z } from 'zod';
 import { useActionState } from 'react';
 import { submitContactForm } from '@/app/actions/submitContact'
 import {contactFormSchema, contactFormInitState} from '@/app/zschema'
+import {useTranslations} from "next-intl";
 interface ContactFormProps {
     tourName: string,
     onClose: () => void;
@@ -19,7 +20,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ tourName, onClose }) => {
         resolver: zodResolver(contactFormSchema),
     });
     const [state, formAction, isPending] = useActionState(submitContactForm, contactFormInitState);
-
+    const t = useTranslations('ContactForm');
     useEffect(() => {
         if (state.success) {
             onClose();
@@ -36,39 +37,39 @@ const ContactForm: React.FC<ContactFormProps> = ({ tourName, onClose }) => {
     }, [state, setValue]);
     return (
         <form action={formAction}>
-            <h3 className="tour-header">Контактная информация</h3>
+            <h3 className="tour-header">{t('title')}</h3>
             <div className="form-body">
-            <div className="tour-body">Я очень рада, что вас интересует {tourName}. Чтобы присоединиться, оставьте свои контакты:</div>
+            <div className="tour-body">{t('body', {tour: tourName})}</div>
             <div className="mb-4">
-                <label className="grid gap-1">Ваше имя&nbsp;&nbsp;
+                <label className="grid gap-1">{t('yourName')}&nbsp;&nbsp;
                 <input className="p-2 border border-gray-300 rounded" {...register('name')} />
                 {errors.name && <div className="form-error">{errors.name.message}</div>}
                 </label>
             </div>
             <div className="mb-4">
             <label className="grid gap-1">
-                Адрес эл почты&nbsp;&nbsp;
+                {t('email')}&nbsp;&nbsp;
                 <input className="p-2 border border-gray-300 rounded" {...register('email')} />
                 {errors.email && <div className="form-error">{errors.email.message}</div>}
             </label>
             </div>
             <div className="mb-4">
             <label className="grid gap-1">
-                Номер телефона&nbsp;&nbsp;
+                {t('phone')}&nbsp;&nbsp;
                 <input className="p-2 border border-gray-300 rounded" {...register('phone')} />
                 {errors.phone && <div className="form-error">{errors.phone.message}</div>}
             </label>
             </div>
             <div className="mb-4">
                 <label className="grid gap-1">
-                    Ник в Telegram&nbsp;&nbsp;
+                    {t('tg')}&nbsp;&nbsp;
                     <input className="p-2 border border-gray-300 rounded" {...register('telegram')} />
                     {errors.telegram && <div className="form-error">{errors.telegram.message}</div>}
                 </label>
             </div>
             <div className="mb-4">
             <label>
-                <input type="checkbox" {...register('whatsapp')} />&nbsp;Я использую Whatsapp
+                <input type="checkbox" {...register('whatsapp')} />&nbsp;{t('what')}
             </label>
             </div>
             </div>
@@ -76,7 +77,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ tourName, onClose }) => {
             {/* Display server errors */}
             {!state.success && state?.errMessage && <div className="mb-4"><div className="form-error">{state.errMessage}</div></div>}
             <button type="submit" disabled={isPending} className="book-button">
-                {isPending ? 'Выполняется запись...' : 'Отправить'}
+                {isPending ? t('pending') : t('submit')}
             </button>
         </form>
     );

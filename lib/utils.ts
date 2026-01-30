@@ -1,6 +1,6 @@
 export function formatDateToUserLocale(
   dateString: string,
-  locale?: string,
+  locale: string,
 ): string {
   // Validate the date string format (YYYY-MM-DD)
   const dateRegex = /^\d{4}-\d{2}-\d{2}$/;

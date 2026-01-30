@@ -6,6 +6,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { useActionState } from 'react';
 import {feedbackFormSchema, feedbackFormInitState, FeedbackFormData} from '@/app/zfdschema'
 import {submitFeedbackForm} from "@/app/actions/sendFeedback";
+import {useTranslations} from "next-intl";
 
 interface FeedbackFormProps {
     tourName: string,
@@ -19,6 +20,7 @@ const FeedbackForm: React.FC<FeedbackFormProps> = ({ tourName, tourId, date, onC
         resolver: zodResolver(feedbackFormSchema),
     });
     const [state, formAction, isPending] = useActionState(submitFeedbackForm, feedbackFormInitState);
+    const t = useTranslations('FeedbackForm');
 
     useEffect(() => {
         if (state.success) {
@@ -36,12 +38,11 @@ const FeedbackForm: React.FC<FeedbackFormProps> = ({ tourName, tourId, date, onC
     return (
         // <div className="tour-body">Большое спасибо, что вы посетили тур "{tourName}". Пожалуйста опишите свои впечатления:</div>
         <form action={formAction}>
-            <h3 className="tour-header">Отзыв об экскурсии</h3>
-            <div className="form-body">
-            Большое спасибо, что вы посетили тур &quot;{tourName}&quot;. Пожалуйста опишите свои впечатления:
+            <h3 className="tour-header">{t('title')}</h3>
+            <div className="form-body">{t('body', {tour: tourName})}
             <div>
                 <label htmlFor="name" className="block text-sm font-bold mb-2">
-                    Ваше имя
+                  {t('yourName')}
                 </label>
                 <input
                     type="text"
@@ -51,17 +52,11 @@ const FeedbackForm: React.FC<FeedbackFormProps> = ({ tourName, tourId, date, onC
                     {...register('name')}
                     className="w-full p-3 rounded-lg bg-white/90 text-gray-800 focus:outline-none focus:ring-2 focus:ring-yellow-400"
                 />
-                {/*
-                <label className="form-label">Ваше имя&nbsp;&nbsp;
-                <input className="p-2 border border-gray-300 rounded" {...register('name')} />
-                {errors.name && <div className="form-error">{errors.name.message}</div>}
-                </label>
-                */}
             </div>
             <div className="mb-4">
                 <label className="block text-sm font-bold mb-2">Ваш отзыв</label>
                 <textarea
-                    placeholder="Текст"
+                    placeholder={t('text')}
                     rows={7}
                     className="w-full p-3 rounded-lg bg-white/90 text-gray-800 focus:outline-none focus:ring-2 focus:ring-yellow-400"
                     {...register('text')}
@@ -75,7 +70,7 @@ const FeedbackForm: React.FC<FeedbackFormProps> = ({ tourName, tourId, date, onC
             {/* Display server errors */}
             {!state.success && state?.errMessage && <div className="mb-4"><div className="form-error">{state.errMessage}</div></div>}
             <button type="submit" disabled={isPending} className="book-button">
-                {isPending ? 'Выполняется запись...' : 'Отправить'}
+                {isPending ? t('pending') : t('submit')}
             </button>
         </form>
     );

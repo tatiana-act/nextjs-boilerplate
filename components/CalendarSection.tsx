@@ -5,17 +5,20 @@ import {PastTourEvent, TourProgram, UpcomingTourEvent} from '@/types/tour';
 import FullCalendar from '@fullcalendar/react'
 import dayGridPlugin from '@fullcalendar/daygrid'
 import MyConstants from "@/lib/MyConstants";
+import {useTranslations} from "next-intl";
 
 interface CalendarSectionProps {
   allTours: ReadonlyMap<string, TourProgram>;
   upcomingTours: UpcomingTourEvent[];
   recentTours: PastTourEvent[];
+  locale: string;
 }
 
 const CalendarSection: React.FC<CalendarSectionProps> = ({
   allTours,
   upcomingTours,
   recentTours,
+  locale
 }) => {
   const handleEventClick = (info: any) => {
       document.getElementById('tour-card-' + info.event.extendedProps.eventId)?.scrollIntoView({ behavior: 'smooth' });
@@ -34,35 +37,36 @@ const CalendarSection: React.FC<CalendarSectionProps> = ({
       }
   })
 
-    const pastEvents = recentTours.map((rt)=> {
-        return {
-            title: allTours.get(rt.tourProgramId)?.shortTitle || '',
-            date: rt.date,
-            allDay: true,
-            extendedProps: {
-                programId: rt.tourProgramId,
-                eventId: rt.id,
-            }
+  const pastEvents = recentTours.map((rt)=> {
+      return {
+          title: allTours.get(rt.tourProgramId)?.shortTitle || '',
+          date: rt.date,
+          allDay: true,
+          extendedProps: {
+            programId: rt.tourProgramId,
+            eventId: rt.id,
+          }
         }
     })
-    const events = pastEvents.concat(futureEvents);
+  const events = pastEvents.concat(futureEvents);
   const initDate = upcomingTours.length === 0 ? new Date() : new Date(upcomingTours[0].date);
+  const t = useTranslations('Calendar');
 
   return (
       <section className="section upcoming-tours-section" id={MyConstants.idCalendar}>
          <div className="container">
-              <h2 className="section-title">Календарь событий</h2>
+              <h2 className="section-title">{t('title')}</h2>
              <div className="tours-grid">
               <FullCalendar
         plugins={[
         dayGridPlugin,
         ]}
-        firstDay={1}
+        firstDay={locale == 'ru' ? 1 : 7}
         headerToolbar={{
             left: 'prev,next',
             center: 'title'
         }}
-        locale={'ru-RU'}
+        locale={locale}
         initialView='dayGridMonth'
         initialDate={initDate}
         nowIndicator={true}

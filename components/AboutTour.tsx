@@ -2,6 +2,8 @@
 
 import React, { useState, useEffect } from "react";
 import Image from 'next/image';
+import { FaFacebook } from 'react-icons/fa';
+import {useTranslations} from "next-intl";
 
 interface AboutTourProps {
     eventUrl: string,
@@ -11,6 +13,7 @@ interface AboutTourProps {
 
 const AboutTour: React.FC<AboutTourProps> = ({ eventImage, eventUrl, tourName }) => {
     const [dimensions, setDimensions] = useState<{ w: number; h: number } | null>(null);
+    const t = useTranslations('AboutTour');
     useEffect(() => {
         const img = new window.Image();
         img.src = eventImage;
@@ -27,14 +30,12 @@ const AboutTour: React.FC<AboutTourProps> = ({ eventImage, eventUrl, tourName })
         );
     }
     return <div className="form-body">
-                <a
-                    href={eventUrl}
+        <span><FaFacebook color="#1877F2" /></span>
+        <a href={eventUrl}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-blue-600 hover:underline mt-2 block"
-                >
-                    📬 Посмотреть на Facebook
-                </a>
+                >{t('fb')}</a>
 
                 <Image
                     src={eventImage}

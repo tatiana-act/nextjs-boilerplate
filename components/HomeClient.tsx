@@ -13,16 +13,17 @@ interface HomeClientProps {
     allTours: Map<string, TourProgram>;
     tours: TourProgram[];
     upcomingTours: UpcomingTourEvent[];
+    locale: string;
 }
 
-const HomeClient: React.FC<HomeClientProps> = ({ allTours, tours, upcomingTours }) => {
+const HomeClient: React.FC<HomeClientProps> = ({ allTours, tours, upcomingTours, locale }) => {
     return (
         <BookingManager allTours={allTours}>
             {(handleBookTour) => (
                 <>
                     <ToursSection tours={tours} onBookTour={handleBookTour} />
-                    <CalendarSection allTours={allTours} upcomingTours={upcomingTours} recentTours={pastTours}/>
-                    <UpcomingToursSection allTours={allTours} upcomingTours={upcomingTours} onReserveSpot={handleBookTour} />
+                    <CalendarSection allTours={allTours} upcomingTours={upcomingTours} recentTours={pastTours} locale={locale} />
+                    <UpcomingToursSection allTours={allTours} upcomingTours={upcomingTours} onReserveSpot={handleBookTour} locale={locale} />
                 </>
             )}
         </BookingManager>
