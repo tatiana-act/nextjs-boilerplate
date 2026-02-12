@@ -21,7 +21,7 @@ export const upcomingTours: UpcomingTourEvent[] = [
     id: 'tour52',
     tourProgramId: 'Brmn',
     date: '2026-02-16',
-    time: '11:00',
+    time: '10:40',
     price: 40,
     bonus: 'bonusChat',
   },
