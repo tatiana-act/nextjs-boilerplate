@@ -1,6 +1,6 @@
-import {PastTourEvent} from '@/types/tour';
+import { PastTourEvent } from '@/types/tour';
 
-const pastTourEvents: PastTourEvent[] =
+const pastTourEvents: PastTourEvent[] = [
     {
         id: 'tour54',
         tourProgramId: 'Gcrt',
