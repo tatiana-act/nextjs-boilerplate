@@ -2,25 +2,28 @@
 
 import React, { useState, useEffect } from "react";
 import Image from 'next/image';
-import { FaFacebook } from 'react-icons/fa';
-import {useTranslations} from "next-intl";
+import { useTranslations } from "next-intl";
 
 interface AboutTourProps {
     eventUrl: string,
     eventImage: string,
     tourName: string,
+    onClose?: () => void,
 }
 
-const AboutTour: React.FC<AboutTourProps> = ({ eventImage, eventUrl, tourName }) => {
+const AboutTour: React.FC<AboutTourProps> = ({ eventImage, eventUrl, tourName, onClose }) => {
     const [dimensions, setDimensions] = useState<{ w: number; h: number } | null>(null);
     const t = useTranslations('AboutTour');
     useEffect(() => {
         const img = new window.Image();
-        img.src = eventImage;
+        img.src = `/${eventImage}`;
         img.onload = () => {
             setDimensions({ w: img.naturalWidth, h: img.naturalHeight });
         };
-    }, [eventImage]);
+        img.onerror = () => {
+            onClose?.();
+        };
+    }, [eventImage, onClose]);
 
     if (!dimensions) {
         return (
@@ -30,23 +33,22 @@ const AboutTour: React.FC<AboutTourProps> = ({ eventImage, eventUrl, tourName })
         );
     }
     return <div className="form-body">
-        <span><FaFacebook color="#1877F2" /></span>
+        {/*<span><FaFacebook color="#1877F2" /></span>*/}
         <a href={eventUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-blue-600 hover:underline mt-2 block"
-                >{t('fb')}</a>
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-blue-600 hover:underline mt-2 block"
+        >{t('fb')}</a>
 
-                <Image
-                    src={eventImage}
-                    alt={`Tour ${tourName} Image`}
-                    layout="intrinsic"
-                    width={dimensions.w}
-                    height={dimensions.h}
-                    objectFit="contain"
-                    className="rounded"
-                />
-            </div>
+        <Image
+            src={`/${eventImage}`}
+            alt={`Tour ${tourName} Image`}
+            width={dimensions.w}
+            height={dimensions.h}
+            style={{ objectFit: 'contain' }}
+            className="rounded"
+        />
+    </div>
 }
 
 export default AboutTour;

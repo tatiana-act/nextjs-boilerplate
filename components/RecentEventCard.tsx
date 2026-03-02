@@ -6,7 +6,7 @@ import { formatDateToUserLocale } from '@/lib/utils';
 import Popup from "reactjs-popup";
 import FeedbackForm from "@/components/FeedbackForm";
 import AboutTour from "@/components/AboutTour";
-import {useTranslations} from "next-intl";
+import { useTranslations } from "next-intl";
 
 interface PastTourCardProps {
     tour: PastTourEvent;
@@ -52,7 +52,7 @@ const RecentEventCard: React.FC<PastTourCardProps> = ({ tour, tourName, locale }
                             <button className="close" onClick={closePopup}>
                                 &times;
                             </button>
-                            <AboutTour eventUrl={tour.eventUrl} eventImage={tour.eventImage} tourName={tourName} />
+                            <AboutTour eventUrl={tour.eventUrl} eventImage={tour.eventImage} tourName={tourName} onClose={closePopup} />
                         </div>
                     </Popup>
                 </div>
