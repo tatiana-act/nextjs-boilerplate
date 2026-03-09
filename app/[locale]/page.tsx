@@ -13,6 +13,7 @@ import RecentEventsSection from '@/components/RecentEventsSection';
 import HomeClient from '@/components/HomeClient';
 import { getAllReviews } from "@/app/actions/readAllFeedbacks";
 import ReviewSection from "@/components/ReviewsSection";
+import { headers } from 'next/headers';
 
 const allReviews = await getAllReviews();
 
@@ -22,6 +23,8 @@ export default async function Home({
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
+  const userAgent = (await headers()).get('user-agent') || '';
+  const isMobileDevice = /android.+mobile|ip(hone|[oa]d)/i.test(userAgent);
   const tours = locale === 'en' ? toursEn : toursRu;
   const faqs = locale === 'en' ? faqsEn : faqsRu;
 
@@ -32,7 +35,7 @@ export default async function Home({
   return (
     <main>
       <Hero />
-      <HomeClient allTours={allTours} tours={tours} upcomingTours={upcomingTours} locale={locale} />
+      <HomeClient allTours={allTours} tours={tours} upcomingTours={upcomingTours} isMobileDevice={isMobileDevice} locale={locale} />
       <RecentEventsSection pastTours={pastTours} tours={tours} locale={locale} />
       <ReviewSection reviews={allReviews} allTours={allTours} />
       <FAQSection faqs={faqs} />

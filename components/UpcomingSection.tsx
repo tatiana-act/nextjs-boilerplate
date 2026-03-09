@@ -2,13 +2,13 @@
 import React from 'react';
 import { TourProgram, UpcomingTourEvent } from '@/types/tour';
 import UpcomingTourCard from './UpcomingTourCard';
-import { Locale } from "use-intl";
 import { useTranslations } from "next-intl";
 
 interface UpcomingToursSectionProps {
   upcomingTours: UpcomingTourEvent[];
   allTours: ReadonlyMap<string, TourProgram>;
   onReserveSpot: (tourId: string) => void;
+  isMobileDevice: boolean;
   locale: string;
 }
 
@@ -16,6 +16,7 @@ const UpcomingToursSection: React.FC<UpcomingToursSectionProps> = ({
   upcomingTours,
   allTours,
   onReserveSpot,
+  isMobileDevice,
   locale
 }) => {
   const t = useTranslations('Upcoming');
@@ -31,6 +32,7 @@ const UpcomingToursSection: React.FC<UpcomingToursSectionProps> = ({
               upcomingTour={upcomingTour}
               tourName={allTours.get(upcomingTour.tourProgramId)?.title || ''}
               onReserveSpot={onReserveSpot}
+              isMobileDevice={isMobileDevice}
               locale={locale}
             />
           ))}

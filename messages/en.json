@@ -47,7 +47,11 @@
         "bonusCap": "Includes the Texas State Capitol!",
         "bonusChat": "Includes The Chateau Bellevue!",
         "bonusMillet": "Includes the gourmet lunch",
-        "bonusWalk": "Visit sites connected with writer's life and stories"
+        "bonusWalk": "Visit sites connected with writer's life and stories",
+        "shareText": "Check out this tour: {date} {time} {tourName}",
+        "shareOnFb": "Share on Facebook",
+        "shareOnTg": "Share on Telegram",
+        "share": "Share"
     },
     "Recent": {
         "title": "Past tours",

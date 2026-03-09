@@ -7,6 +7,7 @@ import { notFound } from 'next/navigation';
 import { routing } from '@/i18n/routing';
 
 import type { Graph } from 'schema-dts';
+import type { Metadata } from 'next'
 
 const graph: Graph = {
   '@context': 'https://schema.org',
@@ -46,7 +47,7 @@ export async function generateMetadata({
   params
 }: {
   params: Promise<{ locale: string }>;
-}) {
+}): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'Metadata' });
 
@@ -64,7 +65,7 @@ export async function generateMetadata({
     openGraph: {
       title: t('title'),
       description: t('description'),
-      url: 'https://austin-city-tours.vercel.app',
+      url: `https://austin-city-tours.vercel.app/${locale}`,
       siteName: 'Austin City Tours',
       images: [
         {
@@ -78,6 +79,7 @@ export async function generateMetadata({
       type: 'website',
     },
     alternates: {
+      canonical: `https://austin-city-tours.vercel.app/${locale}`,
       languages: {
         'en': '/en',
         'ru': '/ru',

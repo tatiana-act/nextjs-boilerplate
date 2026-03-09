@@ -13,17 +13,18 @@ interface HomeClientProps {
     allTours: Map<string, TourProgram>;
     tours: TourProgram[];
     upcomingTours: UpcomingTourEvent[];
+    isMobileDevice: boolean;
     locale: string;
 }
 
-const HomeClient: React.FC<HomeClientProps> = ({ allTours, tours, upcomingTours, locale }) => {
+const HomeClient: React.FC<HomeClientProps> = ({ allTours, tours, upcomingTours, isMobileDevice, locale }) => {
     return (
         <BookingManager allTours={allTours}>
             {(handleBookTour) => (
                 <>
                     <ToursSection tours={tours} onBookTour={handleBookTour} />
                     <CalendarSection allTours={allTours} upcomingTours={upcomingTours} recentTours={pastTours} locale={locale} />
-                    <UpcomingToursSection allTours={allTours} upcomingTours={upcomingTours} onReserveSpot={handleBookTour} locale={locale} />
+                    <UpcomingToursSection allTours={allTours} upcomingTours={upcomingTours} onReserveSpot={handleBookTour} isMobileDevice={isMobileDevice} locale={locale} />
                 </>
             )}
         </BookingManager>

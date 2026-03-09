@@ -1,13 +1,17 @@
 // components/UpcomingTourCard.tsx
+"use client";
+
 import React from 'react';
 import { UpcomingTourEvent } from '@/types/tour';
 import { formatDateToUserLocale } from '@/lib/utils';
 import { useTranslations } from "next-intl";
+import { FaFacebook, FaTelegram, FaShare } from 'react-icons/fa';
 
 interface UpcomingTourCardProps {
   upcomingTour: UpcomingTourEvent;
   tourName: string;
   onReserveSpot: (tourId: string) => void;
+  isMobileDevice: boolean;
   locale: string;
 }
 
@@ -15,6 +19,7 @@ const UpcomingTourCard: React.FC<UpcomingTourCardProps> = ({
   upcomingTour,
   tourName,
   onReserveSpot,
+  isMobileDevice,
   locale
 }) => {
   const handleClick = () => {
@@ -33,7 +38,33 @@ const UpcomingTourCard: React.FC<UpcomingTourCardProps> = ({
     e.stopPropagation();
     onReserveSpot(upcomingTour.tourProgramId);
   };
+
+  const handleShare = async (e: React.MouseEvent<HTMLButtonElement>, platform: string, text: string) => {
+    e.stopPropagation();
+    const url = `${window.location.origin}${window.location.pathname}#tour-card-${upcomingTour.id.valueOf()}`;
+    const encodedUrl = encodeURIComponent(url);
+    if (platform === 'facebook') {
+      window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}`, '_blank');
+    } else if (platform === 'telegram') {
+      const encText = encodeURIComponent(text);
+      window.open(`https://t.me/share/url?url=${encodedUrl}&text=${encText}`, '_blank');
+    } else if (platform === 'share') {
+      if (!navigator.canShare?.({})) {
+        return;
+      }
+      try {
+        await navigator.share({
+          title: text,
+          url: url,
+        });
+      } catch (error) {
+        console.log("Share failed:", error);
+      }
+    }
+  };
+
   const t = useTranslations('Upcoming');
+  const shareText = t('shareText', { tourName: tourName, date: upcomingTour.date, time: upcomingTour.time })
   return (
     <div className="upcoming-tour-card" onClick={handleClick} id={'tour-card-' + upcomingTour.id.valueOf()}>
       <div className="upcoming-tour-content">
@@ -47,6 +78,17 @@ const UpcomingTourCard: React.FC<UpcomingTourCardProps> = ({
           </div>
           {upcomingTour.bonus && <div className="tour-highlights">{t(upcomingTour.bonus)}</div>}
           {upcomingTour.price !== undefined && (<div className="tour-price">💲 {upcomingTour.price}{t('currency')}</div>)}
+        </div>
+        <div className="share-buttons">
+          {isMobileDevice && (<button className="share-button share" onClick={(e) => handleShare(e, 'share', shareText)} title={t('share')}>
+            <FaShare />
+          </button>)}
+          <button className="share-button facebook" onClick={(e) => handleShare(e, 'facebook', shareText)} title={t('shareOnFb')}>
+            <FaFacebook />
+          </button>
+          <button className="share-button telegram" onClick={(e) => handleShare(e, 'telegram', shareText)} title={t('shareOnFb')}>
+            <FaTelegram />
+          </button>
         </div>
         <button className="book-button" onClick={handleReserveClick}>
           {t('join')}
