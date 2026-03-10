@@ -49,6 +49,7 @@
         "bonusMillet": "Includes the gourmet lunch",
         "bonusWalk": "Visit sites connected with writer's life and stories",
         "shareText": "Check out this tour: {date} {time} {tourName}",
+        "shareTitle": "Austin City Tours - The city you don't know yet",
         "shareOnFb": "Share on Facebook",
         "shareOnTg": "Share on Telegram",
         "share": "Share"

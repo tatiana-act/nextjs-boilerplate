@@ -39,7 +39,7 @@ const UpcomingTourCard: React.FC<UpcomingTourCardProps> = ({
     onReserveSpot(upcomingTour.tourProgramId);
   };
 
-  const handleShare = async (e: React.MouseEvent<HTMLButtonElement>, platform: string, text: string) => {
+  const handleShare = async (e: React.MouseEvent<HTMLButtonElement>, platform: string, text: string, title: string) => {
     e.stopPropagation();
     const url = `${window.location.origin}${window.location.pathname}#tour-card-${upcomingTour.id.valueOf()}`;
     const encodedUrl = encodeURIComponent(url);
@@ -49,22 +49,26 @@ const UpcomingTourCard: React.FC<UpcomingTourCardProps> = ({
       const encText = encodeURIComponent(text);
       window.open(`https://t.me/share/url?url=${encodedUrl}&text=${encText}`, '_blank');
     } else if (platform === 'share') {
-      if (!navigator.canShare?.({})) {
-        return;
+      const sharedData: ShareData = {
+        title: text,
+        text: title,
+        url: url,
       }
-      try {
-        await navigator.share({
-          title: text,
-          url: url,
-        });
-      } catch (error) {
-        console.log("Share failed:", error);
+
+      if(navigator.canShare && typeof navigator.canShare === 'function'
+        && navigator.canShare(sharedData)) {
+        try {
+          await navigator.share(sharedData);
+        } catch (error) {
+          console.log("Share failed:", error);
+        }
       }
     }
   };
 
   const t = useTranslations('Upcoming');
   const shareText = t('shareText', { tourName: tourName, date: upcomingTour.date, time: upcomingTour.time })
+  const shareTitle = t('shareTitle')
   return (
     <div className="upcoming-tour-card" onClick={handleClick} id={'tour-card-' + upcomingTour.id.valueOf()}>
       <div className="upcoming-tour-content">
@@ -80,13 +84,13 @@ const UpcomingTourCard: React.FC<UpcomingTourCardProps> = ({
           {upcomingTour.price !== undefined && (<div className="tour-price">💲 {upcomingTour.price}{t('currency')}</div>)}
         </div>
         <div className="share-buttons">
-          {isMobileDevice && (<button className="share-button share" onClick={(e) => handleShare(e, 'share', shareText)} title={t('share')}>
+          {isMobileDevice && (<button className="share-button share" onClick={async (e) => handleShare(e, 'share', shareText, shareTitle)} title={t('share')}>
             <FaShare />
           </button>)}
-          <button className="share-button facebook" onClick={(e) => handleShare(e, 'facebook', shareText)} title={t('shareOnFb')}>
+          <button className="share-button facebook" onClick={async (e) => handleShare(e, 'facebook', shareText, shareTitle)} title={t('shareOnFb')}>
             <FaFacebook />
           </button>
-          <button className="share-button telegram" onClick={(e) => handleShare(e, 'telegram', shareText)} title={t('shareOnFb')}>
+          <button className="share-button telegram" onClick={async (e) => handleShare(e, 'telegram', shareText, shareTitle)} title={t('shareOnFb')}>
             <FaTelegram />
           </button>
         </div>
