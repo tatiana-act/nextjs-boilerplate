@@ -26,7 +26,7 @@ async function fetchFromGoogle(): Promise<Review[]> {
         console.error('Error reading from Google Sheets:', error);
         return [];
     }
-    return convertToFeedbacks(rawData);
+    return convertToFeedbacks(rawData).sort((a:Review, b:Review) => a.tourDate < b.tourDate ? 1 : -1 );
 }
 
 function convertToFeedbacks(values: string[][]): Review[] {
@@ -50,6 +50,6 @@ function convertToFeedbacks(values: string[][]): Review[] {
 
 export const getAllReviews = unstable_cache(
     fetchFromGoogle,
-    ['reviews-v4'],
+    ['reviews-v2'],
     { revalidate: 600 }
 );
