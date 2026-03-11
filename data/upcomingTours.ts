@@ -10,6 +10,14 @@ export const upcomingTours: UpcomingTourEvent[] = [
     bonus: 'bonusWalk'
   },
   {
+    id: 'tour60',
+    tourProgramId: 'Acap',
+    date: '2026-03-16',
+    time: '10:00',
+    price: 40,
+    bonus: 'bonusCap'
+  },
+  {
     id: 'tour58',
     tourProgramId: 'Acap',
     date: '2026-03-18',
