@@ -46,10 +46,10 @@ This project uses Telegram messages for live notifications about bookings ands f
 
 ```env
 # Telegram Bot Token
-TELEGRAM_BOT_TOKEN=8271068063:AAFkSq1P3hSaiTYxquYPFRY_BN8kJCNxERY
+TELEGRAM_BOT_TOKEN="token (number:string)"
 
 # Chat id for live notifications
-TELEGRAM_BOT_CHATID=1192394950
+TELEGRAM_BOT_CHATID="telegram chat id (number)"
 ```
 ---
 
