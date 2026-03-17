@@ -37,7 +37,6 @@ const ContactForm: React.FC<ContactFormProps> = ({ tourName, onClose }) => {
     }, [state, setValue]);
     return (
         <form action={formAction}>
-            <h3 className="tour-header">{t('title')}</h3>
             <div className="form-body">
             <div className="tour-body">{t('body', {tour: tourName})}</div>
             <div className="mb-4">

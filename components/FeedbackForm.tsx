@@ -38,7 +38,6 @@ const FeedbackForm: React.FC<FeedbackFormProps> = ({ tourName, tourId, date, onC
     return (
         // <div className="tour-body">Большое спасибо, что вы посетили тур "{tourName}". Пожалуйста опишите свои впечатления:</div>
         <form action={formAction}>
-            <h3 className="tour-header">{t('title')}</h3>
             <div className="form-body">{t('body', {tour: tourName})}
             <div>
                 <label htmlFor="name" className="block text-sm font-bold mb-2">

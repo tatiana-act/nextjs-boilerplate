@@ -18,7 +18,8 @@
         "description": "Join our tours and discover the hidden gems, rich history, and vibrant culture of our city!",
         "tours": "Our Tours",
         "calendar": "Calendar",
-        "contacts": "Contact"
+        "contacts": "Contact",
+        "makeOrder": "Book a tour"
     },
     "ToursSection": {
         "title": "Our tours",
@@ -81,6 +82,27 @@
         "what": "I use WhatsApp",
         "submit": "Submit",
         "pending": "Recording..."
+    },
+    "BookingForm": {
+        "title": "Booking",
+        "body": "I'm thrilled you're interested my tours! To start the reservation, please share your info:",
+        "name": "Your name",
+        "contact": "How to contact you (phone, email)",
+        "extraNotes": "Extra notes",
+        "submit": "Submit",
+        "dateLabel": "Date",
+        "extraLabel": "Additional requirements",
+        "groupLabel": "Expected number of participants",
+        "tourLabel": "Tour name",
+        "tourDefaultSelectOption": "Tour not selected",
+        "pending": "Recording...",
+        "tourRequired": "Tour is required",
+        "datePast": "Date cannot be in the past",
+        "nameMin": "Name must be at least 3 characters",
+        "nameMax": "Name cannot exceed 50 characters",
+        "contactRequired": "Contact is required",
+        "groupSizeMin": "Group size must be at least 1",
+        "groupSizeMax": "Group size cannot exceed 15"
     },
     "Footer": {
         "title": "Where the best experiences begin"

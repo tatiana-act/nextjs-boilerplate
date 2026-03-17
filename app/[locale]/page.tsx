@@ -34,7 +34,7 @@ export default async function Home({
 
   return (
     <main>
-      <Hero />
+      <Hero allTours={allTours} />
       <HomeClient allTours={allTours} tours={tours} upcomingTours={upcomingTours} isMobileDevice={isMobileDevice} locale={locale} />
       <RecentEventsSection pastTours={pastTours} tours={tours} locale={locale} />
       <ReviewSection reviews={allReviews} allTours={allTours} />

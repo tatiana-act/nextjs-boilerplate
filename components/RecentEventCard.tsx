@@ -17,6 +17,7 @@ interface PastTourCardProps {
 const RecentEventCard: React.FC<PastTourCardProps> = ({ tour, tourName, locale }) => {
     const [openPopupIndex, setOpenPopupIndex] = useState(0);
     const t = useTranslations('Recent');
+    const tFeedback = useTranslations('FeedbackForm');
     const handleDetailsClick = (e: React.MouseEvent<HTMLButtonElement>) => {
         e.preventDefault();
         setOpenPopupIndex(1);
@@ -35,6 +36,7 @@ const RecentEventCard: React.FC<PastTourCardProps> = ({ tour, tourName, locale }
                 <div>
                     <Popup open={openPopupIndex === 2} closeOnDocumentClick onClose={closePopup}>
                         <div className="modal">
+                            <h3 className="tour-header">{tFeedback('title')}</h3>
                             <button className="close" onClick={closePopup}>
                                 &times;
                             </button>
