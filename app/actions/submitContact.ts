@@ -42,7 +42,6 @@ export async function submitContactForm(_prevState: ContactFormData, formData: F
             sendTelegramMessage(tgMessage).catch((error) => {
                 console.error('Unhandled error in sendTelegramMessageInternal:', error);
             });
-            // Append data (adjust range to your sheet, e.g., Sheet1!A:E for 5 columns)
             await sheets.spreadsheets.values.append({
                 spreadsheetId: process.env.GOOGLE_SHEETS_SPREADSHEET_ID!,
                 range: 'Contacts!A:F', // Update if your sheet name or columns differ

@@ -8,8 +8,8 @@ const pastTourEvents: PastTourEvent[] = [
         time: '12:00',
         price: 30,
         bonus: 'bonusWalk',
-        eventUrl: '',
-        eventImage: '',
+        eventUrl: 'https://www.facebook.com/groups/662224066870718/posts/857545010671955',
+        eventImage: '031426hry.png',
         feedbacks: []
     },
     {

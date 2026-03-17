@@ -36,7 +36,7 @@ export async function submitBookingForm(_prevState: BookingFormData, formData: F
             });
 
             const sheets = google.sheets({version: 'v4', auth});
-            const tgMessage = `New book tour request received: ${validated.data?.name}`;
+            const tgMessage = `New book tour request from ${validated.data?.name} / ${validated.data?.contact}: ${validated.data?.tour} for group of ${validated.data?.groupSize} on ${validated.data?.date}`;
             sendTelegramMessage(tgMessage).catch((error) => {
                 console.error('Unhandled error in sendTelegramMessageInternal:', error);
             });
