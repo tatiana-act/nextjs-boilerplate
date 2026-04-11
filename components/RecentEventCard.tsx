@@ -47,7 +47,7 @@ const RecentEventCard: React.FC<PastTourCardProps> = ({ tour, tourName, locale }
                             <button className="close" onClick={closePopup}>
                                 &times;
                             </button>
-                            <AboutTour eventUrl={tour.eventUrl} eventImage={tour.eventImage} tourName={tourName} onClose={closePopup} />
+                            <AboutTour eventUrl={tour.eventUrl || ''} eventImage={tour.eventImage || ''} tourName={tourName} onClose={closePopup} />
                         </div>
                     </Popup>
                 </div>
