@@ -29,7 +29,7 @@ export interface UpcomingTourEvent {
 }
 
 export interface PastTourEvent extends UpcomingTourEvent {
-  eventUrl: string;
-  eventImage: string;
-  feedbacks: string[];
+  eventUrl?: string;
+  eventImage?: string;
+  feedbacks?: string[];
 }

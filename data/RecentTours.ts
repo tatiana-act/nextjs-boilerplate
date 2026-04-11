@@ -2,6 +2,22 @@ import { PastTourEvent } from '@/types/tour';
 
 const pastTourEvents: PastTourEvent[] = [
     {
+        id: 'tour61',
+        tourProgramId: 'Gcrt',
+        date: '2026-04-03',
+        time: '10:00',
+        price: 40,
+        bonus: '',
+    },
+    {
+        id: 'tour60',
+        tourProgramId: 'Hyde',
+        date: '2026-03-31',
+        time: '09:30',
+        price: 40,
+        bonus: '',
+    },
+    {
         id: 'tour53',
         tourProgramId: 'Hyde',
         date: '2026-03-19',
@@ -10,7 +26,6 @@ const pastTourEvents: PastTourEvent[] = [
         bonus: '',
         eventUrl: 'https://www.facebook.com/groups/662224066870718/posts/861427953616994',
         eventImage: '031926hyd.jpg',
-        feedbacks: []
     },
     {
         id: 'tour58',
@@ -21,7 +36,6 @@ const pastTourEvents: PastTourEvent[] = [
         bonus: 'bonusCap',
         eventUrl: '',
         eventImage: '',
-        feedbacks: []
     },
 
     {
@@ -33,7 +47,6 @@ const pastTourEvents: PastTourEvent[] = [
         bonus: 'bonusWalk',
         eventUrl: 'https://www.facebook.com/groups/662224066870718/posts/857545010671955',
         eventImage: '031426hry.png',
-        feedbacks: []
     },
     {
         id: 'tour55',
