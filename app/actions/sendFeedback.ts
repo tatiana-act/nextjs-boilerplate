@@ -1,7 +1,8 @@
 'use server'; // Marks this as a Server Action
 
-import { google } from 'googleapis';
-import {FeedbackFormData, feedbackFormSchema} from "@/app/zfdschema";
+import { GoogleAuth } from 'google-auth-library';
+import { sheets_v4 } from '@googleapis/sheets';
+import { FeedbackFormData, feedbackFormSchema } from "@/app/zfdschema";
 import sendTelegramMessage from "@/app/tgmessage";
 
 export async function submitFeedbackForm(_prevState: FeedbackFormData, formData: FormData): Promise<FeedbackFormData> {
@@ -22,7 +23,7 @@ export async function submitFeedbackForm(_prevState: FeedbackFormData, formData:
     } else {
         try {
             // Authenticate with Google
-            const auth = new google.auth.GoogleAuth({
+            const auth = new GoogleAuth({
                 credentials: {
                     client_email: process.env.GOOGLE_SHEETS_CLIENT_EMAIL,
                     private_key: process.env.GOOGLE_SHEETS_PRIVATE_KEY?.replace(/\\n/g, '\n'),
@@ -30,7 +31,7 @@ export async function submitFeedbackForm(_prevState: FeedbackFormData, formData:
                 scopes: ['https://www.googleapis.com/auth/spreadsheets'],
             });
 
-            const sheets = google.sheets({version: 'v4', auth});
+            const sheets = new sheets_v4.Sheets({ auth });
             const tgMessage = `Received new contact: ${validated.data?.name}`;
             sendTelegramMessage(tgMessage).catch((error) => {
                 console.error('Unhandled error in sendTelegramMessageInternal:', error);
@@ -63,7 +64,7 @@ export async function submitFeedbackForm(_prevState: FeedbackFormData, formData:
         text: data.text || '',
         tour: data.tour || '',
         tourId: data.tourId,
-        date : data.date || '',
+        date: data.date || '',
         success: success,
         errMessage: msg
     };

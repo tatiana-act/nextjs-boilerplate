@@ -1,6 +1,7 @@
 'use server'; // Marks this as a Server Action
 
-import { google } from 'googleapis';
+import { GoogleAuth } from 'google-auth-library';
+import { sheets_v4 } from '@googleapis/sheets';
 import { ContactFormData, contactFormSchema } from '../zschema'
 import sendTelegramMessage from "@/app/tgmessage";
 
@@ -24,7 +25,7 @@ export async function submitContactForm(_prevState: ContactFormData, formData: F
     } else {
         try {
             // Authenticate with Google
-            const auth = new google.auth.GoogleAuth({
+            const auth = new GoogleAuth({
                 credentials: {
                     client_email: process.env.GOOGLE_SHEETS_CLIENT_EMAIL,
                     private_key: process.env.GOOGLE_SHEETS_PRIVATE_KEY?.replace(/\\n/g, '\n'),
@@ -32,7 +33,7 @@ export async function submitContactForm(_prevState: ContactFormData, formData: F
                 scopes: ['https://www.googleapis.com/auth/spreadsheets'],
             });
 
-            const sheets = google.sheets({version: 'v4', auth});
+            const sheets = new sheets_v4.Sheets({ auth });
             const fmtPhone = validated.data?.phone ? '"' + validated.data.phone + '"' : '';
             let fmtTelegram = validated.data?.telegram || '';
             if (fmtTelegram.length > 0 && !fmtTelegram.startsWith('@')) {

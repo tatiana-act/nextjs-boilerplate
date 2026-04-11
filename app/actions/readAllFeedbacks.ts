@@ -1,6 +1,7 @@
 'use server'; // Marks this as a Server Action
 
-import { google } from 'googleapis';
+import { GoogleAuth } from 'google-auth-library';
+import { sheets_v4 } from '@googleapis/sheets';
 import { Review } from 'types/review'
 import { unstable_cache } from "next/cache";
 
@@ -9,14 +10,14 @@ async function fetchFromGoogle(): Promise<Review[]> {
     let rawData: string[][];
     try {
         // Authenticate with Google
-        const auth = new google.auth.GoogleAuth({
+        const auth = new GoogleAuth({
             credentials: {
                 client_email: process.env.GOOGLE_SHEETS_CLIENT_EMAIL,
                 private_key: process.env.GOOGLE_SHEETS_PRIVATE_KEY?.replace(/\\n/g, '\n'),
             },
             scopes: ['https://www.googleapis.com/auth/spreadsheets'],
         });
-        const sheets = google.sheets({ version: 'v4', auth });
+        const sheets = new sheets_v4.Sheets({ auth });
         rawData = (await sheets.spreadsheets.values.get({
             spreadsheetId: process.env.GOOGLE_SHEETS_SPREADSHEET_ID!,
             range: 'Reviews!A:F',
@@ -26,7 +27,7 @@ async function fetchFromGoogle(): Promise<Review[]> {
         console.error('Error reading from Google Sheets:', error);
         return [];
     }
-    return convertToFeedbacks(rawData).sort((a:Review, b:Review) => a.tourDate < b.tourDate ? 1 : -1 );
+    return convertToFeedbacks(rawData).sort((a: Review, b: Review) => a.tourDate < b.tourDate ? 1 : -1);
 }
 
 function convertToFeedbacks(values: string[][]): Review[] {

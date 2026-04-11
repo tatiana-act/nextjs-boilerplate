@@ -15,14 +15,13 @@ import { getAllReviews } from "@/app/actions/readAllFeedbacks";
 import ReviewSection from "@/components/ReviewsSection";
 import { headers } from 'next/headers';
 
-const allReviews = await getAllReviews();
-
 export default async function Home({
   params
 }: {
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
+  const allReviews = await getAllReviews();
   const userAgent = (await headers()).get('user-agent') || '';
   const isMobileDevice = /android.+mobile|ip(hone|[oa]d)/i.test(userAgent);
   const tours = locale === 'en' ? toursEn : toursRu;
