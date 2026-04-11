@@ -2,6 +2,8 @@
 
 import React, { useState } from 'react';
 import Modal from './Modal';
+import ContactForm from './ContactForm';
+import { useTranslations } from 'next-intl';
 import { TourProgram } from '@/types/tour';
 
 interface BookingManagerProps {
@@ -10,6 +12,7 @@ interface BookingManagerProps {
 }
 
 const BookingManager: React.FC<BookingManagerProps> = ({ children, allTours }) => {
+    const tContact = useTranslations('ContactForm');
     const [isContactsOpen, setContactsOpen] = useState(false);
     const [tourProgramName, setTourProgramName] = useState('');
 
@@ -23,9 +26,11 @@ const BookingManager: React.FC<BookingManagerProps> = ({ children, allTours }) =
             {children(handleBookTour)}
             <Modal
                 isOpen={isContactsOpen}
-                tourName={tourProgramName}
+                title={tContact('title')}
                 onClose={() => setContactsOpen(false)}
-            />
+            >
+                <ContactForm tourName={tourProgramName} onClose={() => setContactsOpen(false)} />
+            </Modal>
         </>
     );
 };

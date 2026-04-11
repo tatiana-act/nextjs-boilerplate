@@ -4,7 +4,7 @@ import React, {useState} from 'react';
 import { useTranslations } from 'next-intl';
 import MyConstants from './../lib/MyConstants'
 import LanguageSwitcher from './LanguageSwitcher';
-import { Popup } from "reactjs-popup";
+import Modal from './Modal';
 import BookingForm from "@/components/BookingForm";
 import {TourProgram} from "@/types/tour";
 
@@ -45,17 +45,9 @@ const Hero: React.FC<HeroProps> = ({ allTours }) => {
           <LanguageSwitcher />
         </div>
         {isBookingOpened && (
-            <div>
-              <Popup open={isBookingOpened} closeOnDocumentClick onClose={closeBookingPopup}>
-                <div className="modal">
-                  <div className="tour-header">{tBooking('title')}</div>
-                  <button className="close" onClick={closeBookingPopup}>
-                    &times;
-                  </button>
-                  <BookingForm allTours={allTours} onClose={closeBookingPopup} />
-                </div>
-              </Popup>
-            </div>
+              <Modal isOpen={isBookingOpened} onClose={closeBookingPopup} title={tBooking('title')}>
+                <BookingForm allTours={allTours} onClose={closeBookingPopup} />
+              </Modal>
         )}
       </div>
     </section>
