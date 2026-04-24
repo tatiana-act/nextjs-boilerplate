@@ -2,18 +2,26 @@ import { UpcomingTourEvent } from '@/types/tour';
 
 export const upcomingTours: UpcomingTourEvent[] = [
   {
-    id: 'tour63',
-    tourProgramId: 'Haust',
-    date: '2026-04-17',
-    time: '19:00',
+    id: 'tour64',
+    tourProgramId: 'Hyde',
+    date: '2026-05-07',
+    time: '10:00',
     price: 40,
     bonus: '',
   },
   {
-    id: 'tour62',
+    id: 'tour65',
+    tourProgramId: 'Hyde',
+    date: '2026-05-10',
+    time: '10:00',
+    price: 40,
+    bonus: '',
+  },
+  {
+    id: 'tour66',
     tourProgramId: 'Gcrt',
-    date: '2026-04-18',
-    time: '10:30',
+    date: '2026-05-15',
+    time: '10:00',
     price: 40,
     bonus: '',
   }
