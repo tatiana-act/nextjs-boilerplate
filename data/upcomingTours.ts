@@ -20,7 +20,7 @@ export const upcomingTours: UpcomingTourEvent[] = [
   {
     id: 'tour66',
     tourProgramId: 'Gcrt',
-    date: '2026-05-15',
+    date: '2026-05-31',
     time: '10:00',
     price: 40,
     bonus: '',
