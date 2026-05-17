@@ -8,12 +8,12 @@ import { faqs as faqsRu } from '@/data/faq';
 import { faqs as faqsEn } from '@/data/faq.en';
 import { upcomingTours } from '@/data/upcomingTours';
 import pastTours from '@/data/RecentTours';
-import { PastTourEvent, TourProgram } from '@/types/tour';
-import RecentEventsSection from '@/components/RecentEventsSection';
+import { TourProgram } from '@/types/tour';
 import HomeClient from '@/components/HomeClient';
 import { getAllReviews } from "@/app/actions/readAllFeedbacks";
 import ReviewSection from "@/components/ReviewsSection";
 import { headers } from 'next/headers';
+import { parseCentralTime } from '@/lib/utils';
 
 export default async function Home({
   params
@@ -32,11 +32,10 @@ export default async function Home({
   );
 
   const now = new Date();
-  const tourDateTime = (tour: { date: string; time: string }) => new Date(`${tour.date}T${tour.time}:00`);
-  const futureUpcomingTours = upcomingTours.filter(tour => tourDateTime(tour) >= now);
+  const futureUpcomingTours = upcomingTours.filter(tour => parseCentralTime(tour.date, tour.time) >= now);
   const pastTourIds = new Set(pastTours.map(t => t.id));
   const expiredUpcomingTours: PastTourEvent[] = upcomingTours.filter(
-    tour => tourDateTime(tour) < now && !pastTourIds.has(tour.id)
+    tour => parseCentralTime(tour.date, tour.time) < now && !pastTourIds.has(tour.id)
   );
   const mergedPastTours = [...pastTours];
   for (const expired of expiredUpcomingTours) {
