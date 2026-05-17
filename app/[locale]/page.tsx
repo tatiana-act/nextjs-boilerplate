@@ -34,9 +34,19 @@ export default async function Home({
   const today = new Date();
   today.setHours(0, 0, 0, 0);
   const futureUpcomingTours = upcomingTours.filter(tour => new Date(tour.date) >= today);
-  const expiredUpcomingTours: PastTourEvent[] = upcomingTours.filter(tour => new Date(tour.date) < today);
-  const mergedPastTours = [...expiredUpcomingTours, ...pastTours]
-    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+  const pastTourIds = new Set(pastTours.map(t => t.id));
+  const expiredUpcomingTours: PastTourEvent[] = upcomingTours.filter(
+    tour => new Date(tour.date) < today && !pastTourIds.has(tour.id)
+  );
+  const mergedPastTours = [...pastTours];
+  for (const expired of expiredUpcomingTours) {
+    const insertAt = mergedPastTours.findIndex(t => t.date <= expired.date);
+    if (insertAt === -1) {
+      mergedPastTours.push(expired);
+    } else {
+      mergedPastTours.splice(insertAt, 0, expired);
+    }
+  }
 
   return (
     <main>
