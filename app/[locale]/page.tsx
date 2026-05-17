@@ -8,7 +8,7 @@ import { faqs as faqsRu } from '@/data/faq';
 import { faqs as faqsEn } from '@/data/faq.en';
 import { upcomingTours } from '@/data/upcomingTours';
 import pastTours from '@/data/RecentTours';
-import { TourProgram } from '@/types/tour';
+import { PastTourEvent, TourProgram } from '@/types/tour';
 import RecentEventsSection from '@/components/RecentEventsSection';
 import HomeClient from '@/components/HomeClient';
 import { getAllReviews } from "@/app/actions/readAllFeedbacks";
@@ -34,12 +34,15 @@ export default async function Home({
   const today = new Date();
   today.setHours(0, 0, 0, 0);
   const futureUpcomingTours = upcomingTours.filter(tour => new Date(tour.date) >= today);
+  const expiredUpcomingTours: PastTourEvent[] = upcomingTours.filter(tour => new Date(tour.date) < today);
+  const mergedPastTours = [...expiredUpcomingTours, ...pastTours]
+    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
   return (
     <main>
       <Hero allTours={allTours} />
       <HomeClient allTours={allTours} tours={tours} upcomingTours={futureUpcomingTours} isMobileDevice={isMobileDevice} locale={locale} />
-      <RecentEventsSection pastTours={pastTours} tours={tours} locale={locale} />
+      <RecentEventsSection pastTours={mergedPastTours} tours={tours} locale={locale} />
       <ReviewSection reviews={allReviews} allTours={allTours} />
       <FAQSection faqs={faqs} />
       <Footer />
