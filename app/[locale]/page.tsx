@@ -31,10 +31,14 @@ export default async function Home({
     tours.map(tour => [tour.id, tour] as const),
   );
 
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+  const futureUpcomingTours = upcomingTours.filter(tour => new Date(tour.date) >= today);
+
   return (
     <main>
       <Hero allTours={allTours} />
-      <HomeClient allTours={allTours} tours={tours} upcomingTours={upcomingTours} isMobileDevice={isMobileDevice} locale={locale} />
+      <HomeClient allTours={allTours} tours={tours} upcomingTours={futureUpcomingTours} isMobileDevice={isMobileDevice} locale={locale} />
       <RecentEventsSection pastTours={pastTours} tours={tours} locale={locale} />
       <ReviewSection reviews={allReviews} allTours={allTours} />
       <FAQSection faqs={faqs} />
