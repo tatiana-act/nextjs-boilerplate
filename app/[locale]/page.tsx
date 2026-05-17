@@ -31,12 +31,12 @@ export default async function Home({
     tours.map(tour => [tour.id, tour] as const),
   );
 
-  const today = new Date();
-  today.setHours(0, 0, 0, 0);
-  const futureUpcomingTours = upcomingTours.filter(tour => new Date(tour.date) >= today);
+  const now = new Date();
+  const tourDateTime = (tour: { date: string; time: string }) => new Date(`${tour.date}T${tour.time}:00`);
+  const futureUpcomingTours = upcomingTours.filter(tour => tourDateTime(tour) >= now);
   const pastTourIds = new Set(pastTours.map(t => t.id));
   const expiredUpcomingTours: PastTourEvent[] = upcomingTours.filter(
-    tour => new Date(tour.date) < today && !pastTourIds.has(tour.id)
+    tour => tourDateTime(tour) < now && !pastTourIds.has(tour.id)
   );
   const mergedPastTours = [...pastTours];
   for (const expired of expiredUpcomingTours) {
